@@ -1,1 +1,1 @@
-# paw-squad 🐾🦴
+# paw squad 🐾🦴
