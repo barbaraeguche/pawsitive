@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/rehome/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/statistics.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/testimonials.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/values.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/seed/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/email.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/form-schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/banner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/fonts.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +53,9 @@
     &quot;accountId&quot;: &quot;508dcec7-dc35-4bf4-9f6c-9c4a1a481682&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -73,10 +88,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/adopt" />
+      <recent name="$PROJECT_DIR$/src/app/care" />
+      <recent name="$PROJECT_DIR$/src/app/rehome" />
       <recent name="$PROJECT_DIR$/src/app/contact" />
       <recent name="$PROJECT_DIR$/src/app/my-account" />
-      <recent name="$PROJECT_DIR$/src/app/rehome" />
-      <recent name="$PROJECT_DIR$/src/components/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app" />
@@ -114,7 +129,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
       </set>
     </attachedChunks>
   </component>
@@ -150,6 +165,12 @@
       <workItem from="1732594763176" duration="4449000" />
       <workItem from="1732599236554" duration="1216000" />
       <workItem from="1732851107308" duration="31000" />
+      <workItem from="1734392260171" duration="15867000" />
+      <workItem from="1734470103825" duration="5466000" />
+      <workItem from="1734492818329" duration="16000" />
+      <workItem from="1734498226576" duration="4549000" />
+      <workItem from="1734572386568" duration="1376000" />
+      <workItem from="1734574178223" duration="324000" />
     </task>
     <servers />
   </component>
