@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import '@/ui/globals.css';
-import { poppins } from '@/ui/fonts';
+import { nunito } from '@/ui/fonts';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -19,7 +19,7 @@ export default function RootLayout({ children } : Readonly<{
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${poppins.className} h-screen flex flex-col antialiased`}>
+			<body className={`${nunito.className} p-0 m-0 box-border h-screen flex flex-col  antialiased`}>
 				<Header />
 				{children}
 			  <Footer />
@@ -27,3 +27,4 @@ export default function RootLayout({ children } : Readonly<{
 		</html>
 	);
 }
+//max-w-[1440px] mx-auto
