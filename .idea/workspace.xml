@@ -5,25 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/rehome/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/statistics.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/testimonials.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/values.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/main/testimonial-cards.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/care/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/banner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/statistics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/statistics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/testimonials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/values.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/values.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/email.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/form-schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/banner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/fonts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.build.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.tailwindcss&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/barbara/webstorm/paw-squad/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -98,38 +95,10 @@
       <recent name="$PROJECT_DIR$/src/ui" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/client/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/client/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.start" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -171,6 +140,11 @@
       <workItem from="1734498226576" duration="4549000" />
       <workItem from="1734572386568" duration="1376000" />
       <workItem from="1734574178223" duration="324000" />
+      <workItem from="1734574528913" duration="955000" />
+      <workItem from="1734575756047" duration="770000" />
+      <workItem from="1734578902214" duration="12087000" />
+      <workItem from="1734662927504" duration="3527000" />
+      <workItem from="1734666481918" duration="7523000" />
     </task>
     <servers />
   </component>

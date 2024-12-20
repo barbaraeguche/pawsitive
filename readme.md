@@ -3,12 +3,16 @@
 
 ## features 👾
 - **title:** description
+- adopt a pet
+- rehome a pet
 
 ## limitations 🚨
 - **title:** description
+- currently only for cats and dogs
 
 ## what I learned 💭
-
+- multiple pages website
+- authentication
 
 ## .env file 📄
 
