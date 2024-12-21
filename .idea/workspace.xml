@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ui/input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/care/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/banner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/rehome/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/rehome/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/statistics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/statistics.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/testimonials.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/values.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/values.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/main/testimonial-cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/main/testimonial-cards.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +138,11 @@
       <workItem from="1734734140470" duration="1622000" />
       <workItem from="1734736122649" duration="9210000" />
       <workItem from="1734750088735" duration="744000" />
+      <workItem from="1734750849108" duration="747000" />
+      <workItem from="1734751609420" duration="3791000" />
+      <workItem from="1734755488352" duration="365000" />
+      <workItem from="1734755885800" duration="607000" />
+      <workItem from="1734756503337" duration="1424000" />
     </task>
     <servers />
   </component>
