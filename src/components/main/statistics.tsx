@@ -1,11 +1,11 @@
 'use client';
-import { useEffect } from 'react';
-import { incrementCount } from '@/lib/utils';
+// import { useEffect } from 'react';
+// import { incrementCount } from '@/lib/utils';
 
 export default function Statistics() {
-	useEffect(() => {
-		incrementCount();
-	}, []);
+	// useEffect(() => {
+	// 	incrementCount();
+	// }, []);
 	
 	return (
 		<section className="text-center space-y-10">

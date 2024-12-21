@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import RehomeForm from '@/ui/rehome/rehome-form';
 
 export const metadata: Metadata = {
 	title: 'Rehome Your Pet'
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
 	return (
 		<main className="flex-1">
-			<span>Rehome page</span>
+			<RehomeForm />
 		</main>
 	);
 }
