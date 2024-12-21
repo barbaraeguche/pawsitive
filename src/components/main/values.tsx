@@ -15,8 +15,7 @@ export default function Values() {
 					</div>
 					<p>
 						Every animal is treated with kindness, love, and respect. From their first steps into our sanctuary to
-						finding
-						their forever home, we ensure their comfort and happiness.
+						finding their forever home, we ensure their comfort and happiness.
 					</p>
 				</div>
 				

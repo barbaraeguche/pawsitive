@@ -4,10 +4,10 @@ export default function Banner() {
 	return (
 		//try to make into one image
 		<section className="flex flex-col text-center">
-			<h2 className="bg-green-50">
+			<h2 className="">
 				Find Your Perfect Furry Friend!
 			</h2>
-			<h4 className="italic bg-blue-50">
+			<h4 className="italic">
 				Bring unconditional love into your home. Adopt a pet today and make a lifelong companion.
 			</h4>
 			<div className="flex mx-auto">

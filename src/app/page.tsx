@@ -6,7 +6,7 @@ import Testimonials from '@/components/main/testimonials';
 
 export default function Page() {
 	return (
-		<main className="flex-1 space-y-24 bg-blue-50 mt-5 mb-20">
+		<main className="flex-1 space-y-24 mt-5 mb-32">
 			<Banner />
       <About />
       <Values />

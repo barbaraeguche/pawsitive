@@ -119,7 +119,7 @@ export default function Page() {
 			<p className="italic">
 				<b>Final Note: {' '}</b>
 				Loving care, regular attention, and understanding their needs will help your pets thrive. Remember, every pet is unique and may have individual preferences or requirements.
-				</p>
+			</p>
 		</main>
 	);
 }

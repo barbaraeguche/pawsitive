@@ -5,6 +5,7 @@
 - **title:** description
 - adopt a pet
 - rehome a pet
+- authentication, cookies, authorization
 
 ## limitations 🚨
 - **title:** description
@@ -12,7 +13,7 @@
 
 ## what I learned 💭
 - multiple pages website
-- authentication
+- next authentication
 
 ## .env file 📄
 
