@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<main className="flex-1 flex flex-col p-2 md:p-8 bg-blue-50 gap-y-8 last-of-type:mb-20">
+		<main className="flex-1 p-2 md:p-8 bg-blue-50 space-y-8 last-of-type:mb-20">
 			<div>
 				<h3 className="text-xl font-bold mb-2">A. Care Tips for Cats</h3>
 				<ul className="list-decimal ml-10 space-y-4">

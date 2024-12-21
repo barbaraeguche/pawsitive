@@ -4,24 +4,22 @@ import Input from '@/ui/input';
 export default function RehomeForm() {
 	return (
 		<form>
-			<div className="space-y-4">
+			<div className="rounded-md bg-gray-50 p-4 md:p-6 mx-auto w-[95%] max-w-[600px] space-y-4">
 				{/* pet type */}
 				<fieldset>
-					<legend className="">
+					<legend className="mb-2 block text-sm font-medium">
 						Pet Type
 					</legend>
-					<div className="">
+					<div className="flex gap-x-8 rounded-md border border-gray-200 bg-white p-2.5">
 						{/* cat */}
 						<div>
 							<input id="cat"
 							       name="type"
 							       type="radio"
 							       value="cat"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="cat"
-							       className=""
-							>
+							<label htmlFor="cat" className="ml-2 cursor-pointer">
 								Cat
 							</label>
 						</div>
@@ -32,11 +30,9 @@ export default function RehomeForm() {
 							       name="type"
 							       type="radio"
 							       value="dog"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="dog"
-							       className=""
-							>
+							<label htmlFor="dog" className="ml-2 cursor-pointer">
 								Dog
 							</label>
 						</div>
@@ -46,48 +42,44 @@ export default function RehomeForm() {
 				{/* pet breed */}
 				<div>
 					<label htmlFor="breed"
-					       className=""
+					       className="mb-2 block text-sm font-medium"
 					>
 						Pet Breed
 					</label>
 					<Input id="breed"
 					       name="breed"
 					       placeholder="Enter your pet's breed"
-					       className=""
 					/>
 				</div>
 				
 				{/* pet age - consider two inputs, one for year, the other for months */}
 				<div>
 					<label htmlFor="age"
-					       className=""
+					       className="mb-2 block text-sm font-medium"
 					>
 						Pet Age
 					</label>
 					<Input id="age"
 					       name="age"
 					       placeholder="e.g., 2yrs 3mnths or 15mnths"
-					       className=""
 					/>
 				</div>
 				
 				{/* pet gender */}
 				<fieldset>
-					<legend className="">
+					<legend className="mb-2 block text-sm font-medium">
 						Pet Gender
 					</legend>
-					<div className="">
+					<div className="flex gap-x-8 rounded-md border border-gray-200 bg-white p-2.5">
 						{/* male */}
 						<div>
 							<input id="male"
 							       name="gender"
 							       type="radio"
 							       value="male"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="male"
-							       className=""
-							>
+							<label htmlFor="male" className="ml-2 cursor-pointer">
 								Male
 							</label>
 						</div>
@@ -98,11 +90,9 @@ export default function RehomeForm() {
 							       name="gender"
 							       type="radio"
 							       value="female"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="female"
-							       className=""
-							>
+							<label htmlFor="female" className="ml-2 cursor-pointer">
 								Female
 							</label>
 						</div>
@@ -111,21 +101,19 @@ export default function RehomeForm() {
 				
 				{/* pet compatibility */}
 				<fieldset>
-					<legend className="">
+					<legend className="mb-2 block text-sm font-medium">
 						Pet Compatibility
 					</legend>
-					<div className="">
+					<div className="grid grid-cols-2 md:flex md:gap-x-8 rounded-md border border-gray-200 bg-white p-2.5">
 						{/* dogs */}
 						<div>
 							<input id="dogs"
 							       name="compatibility"
 							       type="checkbox"
 							       value="dogs"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="dogs"
-							       className=""
-							>
+							<label htmlFor="dogs" className="ml-2 cursor-pointer">
 								Dogs
 							</label>
 						</div>
@@ -136,11 +124,9 @@ export default function RehomeForm() {
 							       name="compatibility"
 							       type="checkbox"
 							       value="cats"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="cats"
-							       className=""
-							>
+							<label htmlFor="cats" className="ml-2 cursor-pointer">
 								Cats
 							</label>
 						</div>
@@ -151,11 +137,9 @@ export default function RehomeForm() {
 							       name="compatibility"
 							       type="checkbox"
 							       value="small kids"
-							       className=""
+							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
 							/>
-							<label htmlFor="small kids"
-							       className=""
-							>
+							<label htmlFor="small kids" className="ml-2 cursor-pointer">
 								Small kids
 							</label>
 						</div>
@@ -165,31 +149,30 @@ export default function RehomeForm() {
 				{/* comments on pet */}
 				<div>
 					<label htmlFor="comments"
-					       className=""
+					       className="mb-2 block text-sm font-medium"
 					>
 						Comments
 					</label>
 					<textarea id="comments"
 					          name="comments"
-					          rows={4} cols={30} maxLength={300}
-                    className="resize-none"
-                    placeholder="Tell us more about your pet"
+					          rows={4} cols={30} maxLength={200}
+					          placeholder="Tell us more about your pet"
+					          className="resize-none w-full rounded-md p-2 border border-gray-200 placeholder:text-sm placeholder:text-gray-500 focus:placeholder:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-600 transition-colors"
 					/>
 				</div>
 				
 				{/* pet rehomer - might get this information from the authentication */}
 				<div>
 					<label htmlFor="rehomer"
-                 className=""
-          >
-            Email
-          </label>
-          <Input id="rehomer"
-                 name="rehomer"
-                 type="email"
-                 placeholder="Enter your email"
-                 className=""
-          />
+					       className="mb-2 block text-sm font-medium"
+					>
+						Email
+					</label>
+					<Input id="rehomer"
+					       name="rehomer"
+					       type="email"
+					       placeholder="Enter your email"
+					/>
 				</div>
 			</div>
 		</form>
