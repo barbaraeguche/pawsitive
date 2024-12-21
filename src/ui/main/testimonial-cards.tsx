@@ -2,31 +2,29 @@ import Image from 'next/image';
 
 export default function TestimonialCards({ image, text, name }: {
 	image: string,
-  text: string,
-  name: string
+	text: string,
+	name: string
 }) {
 	return (
-		<div className="p-3 border-2 text-center border-rose-400">
-			{/* make the image circular */}
-			<div className="rounded-[50%] object-cover border-2 text-green-500">
-				hi
-				{/*<Image src={image}*/}
-				{/*       alt={`${name}'s photo`}*/}
-				{/*       width={150}*/}
-				{/*       height={150}*/}
-				{/*       className="rounded-full"*/}
-        {/*/>*/}
-			</div>
-			
-			{/* text and name */}
-			<div className="">
-				<p>
+		<div className="w-1/4 space-y-5">
+			<div className="flex flex-col items-center gap-y-8">
+				{/* make the image circular */}
+				<Image
+					src={image}
+					alt={`${name}'s photo`}
+					width={192}
+					height={192}
+					className="size-48 rounded-full align-middle overflow-hidden"
+				/>
+				
+				<p className="w-[95%] ">
 					{text}
 				</p>
-				<p>
-					{name}
-				</p>
 			</div>
+			
+			<p className="w-[95%] text-center italic">
+				{name}
+			</p>
 		</div>
 	);
 }

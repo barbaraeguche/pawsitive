@@ -4,23 +4,28 @@ export default function Testimonials() {
 	return (
 		<section className="px-16 space-y-8">
 			<h3 className="text-2xl text-center">
-				Hear from some of our customers
+				Our Customers
 			</h3>
 			
-			<div className="flex">
-				<TestimonialCards image="/left.jpg"
-				                  text="Adopting from Whisker Cove was the best decision we ever made. Max has brought so much joy into our lives!"
+			<div className="flex gap-x-16">
+				<TestimonialCards image="/emma.jpg"
+				                  text="Adopting was the best decision we ever made. Max has brought so much joy into our lives!"
 				                  name="Emma J."
 				/>
 				
-				<TestimonialCards image="/middle.jpg"
+				<TestimonialCards image="/sarah.jpg"
 				                  text="The staff was so friendly and supportive. They helped us find the perfect match for our family."
-				                  name="Sarah & Tom"
+				                  name="Sarah T."
 				/>
 				
-				<TestimonialCards image="/right.jpg"
+				<TestimonialCards image="/daniel.jpg"
 				                  text="I never imagined my life with a rescue pet could be so fulfilling. Luna has changed everything."
 				                  name="Daniel P."
+				/>
+				
+				<TestimonialCards image="/lisa.jpg"
+				                  text="I was nervous about adopting, now, Charlie is my best friend, and I can’t imagine life without him!"
+				                  name="Lisa M."
 				/>
 			</div>
 		</section>
