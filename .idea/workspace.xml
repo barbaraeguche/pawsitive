@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/rehome/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/rehome/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/statistics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/statistics.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,6 +137,7 @@
       <workItem from="1734755488352" duration="365000" />
       <workItem from="1734755885800" duration="607000" />
       <workItem from="1734756503337" duration="1424000" />
+      <workItem from="1734757936163" duration="192000" />
     </task>
     <servers />
   </component>

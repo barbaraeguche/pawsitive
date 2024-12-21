@@ -1,7 +1,9 @@
 'use client'; // once submitted, cannot be changed
-import Input from '@/ui/input';
 
-export default function RehomeForm() {
+import Input from '@/ui/input';
+import ClearButton from '@/ui/adopt/clear-button';
+
+export default function AdoptForm() {
 	return (
 		<form>
 			<div className="rounded-md bg-gray-50 p-4 md:p-6 mx-auto w-[95%] max-w-[600px] space-y-4">
@@ -36,6 +38,8 @@ export default function RehomeForm() {
 								Dog
 							</label>
 						</div>
+						
+						<ClearButton selector="input[name='type']" />
 					</div>
 				</fieldset>
 				
@@ -96,6 +100,8 @@ export default function RehomeForm() {
 								Female
 							</label>
 						</div>
+						
+						<ClearButton selector="input[name='gender']" />
 					</div>
 				</fieldset>
 				
@@ -143,6 +149,8 @@ export default function RehomeForm() {
 								Small kids
 							</label>
 						</div>
+						
+						<ClearButton selector="input[name='compatibility']" />
 					</div>
 				</fieldset>
 				
