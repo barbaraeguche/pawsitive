@@ -16,7 +16,11 @@
 - next authentication
 
 ## .env file 📄
+this project requires an `.env` file in the root directory.
 
+rename the `.env.example` file to `.env`, and update it with the necessary values.
+
+ensure this file is configured properly and not committed to version control.
 
 ## running the project 🏁
 to get the project up and running on your local machine, follow these steps:
