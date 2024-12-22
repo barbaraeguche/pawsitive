@@ -7,22 +7,24 @@ export function cn(...args: ClassValue[]) {
 
 export const incrementCount = () => {
 	const counters = document.querySelectorAll('.counter');
-	counters.forEach((counter, index) => {
+	counters.forEach((counter) => {
 		const updateCount = () => {
 			const target = Number(counter.getAttribute('data-target'));
-			const count = index !== 2
+			const hasPercentage = counter.getAttribute('data-percentage') === 'true';
+			
+			const count = !hasPercentage
 				? Number(counter.innerHTML)
 				: Number(counter.innerHTML.slice(0, -1));
 			const increment = target / 200;
 			
 			if (count < target) {
-				counter.innerHTML = index !== 2
+				counter.innerHTML = !hasPercentage
 					? `${Math.ceil(count + increment)}`
 					: `${Math.ceil(count + increment)}%`;
 				
 				setTimeout(updateCount, 20);
 			} else {
-				counter.innerHTML = index !== 2 ? `${target}` : `${target}%`;
+				counter.innerHTML = !hasPercentage ? `${target}` : `${target}%`;
 			}
 		};
 		

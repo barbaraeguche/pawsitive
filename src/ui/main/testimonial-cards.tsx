@@ -6,7 +6,7 @@ export default function TestimonialCards({ image, text, name }: {
 	name: string
 }) {
 	return (
-		<div className="w-1/4 space-y-5 bg-red-300">
+		<div className="w-1/4 space-y-5">
 			<div className="flex flex-col items-center gap-y-8">
 				{/* make the image circular */}
 				<Image
@@ -16,12 +16,10 @@ export default function TestimonialCards({ image, text, name }: {
 					height={192}
 					className="size-48 rounded-full align-middle overflow-hidden"
 				/>
-				
 				<p className="w-[95%] ">
 					{text}
 				</p>
 			</div>
-			
 			<p className="w-[95%] text-center italic">
 				{name}
 			</p>
