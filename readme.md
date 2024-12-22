@@ -7,13 +7,17 @@
 - rehome a pet
 - authentication, cookies, authorization
 
+## what I learned 💭
+- multiple pages website
+- next authentication
+
 ## limitations 🚨
 - **title:** description
 - currently only for cats and dogs
 
-## what I learned 💭
-- multiple pages website
-- next authentication
+## improvements 🌱
+- **title:** description
+price with real time payments to adopt
 
 ## .env file 📄
 this project requires an `.env` file in the root directory.
