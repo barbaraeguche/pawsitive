@@ -7,16 +7,24 @@
 - rehome a pet
 - authentication, cookies, authorization
 
-## limitations 🚨
-- **title:** description
-- currently only for cats and dogs
-
 ## what I learned 💭
 - multiple pages website
 - next authentication
 
-## .env file 📄
+## limitations 🚨
+- **title:** description
+- currently only for cats and dogs
 
+## improvements 🌱
+- **title:** description
+price with real time payments to adopt
+
+## .env file 📄
+this project requires an `.env` file in the root directory.
+
+rename the `.env.example` file to `.env`, and update it with the necessary values.
+
+ensure this file is configured properly and not committed to version control.
 
 ## running the project 🏁
 to get the project up and running on your local machine, follow these steps:
@@ -38,7 +46,7 @@ pnpm install
 ```bash
 next dev
 # or
-pnpm dev
+pnpm run dev
 ```
 - open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
