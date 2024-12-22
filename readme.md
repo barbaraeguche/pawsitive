@@ -42,7 +42,7 @@ pnpm install
 ```bash
 next dev
 # or
-pnpm dev
+pnpm run dev
 ```
 - open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
