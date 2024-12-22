@@ -15,21 +15,21 @@ export default function Statistics() {
 			
 			<div className="flex justify-center gap-x-24">
 				<h3 className="flex flex-col gap-y-4">
-					<span data-target={927} className="counter text-6xl font-bold">
+					<span data-percentage={false} data-target={927} className="counter text-6xl font-bold">
 						0
 					</span>
 					Pets Adopted in 2023 🏡
 				</h3>
 				
 				<h3 className="flex flex-col gap-y-4">
-					<span data-target={250} className="counter text-6xl font-bold">
+					<span data-percentage={false} data-target={250} className="counter text-6xl font-bold">
 						0
 					</span>
 					Volunteers Across Our Shelters 🤝
 				</h3>
 				
 				<h3 className="flex flex-col gap-y-4">
-					<span data-target={95} className="counter text-6xl font-bold">
+					<span data-percentage={true} data-target={95} className="counter text-6xl font-bold">
 						0%
 					</span>
 					Pet Happiness Rating 😺🐕

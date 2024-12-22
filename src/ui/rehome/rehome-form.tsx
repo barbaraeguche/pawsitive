@@ -1,5 +1,6 @@
 'use client'; // once submitted, cannot be changed
 import Input from '@/ui/input';
+import Button from '@/ui/button';
 
 export default function RehomeForm() {
 	return (
@@ -174,6 +175,10 @@ export default function RehomeForm() {
 					       placeholder="Enter your email"
 					/>
 				</div>
+				
+				<Button className="w-full">
+					Rehome
+				</Button>
 			</div>
 		</form>
 	);
