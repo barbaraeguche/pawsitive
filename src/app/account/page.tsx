@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 
 export default function AccountPage() {
 	return (
-		<span>
-			account page
-		</span>
+		<div className="flex flex-col">
+			<span>account page</span>
+		</div>
 	);
 }

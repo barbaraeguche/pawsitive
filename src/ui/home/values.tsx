@@ -1,6 +1,7 @@
 import {
 	HandHeart, Recycle, HousePlus
 } from 'lucide-react';
+import Headings from '@/components/headings';
 
 const values = {
 	'Compassionate Care': HandHeart,
@@ -10,12 +11,10 @@ const values = {
 
 export default function ValuesWrapper() {
 	return (
-		<div className="px-16 text-center space-y-8">
-			<h3 className="text-2xl">
-				Our Core Values
-			</h3>
+		<div className="space-y-12">
+			<Headings title="What We Stand For" />
 			
-			<div className="flex text-justify gap-x-16">
+			<div className="flex text-justify mx-auto gap-x-12 max-w-[1440px]">
 				<ValueCards title="Compassionate Care"
 				            text="Every animal is treated with kindness, love, and respect. From their first steps into our sanctuary to finding their forever home, we ensure their comfort and happiness."
 				/>
@@ -38,7 +37,7 @@ function ValueCards({ title, text }: {
 	return (
 		<div className="w-1/3 space-y-5">
 			<div className="text-center space-y-3">
-				<Icon className="mx-auto size-9"/>
+				<Icon className="mx-auto size-8"/>
 				<h4>{title}</h4>
 			</div>
 			<p>{text}</p>

@@ -55,7 +55,7 @@ export default function CarePage() {
 				</TabsContent>
 			</Tabs>
 			
-			<p className="italic mt-56">
+			<p className="italic mt-10">
 				<b>Final Note: {' '}</b>
 				Loving care, regular attention, and understanding their needs will help your pets thrive. Remember, every pet is unique and may have individual preferences or requirements.
 			</p>

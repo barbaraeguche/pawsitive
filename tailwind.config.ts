@@ -11,12 +11,21 @@ export default {
   ],
   theme: {
   	extend: {
+			borderWidth: {
+				1: '1px'
+			},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		colors: {}
+  		colors: {
+				dough: '#fbfaf5',
+			  brown: {
+          100: '#3b1f15',
+				  DEFAULT: '#78716c'
+			  }
+		  }
   	}
   },
   plugins: [tailwindcssAnimate],

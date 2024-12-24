@@ -3,6 +3,7 @@
 
 ## features 👾
 - **title:** description
+- care tips
 - adopt a pet
 - rehome a pet
 - authentication, cookies, authorization
@@ -10,6 +11,7 @@
 ## what I learned 💭
 - multiple pages website
 - next authentication
+- shadcn
 
 ## limitations 🚨
 - **title:** description
