@@ -3,7 +3,7 @@ import Headings from '@/components/headings';
 
 export default function TestimonialWrapper() {
 	return (
-		<div className="space-y-12 !mb-40">
+		<div className="space-y-12 !mb-32">
 			<Headings title="Hear From Our Community" />
 			
 			<div className="flex mx-auto gap-x-12 max-w-[1440px]">
@@ -41,7 +41,7 @@ function TestimonialCards({ image, text, name }: {
 			       height={192}
 			       className="size-48 rounded-full align-middle overflow-hidden"
 			/>
-			<div className="w-[95%] space-y-3">
+			<div className="w-[95%] space-y-4">
 				<p className="text-justify">{text}</p>
 				<p className="text-center italic">{name}</p>
 			</div>
