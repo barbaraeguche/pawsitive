@@ -14,7 +14,7 @@ export default function Header() {
 			</nav>
 			
 			<span className="">
-				<Link href="#">My Account</Link>
+				<Link href="/account">My Account</Link>
 			</span>
 		</header>
 	);

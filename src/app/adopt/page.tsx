@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
-import AdoptForm from '@/ui/adopt/adopt-form';
+import Form from '@/ui/adopt/adopt-form';
 
 export const metadata: Metadata = {
-	title: 'Rehome Your Pet'
+	title: 'Adopt a Pet'
 };
 
-export default function Page() {
+export default function AdoptPage() {
 	return (
-		<main className="flex-1">
-			<AdoptForm />
-		</main>
+		<div>
+			<Form />
+		</div>
 	);
 }
