@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import Image from 'next/image';
+
 import Headings from '@/components/headings';
 import Button from '@/ui/button';
 
@@ -10,23 +12,23 @@ export default function RootPage() {
 	return (
 		<div className="space-y-32 p-16">
 			{/* banner */}
-			<section className="!mt-5 flex">
-				<div className="flex">
-					<ImageWrapper image="/right.jpg" />
-					<ImageWrapper image="/right.png" />
-					<ImageWrapper image="/bestie.jpg" />
+			<section className="!mt-5 flex gap-x-10 mx-auto max-w-[1470px]">
+				<div className="blob-outline flex space-x-1">
+					<ImageWrapper image="/cat.jpg" position="left" />
+					<ImageWrapper image="/dog.jpg" position="right" />
 				</div>
 				
-				<div className="my-auto">
+				<div className="my-auto space-y-5">
 					<Headings title="Find Your Perfect Furry Friend!"/>
-					<div>
-						<p>
+					<div className="space-y-3">
+						<p className="italic">
 							At Paw Squad, we connect loving families with pets in need of a forever home. Whether you&rsquo;re looking
 							for a playful puppy or a calm senior companion, we’re here to help you find your perfect match and create a lasting bond.
 						</p>
-						
-						<Button className="w-full text-dough bg-brown-100">
-							Meet Your New Best Friend
+						<Button className="w-full">
+							<Link href="/adopt">
+								Meet Your New Best Friend
+							</Link>
 						</Button>
 					</div>
 				</div>
@@ -60,12 +62,18 @@ export default function RootPage() {
 	);
 }
 
-function ImageWrapper({ image }: {
-	image: string
+function ImageWrapper({ image, position }: {
+	image: string,
+	position: 'left' | 'right'
 }) {
 	return (
-		<div className="blob-outline object-cover">
-			<Image src={image} alt="dog 2" height={250} width={370} />
+		<div className={`${position} border-2 border-brown-100 size-[420px] overflow-hidden`}>
+			<Image src={image}
+			       alt={`${ position === 'left' ? 'cat.jpg' : 'dog.jpg' }`}
+			       width={420}
+			       height={420}
+			       className={`${ position === 'left' && '-translate-y-6' }`}
+			/>
 		</div>
 	);
 }
