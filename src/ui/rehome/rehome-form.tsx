@@ -2,7 +2,7 @@
 import Input from '@/ui/input';
 import Button from '@/ui/button';
 
-export default function RehomeForm() {
+export default function Form() {
 	return (
 		<form>
 			<div className="rounded-md bg-gray-50 p-4 md:p-6 mx-auto w-[95%] max-w-[600px] space-y-4">
@@ -176,9 +176,14 @@ export default function RehomeForm() {
 					/>
 				</div>
 				
-				<Button className="w-full">
-					Rehome
-				</Button>
+				<div className="flex gap-x-1">
+					<Button className="w-1/3">
+						Cancel
+					</Button>
+					<Button className="w-2/3">
+						Rehome
+					</Button>
+				</div>
 			</div>
 		</form>
 	);

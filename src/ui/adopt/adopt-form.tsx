@@ -3,7 +3,7 @@
 import Input from '@/ui/input';
 import ClearButton from '@/ui/adopt/clear-button';
 
-export default function AdoptForm() {
+export default function Form() {
 	return (
 		<form>
 			<div className="rounded-md bg-gray-50 p-4 md:p-6 mx-auto w-[95%] max-w-[600px] space-y-4">
