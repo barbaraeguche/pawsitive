@@ -5,33 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/account/adopted/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/rehomed/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/home/stats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/home/values.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/headings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/adopt/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/left.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/middle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/care/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/rehome/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/rehome/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/about.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/banner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/statistics.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/values.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/main/testimonial-cards.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/fonts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/stats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/stats.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/values.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/values.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +94,8 @@
       <recent name="$PROJECT_DIR$/src/app/care" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/pets" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/ui" />
@@ -175,7 +168,7 @@
       <workItem from="1734852812954" duration="2305000" />
       <workItem from="1734893912277" duration="6112000" />
       <workItem from="1734995335336" duration="8793000" />
-      <workItem from="1735004155853" duration="4059000" />
+      <workItem from="1735004155853" duration="30605000" />
     </task>
     <servers />
   </component>

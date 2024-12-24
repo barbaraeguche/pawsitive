@@ -1,17 +1,17 @@
-import { Poppins, Nunito, Merriweather } from 'next/font/google';
+import { Lora, Newsreader, Croissant_One } from 'next/font/google';
 
-export const poppins = Poppins({
+export const croissantOne = Croissant_One({
 	weight: '400',
 	subsets: ['latin']
 });
 
-export const nunito = Nunito({
+export const lora = Lora({
 	weight: '400',
 	subsets: ['latin']
 });
 
-export const merriWeather = Merriweather({
+export const newsreader = Newsreader({
 	weight: '400',
-	style: ['italic'],
-  subsets: ['latin']
+	style: ['normal', 'italic'],
+	subsets: ['latin']
 });

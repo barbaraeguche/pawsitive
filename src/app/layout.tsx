@@ -2,7 +2,7 @@ import '@/ui/globals.css';
 
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
-import { nunito } from '@/ui/fonts';
+import { newsreader } from '@/ui/fonts';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -20,9 +20,9 @@ export default function RootLayout({ children } : Readonly<{
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${nunito.className} p-0 m-0 box-border flex flex-col h-screen antialiased`}>
+			<body className={`${newsreader.className} p-0 m-0 box-border flex flex-col h-screen mx-auto max-w-[2000px] antialiased`}>
 				<Header/>
-				<main className="flex-1 mb-32">
+				<main className="flex-1">
 					{children}
 				</main>
 				<Footer/>
@@ -30,4 +30,3 @@ export default function RootLayout({ children } : Readonly<{
 		</html>
 	);
 }
-//max-w-[1440px] mx-auto

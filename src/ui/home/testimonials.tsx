@@ -1,13 +1,12 @@
 import Image from 'next/image';
+import Headings from '@/components/headings';
 
 export default function TestimonialWrapper() {
 	return (
-		<div className="px-16 space-y-8">
-			<h3 className="text-2xl text-center">
-				Our Customers
-			</h3>
+		<div className="space-y-12 !mb-40">
+			<Headings title="Hear From Our Community" />
 			
-			<div className="flex gap-x-16">
+			<div className="flex mx-auto gap-x-12 max-w-[1440px]">
 				<TestimonialCards image="/emma.jpg"
 				                  text="Adopting was the best decision we ever made. Max has brought so much joy into our lives!"
 				                  name="Emma J."
@@ -35,15 +34,13 @@ function TestimonialCards({ image, text, name }: {
 	name: string
 }) {
 	return (
-		<div className="w-1/4 space-y-8">
-			<div className="flex justify-center">
-				<Image src={image}
-				       alt={name}
-				       width={192}
-				       height={192}
-				       className="size-48 rounded-full align-middle overflow-hidden"
-				/>
-			</div>
+		<div className="flex flex-col items-center w-1/4 space-y-8">
+			<Image src={image}
+			       alt={name}
+			       width={192}
+			       height={192}
+			       className="size-48 rounded-full align-middle overflow-hidden"
+			/>
 			<div className="w-[95%] space-y-3">
 				<p className="text-justify">{text}</p>
 				<p className="text-center italic">{name}</p>
