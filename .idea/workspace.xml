@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/adopt/clear-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/clear-button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +159,7 @@
       <workItem from="1734893912277" duration="6112000" />
       <workItem from="1734995335336" duration="8793000" />
       <workItem from="1735004155853" duration="43506000" />
-      <workItem from="1735084329294" duration="22443000" />
+      <workItem from="1735084329294" duration="27971000" />
     </task>
     <servers />
   </component>

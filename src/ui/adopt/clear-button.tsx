@@ -8,6 +8,7 @@ export default function ClearButton({ selector }: {
 		<Button intent="refresh"
 		        type="button"
 		        className="p-2 border-0 bg-transparent text-gray-600"
+		        aria-label="Clear selected options"
 		        onClick={() => {
 			        const radioButtons = document.querySelectorAll(selector) as NodeListOf<HTMLInputElement>;
 			        radioButtons.forEach((radio) => {

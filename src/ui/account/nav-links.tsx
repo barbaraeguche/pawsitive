@@ -1,16 +1,14 @@
 'use client';
 
-import {
-	Heart, HomeIcon, Stamp
-} from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { Heart, HomeIcon, History } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 const links = [
-	{ name: 'Home', href: '/account', icon: Stamp },
+	{ name: 'Home', href: '/account', icon: HomeIcon },
 	{ name: 'Adopted', href: '/account/adopted', icon: Heart },
-	{ name: 'Rehomed', href: '/account/rehomed', icon: HomeIcon }
+	{ name: 'Rehomed', href: '/account/rehomed', icon: History }
 ];
 
 export default function NavLinks() {
@@ -23,9 +21,10 @@ export default function NavLinks() {
 				return (
 					<Link key={link.name}
 					      href={link.href}
+					      aria-labelledby={link.name}
 					      className={clsx(
-						      'flex items-center justify-center h-12 gap-2 p-4 rounded-md bg-gray-50 hover:bg-sky-100 hover:text-blue-600 md:justify-start',
-						      { 'bg-sky-100 text-blue-600': link.href === pathname }
+						      'flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 hover:bg-dough/30 md:justify-start',
+						      { 'bg-dough/30': link.href === pathname }
 					      )}
 					>
 						<Icon className="w-5" />

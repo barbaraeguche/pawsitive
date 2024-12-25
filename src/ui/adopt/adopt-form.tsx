@@ -132,10 +132,7 @@ export default function Form() {
 					</fieldset>
 					
 					{/* buttons */}
-					<Button type="reset"
-					        intent="refresh"
-					        className="w-full !mt-8"
-					>
+					<Button type="reset" intent="refresh" className="w-full !mt-8">
 						Clear
 					</Button>
 				</div>
