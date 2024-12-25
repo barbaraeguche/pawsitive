@@ -127,17 +127,19 @@ export default function Form() {
 					
 					{/* pet image */}
 					<div>
-						<label htmlFor="image" className="mb-1 block text-sm">Pet Image</label>
-						<div>
-							<span className="sr-only">Select pet image</span>
+						<label htmlFor="image" className="mb-2 block text-sm">Pet Image</label>
+						<div className="relative h-20 rounded-md border-[1.75px] border-dashed border-brown-80 bg-white">
 							<Input id="image"
 							       name="image"
 							       type="file"
 							       accept="image/jpeg, image/png"
-							       className="border-1 border-dashed p-5 bg-red-100"
+							       className="hidden"
 							/>
-							
-							<span>Accepted Type: image/jpeg, image/png</span>
+							{/* centered label content */}
+							<label htmlFor="image" className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer">
+								<p className="text-sm">Select a file</p>
+								<span className="mt-1 text-xs text-gray-500">Accepted types: JPG, PNG</span>
+							</label>
 						</div>
 					</div>
 					
