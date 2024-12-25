@@ -3,7 +3,7 @@ import Headings from '@/components/headings';
 
 export default function TestimonialWrapper() {
 	return (
-		<div className="space-y-12 !mb-32">
+		<div className="space-y-12">
 			<Headings title="Hear From Our Community" />
 			
 			<div className="flex mx-auto gap-x-12 max-w-[1440px]">

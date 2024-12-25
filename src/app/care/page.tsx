@@ -1,15 +1,10 @@
 import { Metadata } from 'next';
-import {
-	Tabs, TabsList, TabsTrigger, TabsContent
-} from "@/ui/shadcn/tabs";
-import {
-	Card, CardHeader, CardTitle, CardContent
-} from "@/ui/shadcn/card";
-import { Cat, Dog } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/shadcn/tabs";
+import { Card, CardHeader, CardTitle, CardContent } from "@/ui/shadcn/card";
 
-export const metadata: Metadata = {
-	title: 'Pet Care'
-};
+import Headings from '@/components/headings';
+
+export const metadata: Metadata = { title: 'Pet Care' };
 
 const catCare = [
 	{ title: 'Nutrition', content: 'Feed high-quality cat food based on age, ensure fresh water is always available, and limit treats to less than 10% of daily calories.' },
@@ -29,48 +24,45 @@ const dogCare = [
 
 export default function CarePage() {
 	return (
-		<div className="max-w-3xl mx-auto">
-			<h3 className="text-2xl text-center mb-6">Pet Care Guide</h3>
+		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
+			<Headings title="Pet Wellness Handbook" />
 			
-			<Tabs defaultValue="cats" className="w-full">
-				<TabsList className="w-full mb-8">
-					<TabsTrigger value="cats" className="w-1/2 flex items-center gap-x-2">
-						<Cat className="size-5"/> Cats
-					</TabsTrigger>
-					<TabsTrigger value="dogs" className="w-1/2 flex items-center gap-x-2">
-						<Dog className="size-5"/> Dogs
-					</TabsTrigger>
+			<Tabs defaultValue="cats">
+				<TabsList className="w-full mb-4">
+					<TabsTrigger value="cats" className="w-1/2 text-[15px]">Cats</TabsTrigger>
+					<TabsTrigger value="dogs" className="w-1/2 text-[15px]">Dogs</TabsTrigger>
 				</TabsList>
 				
 				<TabsContent value="cats">
-					<div className="grid gap-y-2">
+					<div className="grid gap-y-1.5">
 						<CardWrapper array={catCare}/>
 					</div>
 				</TabsContent>
 				
 				<TabsContent value="dogs">
-					<div className="grid gap-y-2">
+					<div className="grid gap-y-1.5">
 						<CardWrapper array={dogCare}/>
 					</div>
 				</TabsContent>
 			</Tabs>
 			
-			<p className="italic mt-10">
+			<p className="italic">
 				<b>Final Note: {' '}</b>
-				Loving care, regular attention, and understanding their needs will help your pets thrive. Remember, every pet is unique and may have individual preferences or requirements.
+				Loving care, regular attention, and understanding their needs will help your pets thrive.
+				Remember, every pet is unique and may have individual preferences or requirements.
 			</p>
 		</div>
 	);
 }
 
-function CardWrapper({array}: {
+function CardWrapper({ array }: {
 	array: { title: string, content: string }[]
 }) {
 	return (
 		array.map((section, index) => (
 			<Card key={index}>
 				<CardHeader>
-					<CardTitle>{section.title}</CardTitle>
+					<CardTitle className="tracking-widest">{section.title}</CardTitle>
 				</CardHeader>
 				<CardContent className="text-justify">
           <p>{section.content}</p>
