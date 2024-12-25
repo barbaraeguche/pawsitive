@@ -1,11 +1,13 @@
+import { Undo } from 'lucide-react';
 import Button from '@/ui/button';
 
 export default function ClearButton({ selector }: {
 	selector: string;
 }) {
 	return (
-		<Button intent="primary"
+		<Button intent="refresh"
 		        type="button"
+		        className="p-2 border-0 bg-transparent text-gray-600"
 		        onClick={() => {
 			        const radioButtons = document.querySelectorAll(selector) as NodeListOf<HTMLInputElement>;
 			        radioButtons.forEach((radio) => {
@@ -15,7 +17,7 @@ export default function ClearButton({ selector }: {
 			        });
 		        }}
 		>
-			Clear
+			<Undo className="size-4" />
 		</Button>
 	);
 }

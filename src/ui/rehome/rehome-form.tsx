@@ -143,14 +143,14 @@ export default function Form() {
 						</div>
 					</div>
 					
-					{/* comments on pet */}
+					{/* pet comments */}
 					<div>
 						<label htmlFor="comments" className="mb-1 block text-sm">Comments</label>
 						<textarea id="comments"
 						          name="comments"
 						          rows={4} cols={30} maxLength={200}
 						          placeholder="Tell us more about your pet, max 200 words"
-						          className="resize-none w-full rounded-md p-2 border border-brown-80 text-sm placeholder:text-gray-500 focus:placeholder:text-gray-400 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-brown transition-colors"
+						          className="align-top resize-none w-full rounded-md p-2 border border-brown-80 text-sm placeholder:text-gray-500 focus:placeholder:text-gray-400 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-brown transition-colors"
 						/>
 					</div>
 					
@@ -166,8 +166,11 @@ export default function Form() {
 					
 					{/* buttons */}
 					<div className="!mt-8 flex gap-x-3">
-						<Button type="reset" intent="dangerGhost" className="w-1/3">
-							Cancel
+						<Button type="reset"
+						        intent="refresh"
+						        className="w-1/3"
+						>
+							Clear
 						</Button>
 						
 						<Button className="w-2/3">

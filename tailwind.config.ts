@@ -23,11 +23,11 @@ export default {
 				  DEFAULT: 'rgba(59,31,21,0.8)',
 				  80: 'rgba(59,31,21,0.6)'
 			  },
-			  meadow: { // for refresh buttons
-				  100: '#62b562',
-				  DEFAULT: '#90e090',
-				  80: '#d4f8d4',
-			  },
+			  // meadow: { // for refresh buttons
+				//   100: '#62b562',
+				//   DEFAULT: '#90e090',
+				//   80: '#d4f8d4',
+			  // },
 			  celeste: { // for input accents
 				  DEFAULT: '#accbee'
 			  }
