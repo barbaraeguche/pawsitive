@@ -8,8 +8,8 @@ const buttonVariants = cva(
 			intent: {
 				primary: "bg-brown hover:bg-brown-80 active:bg-brown-100",
 				danger: "bg-red-500 hover:bg-red-600 active:bg-red-700",
-				dangerGhost: "border border-red-600 bg-white text-red-600 hover:bg-red-100 active:bg-red-200",
-				refresh: "bg-meadow hover:bg-meadow-80 active:bg-meadow-100"
+				// dangerGhost: "border border-red-600 bg-white text-red-600 hover:bg-red-100 active:bg-red-200",
+				refresh: "text-gray-600 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 border border-gray-400"
 			}
 		},
 		defaultVariants: {

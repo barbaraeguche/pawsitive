@@ -1,189 +1,145 @@
 'use client'; // once submitted, cannot be changed
 
+import Headings from '@/components/headings';
+import ClearButton from '@/ui/adopt/clear-button';
 
 import Input from '@/ui/input';
-import ClearButton from '@/ui/adopt/clear-button';
+import Button from '@/ui/button';
 
 export default function Form() {
 	return (
-		<form>
-			<div className="rounded-md bg-gray-50 p-4 md:p-6 mx-auto w-[95%] max-w-[600px] space-y-4">
-				{/* pet type */}
-				<fieldset>
-					<legend className="mb-2 block text-sm font-medium">
-						Pet Type
-					</legend>
-					<div className="flex gap-x-8 rounded-md border border-gray-200 bg-white p-2.5">
-						{/* cat */}
-						<div>
-							<input id="cat"
-							       name="type"
-							       type="radio"
-							       value="cat"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="cat" className="ml-2 cursor-pointer">
-								Cat
-							</label>
+		<div className="mx-auto max-w-[600px] !mt-12 !mb-32 space-y-12">
+			<Headings title="Bring Joy Home: Adopt a Pet Today" />
+			<form>
+				<div className="rounded-lg bg-gray-50 p-3 md:p-5 w-[95%] mx-auto space-y-4">
+					{/* pet type */}
+					<fieldset>
+						<div className="mt-0 flex justify-between">
+							<legend className="mb-1 block text-sm">Pet Type</legend>
+							<ClearButton selector="input[name='type']" />
 						</div>
-						
-						{/* dog */}
-						<div>
-							<input id="dog"
-							       name="type"
-							       type="radio"
-							       value="dog"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="dog" className="ml-2 cursor-pointer">
-								Dog
-							</label>
+						<div className="flex gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2">
+							{/* cat */}
+							<div>
+								<input id="cat"
+								       name="type"
+								       type="radio"
+								       value="cat"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="cat" className="text-sm ml-2 cursor-pointer">Cat</label>
+							</div>
+							
+							{/* dog */}
+							<div>
+								<input id="dog"
+								       name="type"
+								       type="radio"
+								       value="dog"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="dog" className="text-sm ml-2 cursor-pointer">Dog</label>
+							</div>
 						</div>
-						
-						<ClearButton selector="input[name='type']" />
+					</fieldset>
+					
+					{/* pet breed */}
+					<div>
+						<label htmlFor="breed" className="mb-1 block text-sm">Pet Breed</label>
+						<Input id="breed"
+						       name="breed"
+						       placeholder="Enter your pet's breed"
+						/>
 					</div>
-				</fieldset>
-				
-				{/* pet breed */}
-				<div>
-					<label htmlFor="breed"
-					       className="mb-2 block text-sm font-medium"
-					>
-						Pet Breed
-					</label>
-					<Input id="breed"
-					       name="breed"
-					       placeholder="Enter your pet's breed"
-					/>
-				</div>
-				
-				{/* pet age - consider two inputs, one for year, the other for months */}
-				<div>
-					<label htmlFor="age"
-					       className="mb-2 block text-sm font-medium"
-					>
-						Pet Age
-					</label>
-					<Input id="age"
-					       name="age"
-					       placeholder="e.g., 2yrs 3mnths or 15mnths"
-					/>
-				</div>
-				
-				{/* pet gender */}
-				<fieldset>
-					<legend className="mb-2 block text-sm font-medium">
-						Pet Gender
-					</legend>
-					<div className="flex gap-x-8 rounded-md border border-gray-200 bg-white p-2.5">
-						{/* male */}
-						<div>
-							<input id="male"
-							       name="gender"
-							       type="radio"
-							       value="male"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="male" className="ml-2 cursor-pointer">
-								Male
-							</label>
+					
+					{/* pet gender */}
+					<fieldset>
+						<div className="!mt-0 flex justify-between">
+							<legend className="mb-1 block text-sm">Pet Gender</legend>
+							<ClearButton selector="input[name='gender']" />
 						</div>
-						
-						{/* female */}
-						<div>
-							<input id="female"
-							       name="gender"
-							       type="radio"
-							       value="female"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="female" className="ml-2 cursor-pointer">
-								Female
-							</label>
+						<div className="flex gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2">
+							{/* male */}
+							<div>
+								<input id="male"
+								       name="gender"
+								       type="radio"
+								       value="male"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="male" className="text-sm ml-2 cursor-pointer">Male</label>
+							</div>
+							
+							{/* female */}
+							<div>
+								<input id="female"
+								       name="gender"
+								       type="radio"
+								       value="female"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="female" className="text-sm ml-2 cursor-pointer">Female</label>
+							</div>
 						</div>
-						
-						<ClearButton selector="input[name='gender']" />
+					</fieldset>
+					
+					{/* pet age */}
+					<div>
+						<label htmlFor="age" className="mb-1 block text-sm">Pet Age</label>
+						<Input id="age"
+						       name="age"
+						       placeholder="e.g., 2yrs 3months or 15months"
+						/>
 					</div>
-				</fieldset>
-				
-				{/* pet compatibility */}
-				<fieldset>
-					<legend className="mb-2 block text-sm font-medium">
-						Pet Compatibility
-					</legend>
-					<div className="grid grid-cols-2 md:flex md:gap-x-8 rounded-md border border-gray-200 bg-white p-2.5">
-						{/* dogs */}
-						<div>
-							<input id="dogs"
-							       name="compatibility"
-							       type="checkbox"
-							       value="dogs"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="dogs" className="ml-2 cursor-pointer">
-								Dogs
-							</label>
+					
+					{/* pet compatibility */}
+					<fieldset>
+						<legend className="mb-1 block text-sm">Pet Compatibility</legend>
+						<div className="grid grid-cols-2 sm:flex sm:gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2">
+							{/* dogs */}
+							<div>
+								<input id="dogs"
+								       name="compatibility"
+								       type="checkbox"
+								       value="dogs"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="dogs" className="text-sm ml-2 cursor-pointer">Dogs</label>
+							</div>
+							
+							{/* cats */}
+							<div>
+								<input id="cats"
+								       name="compatibility"
+								       type="checkbox"
+								       value="cats"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="cats" className="text-sm ml-2 cursor-pointer">Cats</label>
+							</div>
+							
+							{/* small kids */}
+							<div>
+								<input id="small kids"
+								       name="compatibility"
+								       type="checkbox"
+								       value="small kids"
+								       className="size-3.5 cursor-pointer accent-celeste"
+								/>
+								<label htmlFor="small kids" className="text-sm ml-2 cursor-pointer">Small kids</label>
+							</div>
 						</div>
-						
-						{/* cats */}
-						<div>
-							<input id="cats"
-							       name="compatibility"
-							       type="checkbox"
-							       value="cats"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="cats" className="ml-2 cursor-pointer">
-								Cats
-							</label>
-						</div>
-						
-						{/* small kids */}
-						<div>
-							<input id="small kids"
-							       name="compatibility"
-							       type="checkbox"
-							       value="small kids"
-							       className="size-3.5 cursor-pointer border-gray-300 bg-gray-100 focus-visible:ring-2 accent-blue-700"
-							/>
-							<label htmlFor="small kids" className="ml-2 cursor-pointer">
-								Small kids
-							</label>
-						</div>
-						
-						<ClearButton selector="input[name='compatibility']" />
-					</div>
-				</fieldset>
-				
-				{/* comments on pet */}
-				<div>
-					<label htmlFor="comments"
-					       className="mb-2 block text-sm font-medium"
+					</fieldset>
+					
+					{/* buttons */}
+					<Button type="reset"
+					        intent="refresh"
+					        className="w-full !mt-8"
 					>
-						Comments
-					</label>
-					<textarea id="comments"
-					          name="comments"
-					          rows={4} cols={30} maxLength={200}
-					          placeholder="Tell us more about your pet"
-					          className="resize-none w-full rounded-md p-2 border border-gray-200 placeholder:text-sm placeholder:text-gray-500 focus:placeholder:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-600 transition-colors"
-					/>
+						Clear
+					</Button>
 				</div>
-				
-				{/* pet rehomer - might get this information from the authentication */}
-				<div>
-					<label htmlFor="rehomer"
-					       className="mb-2 block text-sm font-medium"
-					>
-						Email
-					</label>
-					<Input id="rehomer"
-					       name="rehomer"
-					       type="email"
-					       placeholder="Enter your email"
-					/>
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	);
 }
