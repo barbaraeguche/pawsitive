@@ -3,11 +3,12 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-	'text-brown-100 flex items-center justify-center rounded-lg px-3 py-5 h-5 text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400 transition-colors', {
+	'text-white flex items-center justify-center rounded-lg px-3 py-5 h-5 text-[15px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400 transition-colors', {
 		variants: {
 			intent: {
-				primary: "text-dough bg-brown hover:bg-brown-80 active:bg-brown-100",
-				danger: "bg-ember hover:bg-ember-80 active:bg-ember-100",
+				primary: "bg-brown hover:bg-brown-80 active:bg-brown-100",
+				danger: "bg-red-500 hover:bg-red-600 active:bg-red-700",
+				dangerGhost: "border border-red-600 bg-white text-red-600 hover:bg-red-100 active:bg-red-200",
 				refresh: "bg-meadow hover:bg-meadow-80 active:bg-meadow-100"
 			}
 		},

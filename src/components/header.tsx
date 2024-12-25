@@ -9,7 +9,7 @@ const links = [
 
 export default function Header() {
 	return (
-		<header className={`${lora.className} flex items-center justify-between p-2 sticky top-0 border-b-1 border-b-brown-100 bg-dough backdrop-blur`}>
+		<header className={`${lora.className} z-50 flex items-center justify-between p-2 sticky top-0 border-b-1 border-b-brown-100 bg-dough backdrop-blur`}>
 			<h1 className={`${croissantOne.className} text-3xl`}>
 				<Link href="/">PAW SQUAD</Link>
 			</h1>

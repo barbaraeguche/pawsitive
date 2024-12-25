@@ -10,16 +10,16 @@ import TestimonialWrapper from '@/ui/home/testimonials';
 
 export default function RootPage() {
 	return (
-		<div className="space-y-32 p-16">
+		<div className="space-y-32 !mt-12 !mb-32">
 			{/* banner */}
-			<section className="!mt-5 flex gap-x-10 mx-auto max-w-[1470px]">
+			<section className="flex gap-x-16 mx-auto max-w-[1470px]">
 				<div className="blob-outline flex space-x-1">
 					<ImageWrapper image="/cat.jpg" position="left" />
 					<ImageWrapper image="/dog.jpg" position="right" />
 				</div>
 				
 				<div className="my-auto space-y-5">
-					<Headings title="Find Your Perfect Furry Friend!"/>
+					<Headings title="Find Your Perfect Furry Friend!" />
 					<div className="space-y-3">
 						<p className="italic">
 							At Paw Squad, we connect loving families with pets in need of a forever home. Whether you&rsquo;re looking
@@ -37,7 +37,7 @@ export default function RootPage() {
 			{/* about */}
 			<section className="flex gap-20 text-center mx-auto max-w-5xl">
 				<div className="my-auto">
-					<Headings title="Our Mission: Happy Pets, Happy Families!"/>
+					<Headings title="Our Mission: Happy Pets, Happy Families!" />
 				</div>
 				
 				<div className="space-y-3 text-justify">
@@ -53,11 +53,11 @@ export default function RootPage() {
 			</section>
 			
 			{/* core values */}
-			<ValuesWrapper/>
+			<ValuesWrapper />
 			{/* statistics */}
-			<StatsWrapper/>
+			<StatsWrapper />
 			{/* testimonials */}
-			<TestimonialWrapper/>
+			<TestimonialWrapper />
 		</div>
 	);
 }
