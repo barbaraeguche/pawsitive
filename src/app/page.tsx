@@ -10,7 +10,7 @@ import TestimonialWrapper from '@/ui/home/testimonials';
 
 export default function RootPage() {
 	return (
-		<div className="space-y-32 !mt-12 !mb-32">
+		<div className="space-y-24 !mt-12 !mb-32">
 			{/* banner */}
 			<section className="flex gap-x-16 mx-auto max-w-[1470px]">
 				<div className="blob-outline flex space-x-1">

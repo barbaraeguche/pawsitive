@@ -11,9 +11,6 @@ export default {
   ],
   theme: {
   	extend: {
-			borderWidth: {
-				1: '1px'
-			},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

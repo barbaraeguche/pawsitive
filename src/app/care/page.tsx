@@ -29,20 +29,16 @@ export default function CarePage() {
 			
 			<Tabs defaultValue="cats">
 				<TabsList className="w-full mb-4">
-					<TabsTrigger value="cats" className="w-1/2 text-[15px]">Cats</TabsTrigger>
-					<TabsTrigger value="dogs" className="w-1/2 text-[15px]">Dogs</TabsTrigger>
+					<TabsTrigger value="cats" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Cats</TabsTrigger>
+					<TabsTrigger value="dogs" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Dogs</TabsTrigger>
 				</TabsList>
 				
 				<TabsContent value="cats">
-					<div className="grid gap-y-1.5">
-						<CardWrapper array={catCare}/>
-					</div>
+					<CardWrapper array={catCare}/>
 				</TabsContent>
 				
 				<TabsContent value="dogs">
-					<div className="grid gap-y-1.5">
-						<CardWrapper array={dogCare}/>
-					</div>
+					<CardWrapper array={dogCare}/>
 				</TabsContent>
 			</Tabs>
 			
@@ -59,15 +55,17 @@ function CardWrapper({ array }: {
 	array: { title: string, content: string }[]
 }) {
 	return (
-		array.map((section, index) => (
-			<Card key={index}>
-				<CardHeader>
-					<CardTitle className="tracking-widest">{section.title}</CardTitle>
-				</CardHeader>
-				<CardContent className="text-justify">
-          <p>{section.content}</p>
-        </CardContent>
-			</Card>
-		))
+		<div className="grid gap-y-1.5">
+			{array.map((section, index) => (
+				<Card key={index} className="border border-brown-80">
+					<CardHeader>
+						<CardTitle className="tracking-widest">{section.title}</CardTitle>
+					</CardHeader>
+					<CardContent className="text-justify">
+						<p>{section.content}</p>
+					</CardContent>
+				</Card>
+			))}
+		</div>
 	);
 }
