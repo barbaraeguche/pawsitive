@@ -23,7 +23,7 @@ export default function NavLinks() {
 					      href={link.href}
 					      aria-labelledby={link.name}
 					      className={clsx(
-						      'flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 hover:bg-dough/30 md:justify-start',
+						      'grow flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 hover:bg-dough/30 md:justify-start',
 						      { 'bg-dough/30': link.href === pathname }
 					      )}
 					>

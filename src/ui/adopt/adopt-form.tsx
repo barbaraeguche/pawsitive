@@ -8,15 +8,15 @@ import Button from '@/ui/button';
 
 export default function Form() {
 	return (
-		<div className="mx-auto max-w-[600px] !mt-12 !mb-32 space-y-12">
-			<Headings title="Bring Joy Home: Adopt a Pet Today" />
+		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
+			<Headings title="Adopt a Pet, Bring Joy"/>
 			<form>
-				<div className="rounded-lg bg-gray-50 p-3 md:p-5 w-[95%] mx-auto space-y-4">
+				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet type */}
 					<fieldset>
 						<div className="mt-0 flex justify-between">
 							<legend className="mb-1 block text-sm">Pet Type</legend>
-							<ClearButton selector="input[name='type']" />
+							<ClearButton selector="input[name='type']"/>
 						</div>
 						<div className="flex gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2">
 							{/* cat */}
@@ -56,7 +56,7 @@ export default function Form() {
 					<fieldset>
 						<div className="!mt-0 flex justify-between">
 							<legend className="mb-1 block text-sm">Pet Gender</legend>
-							<ClearButton selector="input[name='gender']" />
+							<ClearButton selector="input[name='gender']"/>
 						</div>
 						<div className="flex gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2">
 							{/* male */}
