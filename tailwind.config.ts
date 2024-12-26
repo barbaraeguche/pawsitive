@@ -6,6 +6,11 @@ export default {
 	content: [ "./src/**/*.{js,ts,jsx,tsx,mdx}" ],
   theme: {
   	extend: {
+			screens: {
+				card: '923px',
+				toRow: '1476px',
+				toGrid: '1550px'
+			},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

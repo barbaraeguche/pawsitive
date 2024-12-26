@@ -1,7 +1,6 @@
-import {
-	HandHeart, Recycle, HousePlus
-} from 'lucide-react';
+import { HandHeart, Recycle, HousePlus } from 'lucide-react';
 import Headings from '@/components/headings';
+import clsx from 'clsx';
 
 const values = {
 	'Compassionate Care': HandHeart,
@@ -12,9 +11,9 @@ const values = {
 export default function ValuesWrapper() {
 	return (
 		<div className="space-y-12">
-			<Headings title="What We Stand For" />
+			<Headings title="What We Stand For"/>
 			
-			<div className="flex text-justify mx-auto gap-x-12 max-w-[1440px]">
+			<div className="text-justify px-2 grid gap-y-6 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:gap-x-12 mx-auto max-w-[1440px]">
 				<ValueCards title="Compassionate Care"
 				            text="Every animal is treated with kindness, love, and respect. From their first steps into our sanctuary to finding their forever home, we ensure their comfort and happiness."
 				/>
@@ -29,18 +28,26 @@ export default function ValuesWrapper() {
 	);
 }
 
-function ValueCards({ title, text }: {
+function ValueCards({title, text}: {
 	title: 'Compassionate Care' | 'Zero Waste Initiatives' | 'Forever Homes',
-  text: string
+	text: string
 }) {
 	const Icon = values[title];
 	return (
-		<div className="w-1/3 space-y-5">
+		<div className="space-y-5 ">
 			<div className="text-center space-y-3">
-				<Icon className="mx-auto size-8"/>
+				<Icon className={clsx(
+					'mx-auto size-8',
+					{
+						'text-red-700' : title === 'Compassionate Care',
+						'text-green-700' : title === 'Zero Waste Initiatives',
+						'text-brown-100' : title === 'Forever Homes',
+					}
+				)}
+				/>
 				<h4>{title}</h4>
 			</div>
-			<p>{text}</p>
+			<p className="w-[75%] sm:w-full mx-auto">{text}</p>
 		</div>
 	);
 }

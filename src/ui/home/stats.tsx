@@ -2,6 +2,7 @@
 
 // import { useEffect } from 'react';
 // import { incrementCount } from '@/lib/utils';
+
 import Headings from '@/components/headings';
 
 export default function StatsWrapper() {
@@ -11,9 +12,9 @@ export default function StatsWrapper() {
 	
 	return (
 		<div className="text-center space-y-12">
-			<Headings title="Measuring Our Success" />
+			<Headings title="Measuring Our Success"/>
 			
-			<div className="flex justify-center gap-x-32">
+			<div className="px-2 grid gap-y-10 sm:flex justify-center sm:gap-x-16 md:gap-x-32">
 				<StatsCards percent={false}
 				            target={927}
 				            title="Pets Adopted in 2023"
@@ -31,7 +32,7 @@ export default function StatsWrapper() {
 	);
 }
 
-function StatsCards({ percent, target, title }: {
+function StatsCards({percent, target, title}: {
 	percent: boolean,
 	target: number,
 	title: string

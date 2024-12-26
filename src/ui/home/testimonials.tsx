@@ -6,7 +6,7 @@ export default function TestimonialWrapper() {
 		<div className="space-y-12">
 			<Headings title="Hear From Our Community" />
 			
-			<div className="flex mx-auto gap-x-12 max-w-[1440px]">
+			<div className="px-2 grid gap-y-6 sm:grid-cols-2 sm:gap-6 md:grid-cols-4 md:gap-x-12 mx-auto max-w-[1440px]">
 				<TestimonialCards image="/emma.jpg"
 				                  text="Adopting was the best decision we ever made. Max has brought so much joy into our lives!"
 				                  name="Emma J."
@@ -34,14 +34,14 @@ function TestimonialCards({ image, text, name }: {
 	name: string
 }) {
 	return (
-		<div className="flex flex-col items-center w-1/4 space-y-8">
+		<div className="flex flex-col items-center space-y-8">
 			<Image src={image}
 			       alt={name}
-			       width={192}
-			       height={192}
+			       width={180}
+			       height={180}
 			       className="size-48 rounded-full align-middle overflow-hidden"
 			/>
-			<div className="w-[95%] space-y-4">
+			<div className="w-[75%] md:w-[90%] space-y-4">
 				<p className="text-justify">{text}</p>
 				<p className="text-center italic">{name}</p>
 			</div>

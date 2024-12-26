@@ -14,7 +14,7 @@ export type PetRecord = {
 	compatibility: Array<'dogs' | 'cats' | 'small kids'>;
 	image: string;
 	comments: string;
-	rehomer: Pick<User, 'email'>;
+	// rehomer: Pick<User, 'email'>;
 };
 
 export type Contact = {
@@ -24,15 +24,15 @@ export type Contact = {
 
 export type PetRecordState = {
 	errors?: {
-		type?: string;
-		breed?: string;
-		gender?: string;
-		age?: string;
-		compatibility?: string;
-		imageUrl?: string;
-		comments?: string;
-		// rehomer: string;
-	},
+		type?: string[];
+		breed?: string[];
+		gender?: string[];
+		age?: string[];
+		compatibility?: string[];
+		image?: string[];
+		comments?: string[];
+		// rehomer?: string[];
+	};
 	message?: string | null;
 };
 

@@ -7,26 +7,23 @@
 - adopt a pet
 - rehome a pet
 - authentication, cookies, authorization
+- adopted and rehomed pet history
 
 ## what I learned 💭
 - multiple pages website
-- next authentication
+- next authentication, cookies, authorization
 - shadcn
 
 ## limitations 🚨
 - **title:** description
-- currently only for cats and dogs
+- currently only for cats and dogs over a month old(because of zod validation)
 
 ## improvements 🌱
 - **title:** description
-price with real time payments to adopt
+prices with real time payments to adopt, example stripe
 
 ## .env file 📄
-this project requires an `.env` file in the root directory.
-
-rename the `.env.example` file to `.env`, and update it with the necessary values.
-
-ensure this file is configured properly and not committed to version control.
+this project requires an `.env` file in the root directory. rename the `.env.example` file to `.env`, and update it with the necessary values. ensure this file is configured properly and not committed to version control.
 
 ## running the project 🏁
 to get the project up and running on your local machine, follow these steps:
