@@ -7,7 +7,7 @@ const RehomeSchema = z.object({
 	gender: z.enum(['male', 'female'], { message: 'Please select a gender' }),
 	age: z.custom<string>((val) => {
 		return typeof val === 'string' && (
-			/^\d+yrs \d+months$/.test(val) || /^\d+months$/.test(val)
+			/^\d+yr(s)? \d+month(s)?$/.test(val) || /^\d+month(s)?$/.test(val)
 		);
 	}, { message: 'Format: Xyrs Ymonths or Ymonths' }),
 	compatibility: z.array(

@@ -14,7 +14,7 @@ export default function StatsWrapper() {
 		<div className="text-center space-y-12">
 			<Headings title="Measuring Our Success"/>
 			
-			<div className="px-2 grid gap-y-10 sm:flex justify-center sm:gap-x-16 md:gap-x-32">
+			<div className="px-2 grid gap-y-10 sm:flex justify-center sm:gap-x-12 md:gap-x-32">
 				<StatsCards percent={false}
 				            target={927}
 				            title="Pets Adopted in 2023"
