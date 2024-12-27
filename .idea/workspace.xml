@@ -5,28 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/form-schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/account/pet-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/available-pets.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useDebounce.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useNavigationParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/adopted/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/adopted/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/rehomed/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/rehomed/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/care/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/adopt/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/nav-links.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/sidenav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/account/pet-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/pet-card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/adopt/clear-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/clear-button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/home/stats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/stats.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/home/values.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/values.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -97,11 +89,11 @@
       <recent name="$PROJECT_DIR$/src/app/care" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/ui" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/pets" />
-      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/app" />
-      <recent name="$PROJECT_DIR$/src/ui" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -174,6 +166,10 @@
       <workItem from="1735004155853" duration="43506000" />
       <workItem from="1735084329294" duration="57863000" />
       <workItem from="1735190938651" duration="3267000" />
+      <workItem from="1735194224296" duration="6259000" />
+      <workItem from="1735250843167" duration="1204000" />
+      <workItem from="1735252051551" duration="3818000" />
+      <workItem from="1735256589378" duration="13824000" />
     </task>
     <servers />
   </component>

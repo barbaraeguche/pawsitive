@@ -12,13 +12,13 @@ export default function RootPage() {
 	return (
 		<div className="space-y-24 !mt-12 !mb-32">
 			{/* banner */}
-			<section className="px-6 md:px-4 flex flex-col lg:flex-row gap-y-8 lg:gap-x-8 toGrid:gap-x-16 mx-auto max-w-[1470px]">
+			<section className="mx-auto flex flex-col gap-8 w-[90%] max-w-[420px] sm:max-w-[550px] md:max-w-[690px] lg:flex-row lg:gap-16 lg:max-w-6xl toGrid:gap-20 toGrid:max-w-[1400px]">
 				<div className="blob-outline flex justify-center space-x-1">
 					<ImageWrapper image="/cat.jpg" position="left"/>
 					<ImageWrapper image="/dog.jpg" position="right"/>
 				</div>
 				
-				<div className="m-auto space-y-5 w-[85%] sm:w-[90%] md:w-[85%] toGrid:w-full">
+				<div className="m-auto space-y-5 w-full">
 					<Headings title="Find Your Perfect Furry Friend!"/>
 					<div className="space-y-3">
 						<p className="italic text-justify">
@@ -26,19 +26,17 @@ export default function RootPage() {
 							for a playful puppy or a calm senior companion, we’re here to help you find your perfect match and create
 							a lasting bond.
 						</p>
-						<div className="mx-auto max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:w-full">
-							<Button className="w-full">
-								<Link href="/adopt">
-									Meet Your New Best Friend
-								</Link>
-							</Button>
-						</div>
+						<Button className="w-full">
+							<Link href="/adopt">
+								Meet Your New Best Friend
+							</Link>
+						</Button>
 					</div>
 				</div>
 			</section>
 			
 			{/* about */}
-			<section className="px-6 md:px-4 flex flex-col md:flex-row gap-x-16 gap-y-8 mx-auto max-w-5xl">
+			<section className="px-8 md:px-6 flex flex-col md:flex-row gap-x-16 gap-y-8 mx-auto max-w-5xl">
 				<div className="my-auto">
 					<Headings title="Our Mission: Happy Pets, Happy Families!"/>
 				</div>
@@ -72,7 +70,7 @@ function ImageWrapper({image, position}: {
 	position: 'left' | 'right'
 }) {
 	return (
-		<div className={`${position} border-2 border-brown-100 size-[175px] sm:size-[265px] md:size-[320px] toGrid:size-[400px] overflow-hidden`}>
+		<div className={`${position} border-2 border-brown-100 size-[140px] sm:size-[200px] md:size-[260px] toGrid:size-[320px] overflow-hidden`}>
 			<Image src={image}
 			       alt={`${position === 'left' ? 'cat.jpg' : 'dog.jpg'}`}
 			       width={420}

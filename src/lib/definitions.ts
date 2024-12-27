@@ -17,6 +17,12 @@ export type PetRecord = {
 	// rehomer: Pick<User, 'email'>;
 };
 
+export type AvailablePetsRecord = Partial<Omit<PetRecord, 'type' | 'gender' | 'compatibility'>> & {
+	type: string;
+	gender: string;
+	compatibility: string[];
+};
+
 export type Contact = {
 	email: string;
 	message: string;

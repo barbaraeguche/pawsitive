@@ -1,17 +1,22 @@
-'use client'; // once submitted, cannot be changed
+'use client';
 
-import Headings from '@/components/headings';
-import ClearButton from '@/ui/adopt/clear-button';
+import { useNavigationParams } from '@/hooks/useNavigationParams';
+import { useDebounce } from '@/hooks/useDebounce';
 
 import Input from '@/ui/input';
 import Button from '@/ui/button';
+import ClearButton from '@/ui/adopt/clear-button';
+import Headings from '@/components/headings';
 
 export default function Form() {
+	const { replace, pathname, searchParams } = useNavigationParams();
+	const { handleFilter } = useDebounce();
+	
 	return (
-		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
+		<div className="px-1.5 md:px-6 space-y-6 md:space-y-12">
 			<Headings title="Adopt a Pet, Bring Joy"/>
 			<form>
-				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
+				<div className="mx-auto max-w-[400px] sm:max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet type */}
 					<fieldset>
 						<div className="mt-0 flex justify-between">
@@ -25,6 +30,7 @@ export default function Form() {
 								       name="type"
 								       type="radio"
 								       value="cat"
+								       onChange={(e) => handleFilter('type', e.target.value)}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="cat" className="text-sm ml-2 cursor-pointer">Cat</label>
@@ -36,6 +42,7 @@ export default function Form() {
 								       name="type"
 								       type="radio"
 								       value="dog"
+								       onChange={(e) => handleFilter('type', e.target.value)}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="dog" className="text-sm ml-2 cursor-pointer">Dog</label>
@@ -49,6 +56,8 @@ export default function Form() {
 						<Input id="breed"
 						       name="breed"
 						       placeholder="Enter your pet's breed"
+						       defaultValue={searchParams.get('breed')?.toString()}
+						       onChange={(e) => handleFilter('breed', e.target.value)}
 						/>
 					</div>
 					
@@ -65,6 +74,7 @@ export default function Form() {
 								       name="gender"
 								       type="radio"
 								       value="male"
+								       onChange={(e) => handleFilter('gender', e.target.value)}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="male" className="text-sm ml-2 cursor-pointer">Male</label>
@@ -76,6 +86,7 @@ export default function Form() {
 								       name="gender"
 								       type="radio"
 								       value="female"
+								       onChange={(e) => handleFilter('gender', e.target.value)}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="female" className="text-sm ml-2 cursor-pointer">Female</label>
@@ -89,6 +100,8 @@ export default function Form() {
 						<Input id="age"
 						       name="age"
 						       placeholder="e.g., 2yrs 3months or 15months"
+						       defaultValue={searchParams.get('age')?.toString()}
+						       onChange={(e) => handleFilter('age', e.target.value)}
 						/>
 					</div>
 					
@@ -102,6 +115,7 @@ export default function Form() {
 								       name="compatibility"
 								       type="checkbox"
 								       value="dogs"
+								       onChange={(e) => handleFilter('compatibility', e.target.value, 'checkbox')}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="dogs" className="text-sm ml-2 cursor-pointer">Dogs</label>
@@ -113,6 +127,7 @@ export default function Form() {
 								       name="compatibility"
 								       type="checkbox"
 								       value="cats"
+								       onChange={(e) => handleFilter('compatibility', e.target.value, 'checkbox')}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="cats" className="text-sm ml-2 cursor-pointer">Cats</label>
@@ -124,6 +139,7 @@ export default function Form() {
 								       name="compatibility"
 								       type="checkbox"
 								       value="small kids"
+								       onChange={(e) => handleFilter('compatibility', e.target.value, 'checkbox')}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="small kids" className="text-sm ml-2 cursor-pointer">Small kids</label>
@@ -132,7 +148,11 @@ export default function Form() {
 					</fieldset>
 					
 					{/* buttons */}
-					<Button type="reset" intent="refresh" className="w-full !mt-8">
+					<Button type="reset"
+					        intent="refresh"
+					        className="w-full !mt-8"
+					        onClick={() => replace(`${pathname}`)}
+					>
 						Clear
 					</Button>
 				</div>

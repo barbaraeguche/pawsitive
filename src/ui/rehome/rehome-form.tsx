@@ -114,7 +114,7 @@ export default function Form() {
 						<Input id="age"
 						       name="age"
 						       aria-describedby="age-error"
-						       placeholder="e.g., 2yrs 3months or 15months"
+						       placeholder="e.g., 2yr(s) 3month(s) or 15month(s)"
 						/>
 						<div id="age-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.age?.map((error: string) => (
