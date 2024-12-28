@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useEffect, Suspense } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
 
 import { AvailablePetsRecord } from '@/lib/definitions';
@@ -9,7 +9,7 @@ import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
 
 export default function AvailablePets({ type, breed, gender, age, compatibility }: AvailablePetsRecord) {
-	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isLoading] = useState<boolean>(false);
 	const [filteredPets, setFilteredPets] = useState<AvailablePetsRecord[]>([{
 		id: '', type: '', breed: '', gender: '', age: '', compatibility: [], image: '/cat.jpg', comments: ''
 	}]);
