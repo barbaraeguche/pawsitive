@@ -9,7 +9,7 @@ const buttonVariants = cva(
 				primary: "text-white bg-brown hover:bg-brown-80 active:bg-brown-100",
 				danger: "text-black bg-gray-50 hover:bg-red-100 hover:text-red-600",
 				refresh: "text-gray-600 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 border border-gray-400",
-				skeleton: "bg-gray-500"
+				skeleton: "bg-brown-80/10"
 			}
 		},
 		defaultVariants: {

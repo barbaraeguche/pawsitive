@@ -1,10 +1,11 @@
 'use client';
 
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, Suspense } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
 
 import { AvailablePetsRecord } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
+import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
 
 export default function AvailablePets({ type, breed, gender, age, compatibility }: AvailablePetsRecord) {
@@ -133,7 +134,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 		<Fragment>
 			<Headings title="Our Available Pets" />
 			{isLoading ? (
-				<p className="text-[17px] tracking-[3px] animate-pulse">make here the skeleton...</p>
+				<PetCardsSkeleton isAdopting={true} />
 			) : (
 				filteredPets.length === 0 ? (
 					<div className="flex justify-center">
