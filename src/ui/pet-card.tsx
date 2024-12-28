@@ -21,6 +21,7 @@ export default function PetCard({ pets, isAdopting }: {
 								<Image src={pet.image!} alt={pet.image!} fill className="rounded-t-md"/>
 							</div>
 							<div className="p-2 my-1.5 text-center break-words">
+								<AdjustTextSize type="Name: " value={capitalizeFirstLetter(pet.name!)} />
 								<AdjustTextSize type="Type: " value={capitalizeFirstLetter(pet.type)} />
 								<AdjustTextSize type="Breed: " value={pet.breed!} />
 								<AdjustTextSize type="Gender: " value={capitalizeFirstLetter(pet.gender)} />
@@ -48,6 +49,7 @@ export default function PetCard({ pets, isAdopting }: {
 								<Image src={pet.image!} alt={pet.image!} fill className="rounded-tl-md rounded-bl-md"/>
 							</div>
 							<div className="py-2 mr-4 my-auto text-justify break-words">
+								<AdjustTextSize type="Name: " value={capitalizeFirstLetter(pet.name!)} />
 								<AdjustTextSize type="Type: " value={capitalizeFirstLetter(pet.type)} />
 								<AdjustTextSize type="Breed: " value={pet.breed!} />
 								<AdjustTextSize type="Gender: " value={capitalizeFirstLetter(pet.gender)} />

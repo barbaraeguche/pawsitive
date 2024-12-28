@@ -2,7 +2,7 @@
 
 // import { PawPrint } from 'lucide-react';
 import { useActionState } from 'react';
-// import { PetRecordState } from '@/lib/definitions';
+import { PetRecordState } from '@/lib/definitions';
 import { rehomePet } from '@/lib/action';
 
 import Headings from '@/components/headings';
@@ -10,13 +10,31 @@ import Input from '@/ui/input';
 import Button from '@/ui/button';
 
 export default function Form() {
-	const [state, formAction] = useActionState(rehomePet, { message: null, errors: {} });
+	const initialState: PetRecordState = { message: null, errors: {} };
+	const [state, formAction] = useActionState(rehomePet, initialState);
 	
 	return (
 		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
 			<Headings title="Rehome Your Beloved Pet" />
 			<form action={formAction}>
 				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
+					{/* pet name */}
+					<div>
+						<label htmlFor="name" className="mb-1 block text-sm">Pet Name</label>
+						<Input id="name"
+						       name="name"
+						       aria-describedby="name-error"
+						       placeholder="Enter your pet's name"
+						/>
+						<div id="name-error" aria-live="polite" aria-atomic="true">
+							{state.errors?.name?.map((error: string) => (
+								<p key={error} className="mt-2 text-sm text-red-600">
+									{error}
+								</p>
+							))}
+						</div>
+					</div>
+					
 					{/* pet type */}
 					<fieldset>
 						<legend className="mb-1 block text-sm">Pet Type</legend>
@@ -185,7 +203,8 @@ export default function Form() {
 							       className="hidden"
 							/>
 							{/* centered label content */}
-							<label htmlFor="image" className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer">
+							<label htmlFor="image"
+							       className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer">
 								<p className="text-sm">Select a file</p>
 								<span className="mt-1 text-xs text-gray-500">Accepted types: JPG, PNG</span>
 							</label>

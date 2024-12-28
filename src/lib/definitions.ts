@@ -7,6 +7,7 @@ export type User = {
 
 export type PetRecord = {
 	id: string;
+	name: string;
 	type: 'cat' | 'dog';
 	breed: string;
 	gender: 'male' | 'female';
@@ -14,7 +15,6 @@ export type PetRecord = {
 	compatibility: Array<'dogs' | 'cats' | 'small kids'>;
 	image: string;
 	comments: string;
-	// rehomer: Pick<User, 'email'>;
 };
 
 export type AvailablePetsRecord = Partial<Omit<PetRecord, 'type' | 'gender' | 'compatibility'>> & {
@@ -30,6 +30,7 @@ export type Contact = {
 
 export type PetRecordState = {
 	errors?: {
+		name?: string[];
 		type?: string[];
 		breed?: string[];
 		gender?: string[];
