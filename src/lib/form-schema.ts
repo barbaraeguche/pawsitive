@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 const RehomeSchema = z.object({
 	id: z.string(),
+	name: z.string().min(3, { message: 'Please enter a name' }),
 	type: z.enum(['cat', 'dog'], { message: 'Please select a type' }),
 	breed: z.string().min(3, { message: 'Please enter a breed' }),
 	gender: z.enum(['male', 'female'], { message: 'Please select a gender' }),

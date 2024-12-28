@@ -3,7 +3,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
 
-import { AvailablePetsRecord } from '@/lib/definitions';
+import { AvailablePetsRecord, PetRecord } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
 import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
@@ -11,7 +11,7 @@ import Headings from '@/components/headings';
 export default function AvailablePets({ type, breed, gender, age, compatibility }: AvailablePetsRecord) {
 	const [isLoading] = useState<boolean>(false);
 	const [filteredPets, setFilteredPets] = useState<AvailablePetsRecord[]>([{
-		id: '', type: '', breed: '', gender: '', age: '', compatibility: [], image: '/cat.jpg', comments: ''
+		id: '', name: '', type: '', breed: '', gender: '', age: '', compatibility: [], image: '/cat.jpg', comments: ''
 	}]);
 	const { filterTrigger } = useAdoptContext();
 	
@@ -19,6 +19,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 		const pets = [
 			{
 				id: "1",
+				name: 'Tom',
 				type: "dog",
 				breed: "Golden Retriever",
 				gender: "male",
@@ -29,6 +30,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "2",
+				name: 'Angela',
 				type: "cat",
 				breed: "Persian",
 				gender: "female",
@@ -39,6 +41,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "3",
+				name: 'Tom',
 				type: "dog",
 				breed: "Bulldog",
 				gender: "male",
@@ -49,6 +52,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "4",
+				name: 'Angela',
 				type: "cat",
 				breed: "Siamese",
 				gender: "female",
@@ -59,6 +63,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "5",
+				name: 'Tom',
 				type: "dog",
 				breed: "Beagle",
 				gender: "male",
@@ -69,6 +74,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "6",
+				name: 'Angela',
 				type: "cat",
 				breed: "Persian",
 				gender: "female",
@@ -79,6 +85,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "7",
+				name: 'Tom',
 				type: "dog",
 				breed: "Golden Retriever",
 				gender: "male",
@@ -89,6 +96,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "8",
+				name: 'Angela',
 				type: "cat",
 				breed: "Persian",
 				gender: "female",
@@ -99,6 +107,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "9",
+				name: 'Tom',
 				type: "dog",
 				breed: "Bulldog",
 				gender: "male",
@@ -109,6 +118,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			},
 			{
 				id: "10",
+				name: 'Angela',
 				type: "cat",
 				breed: "Siamese",
 				gender: "female",

@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/available-pets.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useDebounce.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useNavigationParams.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/contact/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/adopt/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/account/pet-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/pet-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/adopt/clear-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/clear-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/home/stats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/stats.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/home/values.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/values.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/available-pets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/available-pets.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/form-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/form-schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/pet-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/pet-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -62,24 +58,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/barbara/webstorm/paw-squad/src/app/account/rehomed&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.tailwindcss&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/barbara/webstorm/paw-squad/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "javascript.nodejs.core.library.configured.version": "23.4.0",
+    "javascript.nodejs.core.library.typings.version": "22.10.2",
+    "last_opened_file_path": "/Users/barbara/webstorm/paw-squad/src/app/account/rehomed",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/Users/barbara/.nvm/versions/node/v22.12.0/bin/node",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.build.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "/Users/barbara/webstorm/paw-squad/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/account/rehomed" />
@@ -170,6 +169,8 @@
       <workItem from="1735250843167" duration="1204000" />
       <workItem from="1735252051551" duration="3818000" />
       <workItem from="1735256589378" duration="13824000" />
+      <workItem from="1735270714965" duration="28541000" />
+      <workItem from="1735353991435" duration="13787000" />
     </task>
     <servers />
   </component>
