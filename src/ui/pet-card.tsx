@@ -15,7 +15,7 @@ export default function PetCard({ pets, isAdopting }: {
 				<div className="grid sm:grid-cols-2 gap-5 mx-auto max-w-[300px] sm:max-w-[620px]">
 					{pets.map((pet) => (
 						<div key={pet.id}
-						     className="relative border border-brown-80 rounded-lg flex flex-col shadow-xl shadow-brown-80/30 bg-dough/35"
+						     className="relative border border-brown-80 rounded-lg flex flex-col shadow-xl shadow-brown-80/15 bg-dough/35"
 						>
 							<div className="relative h-[220px]">
 								<Image src={pet.image!} alt={pet.image!} fill className="rounded-t-md"/>
@@ -42,7 +42,7 @@ export default function PetCard({ pets, isAdopting }: {
 				<div className="grid grid-cols-1 toGrid:grid-cols-2 gap-3 mx-auto max-w-[717px] toGrid:max-w-[1450px]">
 					{pets.map((pet) => (
 						<div key={pet.id}
-						     className="relative border border-brown-80 rounded-md flex gap-x-4 shadow-xl shadow-brown-80/30 bg-dough/35"
+						     className="relative border border-brown-80 rounded-md flex gap-x-4 shadow-xl shadow-brown-80/15 bg-dough/35"
 						>
 							<div className="relative size-[190px]">
 								<Image src={pet.image!} alt={pet.image!} fill className="rounded-tl-md rounded-bl-md"/>

@@ -26,6 +26,13 @@ export default {
 			  celeste: { // for input accents
 				  DEFAULT: '#accbee'
 			  }
+		  },
+		  keyframes: {
+			  shimmer: {
+				  "100%": {
+					  transform: "translateX(100%)",
+				  },
+			  },
 		  }
   	}
   },

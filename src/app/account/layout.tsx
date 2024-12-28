@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
-
 import Sidenav from '@/ui/account/sidenav';
 
 export const metadata: Metadata = {

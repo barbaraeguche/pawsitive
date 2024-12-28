@@ -1,23 +1,21 @@
 import Button from '@/ui/button';
 
-const shimmer = 'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
+const shimmer = 'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-brown-80/5 before:to-transparent isolate overflow-hidden shadow-xl shadow-brown-80/15 before:border-t before:border-brown-80/30';
 
 function PetCardMobileSkeleton({ isAdopting }: {
 	isAdopting?: boolean
 }) {
 	return (
-		<div className={`${shimmer} relative border border-brown-80 rounded-lg flex flex-col shadow-xl shadow-brown-80/30 `}>
-			<div className="bg-red-200 relative h-[220px] rounded-t-md"/>
-			<div className="p-2 my-1.5 text-center break-words">
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<p className="mt-2 flex flex-col">
-					<span className="bg-gray-200 w-4"/>
-					<span className="bg-gray-200 w-6"/>
-				</p>
+		<div className={`${shimmer} relative rounded-lg flex flex-col bg-dough/50`}>
+			<div className="h-[220px] rounded-t-md bg-brown-80/5"/>
+			<div className="p-2 my-1.5 space-y-2">
+				<div className="h-2 w-2/5 rounded-md bg-brown-80/20"/>
+				<div className="h-2 w-4/5 rounded-md bg-brown-80/30"/>
+				<div className="h-2 w-3/5 rounded-md bg-brown-80/30"/>
+				<div className="mt-2 flex flex-col items-center space-y-1">
+					<div className="h-2 w-1/5 rounded-md bg-brown-80/40"/>
+					<div className="h-6 w-full rounded-md bg-brown-80/30"/>
+				</div>
 			</div>
 			{isAdopting && <AdoptButtonSkeleton/>}
 		</div>
@@ -28,22 +26,21 @@ function PetCardDesktopSkeleton({ isAdopting }: {
 	isAdopting?: boolean
 }) {
 	return (
-		<div className={`${shimmer} relative border border-brown-80 rounded-md flex gap-x-4 shadow-xl shadow-brown-80/30 bg-gray-100`}>
-			<div className="relative size-[190px] rounded-tl-md rounded-bl-md" />
-			<div className="py-2 mr-4 my-auto text-justify break-words">
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-4"/>
-				<div className="bg-gray-200 w-6"/>
+		<div className={`${shimmer} relative rounded-md flex gap-x-4 bg-dough/50`}>
+			<div className="size-[190px] rounded-tl-md rounded-bl-md bg-brown-80/5"/>
+			<div className="py-2 mr-4 my-auto w-[65%] space-y-2">
+				<div className="h-2 w-1/5 rounded-md bg-brown-80/20"/>
+				<div className="h-2 w-3/5 rounded-md bg-brown-80/30"/>
+				<div className="h-2 w-2/5 rounded-md bg-brown-80/30"/>
+				<div className="h-2 w-4/5 rounded-md bg-brown-80/30"/>
+				<div className="h-12 w-full rounded-md bg-brown-80/20"/>
 			</div>
 			{isAdopting && <AdoptButtonSkeleton/>}
 		</div>
 	);
 }
 
-export default function PetCardsSkeleton({isAdopting}: {
+export default function PetCardsSkeleton({ isAdopting }: {
 	isAdopting?: boolean
 }) {
 	return (
@@ -51,22 +48,22 @@ export default function PetCardsSkeleton({isAdopting}: {
 			{/* default format */}
 			<div className="block card:hidden">
 				<div className="grid sm:grid-cols-2 gap-5 mx-auto max-w-[300px] sm:max-w-[620px]">
-					<PetCardMobileSkeleton isAdopting={isAdopting} />
-					<PetCardMobileSkeleton isAdopting={isAdopting} />
-					<PetCardMobileSkeleton isAdopting={isAdopting} />
-					<PetCardMobileSkeleton isAdopting={isAdopting} />
-					<PetCardMobileSkeleton isAdopting={isAdopting} />
+					<PetCardMobileSkeleton isAdopting={isAdopting}/>
+					<PetCardMobileSkeleton isAdopting={isAdopting}/>
+					<PetCardMobileSkeleton isAdopting={isAdopting}/>
+					<PetCardMobileSkeleton isAdopting={isAdopting}/>
+					<PetCardMobileSkeleton isAdopting={isAdopting}/>
 				</div>
 			</div>
 			
 			{/* medium format */}
 			<div className="hidden card:block">
 				<div className="grid grid-cols-1 toGrid:grid-cols-2 gap-3 mx-auto max-w-[717px] toGrid:max-w-[1450px]">
-					<PetCardDesktopSkeleton isAdopting={isAdopting} />
-					<PetCardDesktopSkeleton isAdopting={isAdopting} />
-					<PetCardDesktopSkeleton isAdopting={isAdopting} />
-					<PetCardDesktopSkeleton isAdopting={isAdopting} />
-					<PetCardDesktopSkeleton isAdopting={isAdopting} />
+					<PetCardDesktopSkeleton isAdopting={isAdopting}/>
+					<PetCardDesktopSkeleton isAdopting={isAdopting}/>
+					<PetCardDesktopSkeleton isAdopting={isAdopting}/>
+					<PetCardDesktopSkeleton isAdopting={isAdopting}/>
+					<PetCardDesktopSkeleton isAdopting={isAdopting}/>
 				</div>
 			</div>
 		</div>
@@ -78,6 +75,8 @@ function AdoptButtonSkeleton() {
 		<Button intent="skeleton"
 		        className="absolute top-1 right-1"
 		>
+			<div className="block w-5 card:hidden" />
+			<div className="hidden card:block card:w-12" />
 		</Button>
 	);
 }
