@@ -31,5 +31,19 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbaraeguche/paw-squad.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/barbaraeguche/paw-squad/issues"
+  },
+  "homepage": "https://github.com/barbaraeguche/paw-squad#readme"
 }
