@@ -14,7 +14,7 @@ export default function Form() {
 	
 	return (
 		<div className="px-1.5 md:px-6 space-y-6 md:space-y-12">
-			<Headings title="Adopt a Pet, Bring Joy"/>
+			<Headings title="Adopt a Pet, Bring Joy Home"/>
 			<form>
 				<div className="mx-auto max-w-[400px] sm:max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet type */}
