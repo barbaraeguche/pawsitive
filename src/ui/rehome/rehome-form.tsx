@@ -28,7 +28,7 @@ export default function Form() {
 						/>
 						<div id="name-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.name?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -65,7 +65,7 @@ export default function Form() {
 						</div>
 						<div id="type-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.type?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -82,7 +82,7 @@ export default function Form() {
 						/>
 						<div id="breed-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.breed?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -119,7 +119,7 @@ export default function Form() {
 						</div>
 						<div id="gender-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.gender?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -136,7 +136,7 @@ export default function Form() {
 						/>
 						<div id="age-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.age?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -184,7 +184,7 @@ export default function Form() {
 						</div>
 						<div id="compatibility-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.compatibility?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -211,7 +211,7 @@ export default function Form() {
 						</div>
 						<div id="image-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.image?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -230,7 +230,7 @@ export default function Form() {
 						/>
 						<div id="comments-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.comments?.map((error: string) => (
-								<p key={error} className="mt-2 text-sm text-red-600">
+								<p key={error} className="mt-1 text-sm text-red-600">
 									{error}
 								</p>
 							))}
@@ -248,7 +248,7 @@ export default function Form() {
 					{/*	/>*/}
 					{/*	<div id="rehomer-error" aria-live="polite" aria-atomic="true">*/}
 					{/*		{state.errors?.rehomer?.map((error: string) => (*/}
-					{/*			<p key={error} className="mt-2 text-sm text-red-600">*/}
+					{/*			<p key={error} className="mt-1 text-sm text-red-600">*/}
 					{/*				{error}*/}
 					{/*			</p>*/}
 					{/*		))}*/}

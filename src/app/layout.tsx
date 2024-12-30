@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import '@/ui/globals.css';
 import { newsreader } from '@/ui/fonts';
-
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 

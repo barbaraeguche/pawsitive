@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
 import Headings from '@/components/headings';
 import Button from '@/ui/button';
-
 import ValuesWrapper from '@/ui/home/values';
 import StatsWrapper from '@/ui/home/stats';
 import TestimonialWrapper from '@/ui/home/testimonials';
@@ -65,7 +63,7 @@ export default function RootPage() {
 	);
 }
 
-function ImageWrapper({image, position}: {
+function ImageWrapper({ image, position }: {
 	image: string,
 	position: 'left' | 'right'
 }) {

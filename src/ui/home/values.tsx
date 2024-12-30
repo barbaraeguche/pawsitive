@@ -28,7 +28,7 @@ export default function ValuesWrapper() {
 	);
 }
 
-function ValueCards({title, text}: {
+function ValueCards({ title, text }: {
 	title: 'Compassionate Care' | 'Zero Waste Initiatives' | 'Forever Homes',
 	text: string
 }) {
