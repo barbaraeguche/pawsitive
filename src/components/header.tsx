@@ -6,7 +6,6 @@ const mainLinks = [
 	{ name: 'Care', href: '/care' },
 	{ name: 'Rehome', href: '/rehome' },
 	{ name: 'Adopt', href: '/adopt' },
-	{ name: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -14,7 +13,7 @@ export default function Header() {
 		<header className={`${lora.className} z-50 p-2 sticky top-0 border-b border-b-brown-100 bg-dough`}>
 			{/* desktop format */}
 			<div className="hidden sm:flex items-center justify-between">
-				<SiteName />
+				<SiteName/>
 				
 				<nav className="space-x-3 md:space-x-8 lg:space-x-16 toGrid:space-x-32">
 					{mainLinks.map((link) => (
@@ -34,8 +33,8 @@ export default function Header() {
 			
 			{/* mobile format */}
 			<div className="flex items-center justify-between sm:hidden">
-				<SiteName />
-				<MobileNavLink mainLinks={mainLinks} />
+				<SiteName/>
+				<MobileNavLink mainLinks={mainLinks}/>
 			</div>
 		</header>
 	);

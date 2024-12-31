@@ -1,21 +1,18 @@
-'use client'; // once submitted, cannot be changed
-
-// import { PawPrint } from 'lucide-react';
+'use client';
 import { useActionState } from 'react';
 import { PetRecordState } from '@/lib/definitions';
 import { rehomePet } from '@/lib/action';
-
-import Headings from '@/components/headings';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
+import Headings from '@/components/headings';
 
 export default function Form() {
-	const initialState: PetRecordState = { message: null, errors: {} };
-	const [state, formAction] = useActionState(rehomePet, initialState);
+	const initialState: PetRecordState = { values: {}, errors: {}, message: null };
+	const [state, formAction, isPending] = useActionState(rehomePet, initialState);
 	
 	return (
 		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
-			<Headings title="Rehome Your Beloved Pet" />
+			<Headings title="Rehome Your Beloved Pet"/>
 			<form action={formAction}>
 				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet name */}
@@ -24,6 +21,7 @@ export default function Form() {
 						<Input id="name"
 						       name="name"
 						       aria-describedby="name-error"
+						       defaultValue={state.values?.name}
 						       placeholder="Enter your pet's name"
 						/>
 						<div id="name-error" aria-live="polite" aria-atomic="true">
@@ -47,6 +45,7 @@ export default function Form() {
 								       name="type"
 								       type="radio"
 								       value="cat"
+								       defaultChecked={state.values?.type === 'cat'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="cat" className="text-sm ml-2 cursor-pointer">Cat</label>
@@ -58,6 +57,7 @@ export default function Form() {
 								       name="type"
 								       type="radio"
 								       value="dog"
+								       defaultChecked={state.values?.type === 'dog'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="dog" className="text-sm ml-2 cursor-pointer">Dog</label>
@@ -78,6 +78,7 @@ export default function Form() {
 						<Input id="breed"
 						       name="breed"
 						       aria-describedby="breed-error"
+						       defaultValue={state.values?.breed}
 						       placeholder="Enter your pet's breed"
 						/>
 						<div id="breed-error" aria-live="polite" aria-atomic="true">
@@ -101,6 +102,7 @@ export default function Form() {
 								       name="gender"
 								       type="radio"
 								       value="male"
+								       defaultChecked={state.values?.gender === 'male'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="male" className="text-sm ml-2 cursor-pointer">Male</label>
@@ -112,6 +114,7 @@ export default function Form() {
 								       name="gender"
 								       type="radio"
 								       value="female"
+								       defaultChecked={state.values?.gender === 'female'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
 								<label htmlFor="female" className="text-sm ml-2 cursor-pointer">Female</label>
@@ -132,7 +135,8 @@ export default function Form() {
 						<Input id="age"
 						       name="age"
 						       aria-describedby="age-error"
-						       placeholder="e.g., 2yr(s) 3month(s) or 15month(s)"
+						       defaultValue={state.values?.age}
+						       placeholder="e.g., 5month(s) or 1yr or 2yr(s) 3month(s)"
 						/>
 						<div id="age-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.age?.map((error: string) => (
@@ -156,6 +160,7 @@ export default function Form() {
 								       type="checkbox"
 								       value="dogs"
 								       className="size-3.5 cursor-pointer accent-celeste"
+								       defaultChecked={state.values?.compatibility?.includes('dogs')}
 								/>
 								<label htmlFor="dogs" className="text-sm ml-2 cursor-pointer">Dogs</label>
 							</div>
@@ -167,6 +172,7 @@ export default function Form() {
 								       type="checkbox"
 								       value="cats"
 								       className="size-3.5 cursor-pointer accent-celeste"
+								       defaultChecked={state.values?.compatibility?.includes('cats')}
 								/>
 								<label htmlFor="cats" className="text-sm ml-2 cursor-pointer">Cats</label>
 							</div>
@@ -178,6 +184,7 @@ export default function Form() {
 								       type="checkbox"
 								       value="small kids"
 								       className="size-3.5 cursor-pointer accent-celeste"
+								       defaultChecked={state.values?.compatibility?.includes('small kids')}
 								/>
 								<label htmlFor="small kids" className="text-sm ml-2 cursor-pointer">Small kids</label>
 							</div>
@@ -225,6 +232,7 @@ export default function Form() {
 						          name="comments"
 						          aria-describedby="comments-error"
 						          rows={4} cols={30} maxLength={170}
+						          defaultValue={state.values?.comments}
 						          placeholder="Tell us more about your pet, max 170 words"
 						          className="align-top resize-none w-full rounded-md p-2 border border-brown-80 text-sm placeholder:text-gray-500 focus:placeholder:text-gray-400 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-brown transition-colors"
 						/>
@@ -237,24 +245,6 @@ export default function Form() {
 						</div>
 					</div>
 					
-					{/*/!* pet rehomer - might get this information from the authentication instead *!/*/}
-					{/*<div>*/}
-					{/*	<label htmlFor="rehomer" className="mb-1 block text-sm">Email</label>*/}
-					{/*	<Input id="rehomer"*/}
-					{/*	       name="rehomer"*/}
-					{/*	       type="email"*/}
-					{/*	       placeholder="Enter your email"*/}
-					{/*	       aria-describedby="rehomer-error"*/}
-					{/*	/>*/}
-					{/*	<div id="rehomer-error" aria-live="polite" aria-atomic="true">*/}
-					{/*		{state.errors?.rehomer?.map((error: string) => (*/}
-					{/*			<p key={error} className="mt-1 text-sm text-red-600">*/}
-					{/*				{error}*/}
-					{/*			</p>*/}
-					{/*		))}*/}
-					{/*	</div>*/}
-					{/*</div>*/}
-					
 					{/* buttons */}
 					<div className="!mt-8 flex gap-x-3">
 						<Button type="reset"
@@ -265,7 +255,8 @@ export default function Form() {
 						</Button>
 						
 						<Button type="submit"
-						        className="w-2/3"
+						        disabled={isPending}
+						        className="w-2/3 disabled:bg-brown-80/10 disabled:text-brown disabled:cursor-default"
 						>
 							Rehome
 						</Button>
