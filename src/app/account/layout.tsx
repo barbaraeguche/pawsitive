@@ -6,8 +6,7 @@ export const metadata: Metadata = {
 	title: {
 		template: '%s | My Account',
 		default: 'My Account'
-	},
-	description: ''
+	}
 };
 
 export default function AccountLayout({ children }: {
@@ -16,7 +15,7 @@ export default function AccountLayout({ children }: {
 	return (
 		<div className="flex h-screen overflow-hidden">
 			<div className="w-64">
-				<Sidenav />
+				<Sidenav/>
 			</div>
 			<div className="grow p-3 md:p-5 overflow-y-auto">{children}</div>
 		</div>

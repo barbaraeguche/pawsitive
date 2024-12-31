@@ -23,11 +23,6 @@ export type AvailablePetsRecord = Partial<Omit<PetRecord, 'type' | 'gender' | 'c
 	compatibility: string[];
 };
 
-export type Contact = {
-	email: string;
-	message: string;
-};
-
 export type PetRecordState = {
 	values?: { [key: string]: any };
 	errors?: {
@@ -43,8 +38,14 @@ export type PetRecordState = {
 	message?: string | null;
 };
 
+export type Contact = {
+	email: string;
+	message: string;
+};
+
 export type ContactState = {
 	errors?: {
+		name: string
 		email?: string;
 		message?: string;
 	},

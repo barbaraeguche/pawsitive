@@ -1,8 +1,8 @@
 'use server';
-// import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-// import { normalizeAndLowercase } from '@/lib/utils';
+import { normalizeAndLowercase } from '@/lib/utils';
 import { PetRecordState } from '@/lib/definitions';
 import { RehomePet } from '@/lib/form-schema';
 

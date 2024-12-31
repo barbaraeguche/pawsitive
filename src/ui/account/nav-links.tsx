@@ -1,5 +1,4 @@
 'use client';
-
 import { Heart, HomeIcon, History } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -27,7 +26,7 @@ export default function NavLinks() {
 						      { 'bg-dough/30': link.href === pathname }
 					      )}
 					>
-						<Icon className="w-5" />
+						<Icon className="w-5"/>
 						<p className="hidden md:block">{link.name}</p>
 					</Link>
 				);
