@@ -29,6 +29,7 @@ export type Contact = {
 };
 
 export type PetRecordState = {
+	values?: { [key: string]: any };
 	errors?: {
 		name?: string[];
 		type?: string[];
@@ -38,7 +39,6 @@ export type PetRecordState = {
 		compatibility?: string[];
 		image?: string[];
 		comments?: string[];
-		// rehomer?: string[];
 	};
 	message?: string | null;
 };

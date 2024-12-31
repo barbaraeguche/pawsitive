@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/shadcn/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/ui/shadcn/card";
-
 import Headings from '@/components/headings';
 
 export const metadata: Metadata = { title: 'Pet Care' };
@@ -25,7 +24,7 @@ const dogCare = [
 export default function CarePage() {
 	return (
 		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
-			<Headings title="Pet Wellness Handbook" />
+			<Headings title="Pet Wellness Handbook"/>
 			
 			<Tabs defaultValue="cats" className="px-2">
 				<TabsList className="w-full mb-4">
