@@ -1,8 +1,6 @@
 'use client';
-
 import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
-
 import { AvailablePetsRecord, PetRecord } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
 import PetCardsSkeleton from '@/ui/skeleton';
@@ -142,16 +140,16 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 	
 	return (
 		<Fragment>
-			<Headings title="Our Available Pets" />
+			<Headings title="Our Available Pets"/>
 			{isLoading ? (
-				<PetCardsSkeleton isAdopting={true} />
+				<PetCardsSkeleton isAdopting={true}/>
 			) : (
 				filteredPets.length === 0 ? (
 					<div className="flex justify-center">
 						<span className="!mt-16 toRow:!mt-36 text-base">No matching pets available</span>
 					</div>
 				) : (
-					<PetCard pets={filteredPets} isAdopting={true} />
+					<PetCard pets={filteredPets} isAdopting={true}/>
 				)
 			)}
 		</Fragment>

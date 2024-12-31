@@ -4,8 +4,7 @@ import Headings from '@/components/headings';
 export default function TestimonialWrapper() {
 	return (
 		<div className="space-y-12">
-			<Headings title="Hear From Our Community" />
-			
+			<Headings title="Hear From Our Community"/>
 			<div className="px-2 grid gap-y-6 sm:grid-cols-2 sm:gap-6 md:grid-cols-4 md:gap-x-12 mx-auto max-w-[1440px]">
 				<TestimonialCards image="/emma.jpg"
 				                  text="Adopting was the best decision we ever made. Max has brought so much joy into our lives!"

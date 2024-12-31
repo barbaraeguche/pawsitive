@@ -21,7 +21,7 @@ export default async function AdoptPage(props: {
 	const gender = searchParams?.gender || '';
 	const age = searchParams?.age || '';
 	const compatibility = searchParams?.compatibility ? (
-		Array.isArray(searchParams?.compatibility) ? searchParams.compatibility : [searchParams?.compatibility]
+		Array.isArray(searchParams.compatibility) ? searchParams.compatibility : [searchParams.compatibility]
 	) : [];
 	
 	return (

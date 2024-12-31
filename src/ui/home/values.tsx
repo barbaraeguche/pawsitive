@@ -12,7 +12,6 @@ export default function ValuesWrapper() {
 	return (
 		<div className="space-y-12">
 			<Headings title="What We Stand For"/>
-			
 			<div className="text-justify px-2 grid gap-6 sm:grid-cols-2 sm:px-5 sm:gap-9 md:px-2 md:grid-cols-3 md:gap-x-12 mx-auto max-w-[1440px]">
 				<ValueCards title="Compassionate Care"
 				            text="Every animal is treated with kindness, love, and respect. From their first steps into our sanctuary to finding their forever home, we ensure their comfort and happiness."

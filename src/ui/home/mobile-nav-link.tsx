@@ -22,7 +22,7 @@ export default function MobileNavLink({ mainLinks }: {
 			                     className="hover:cursor-pointer"
 			                     asChild
 			>
-				<Menu />
+				<Menu/>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="bg-dough w-56">
 				<DropdownMenuGroup>

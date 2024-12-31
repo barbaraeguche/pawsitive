@@ -16,7 +16,6 @@ export default function StatsWrapper() {
 	return (
 		<div className="text-center space-y-12">
 			<Headings title="Measuring Our Success"/>
-			
 			<div className="px-2 grid gap-y-10 sm:flex justify-center sm:gap-x-12 md:gap-x-32">
 				<StatsCards percent={false}
 				            target={927}
@@ -41,13 +40,11 @@ function StatsCards({ percent, target, title }: {
 	title: string
 }) {
 	return (
-		<div>
-			<span className="flex flex-col gap-y-4">
-				<h3 data-percentage={percent} data-target={target} className="counter text-6xl font-bold">
-					0
-				</h3>
-				{title}
-			</span>
-		</div>
+		<span className="flex flex-col gap-y-4">
+			<h3 data-percentage={percent} data-target={target} className="counter text-6xl font-bold">
+				0
+			</h3>
+			{title}
+		</span>
 	);
 }

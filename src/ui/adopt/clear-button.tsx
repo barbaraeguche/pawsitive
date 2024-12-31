@@ -1,8 +1,7 @@
 'use client';
-
 import { Undo } from 'lucide-react';
-import Button from '@/ui/button';
 import { useNavigationParams } from '@/hooks/useNavigationParams';
+import Button from '@/ui/button';
 
 export default function ClearButton({ selector }: {
 	selector: string;

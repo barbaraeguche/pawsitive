@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import { capitalizeFirstLetter } from '@/lib/utils';
 import { PetRecord, AvailablePetsRecord } from '@/lib/definitions';
 import AdoptButton from '@/ui/adopt/adopt-button';
@@ -21,15 +20,15 @@ export default function PetCard({ pets, isAdopting }: {
 								<Image src={pet.image!} alt={pet.image!} fill className="rounded-t-md"/>
 							</div>
 							<div className="p-2 my-1.5 text-center break-words">
-								<AdjustTextSize type="Name: " value={capitalizeFirstLetter(pet.name!)} />
-								<AdjustTextSize type="Type: " value={capitalizeFirstLetter(pet.type)} />
-								<AdjustTextSize type="Breed: " value={pet.breed!} />
-								<AdjustTextSize type="Gender: " value={capitalizeFirstLetter(pet.gender)} />
-								<AdjustTextSize type="Age: " value={pet.age!} />
-								<AdjustTextSize type="Compatibility: " value={capitalizeFirstLetter(pet.compatibility.join(', '))} />
+								<AdjustTextSize name="Name: " value={pet.name!}/>
+								<AdjustTextSize name="Type: " value={pet.type}/>
+								<AdjustTextSize name="Breed: " value={pet.breed!}/>
+								<AdjustTextSize name="Gender: " value={pet.gender}/>
+								<AdjustTextSize name="Age: " value={pet.age!}/>
+								<AdjustTextSize name="Compatibility: " value={pet.compatibility.join(', ')}/>
 								<p className="mt-2 flex flex-col">
 									<span className="underline text-[15px]">Comments</span>
-									<span className="text-justify px-3 text-sm">{pet.comments}</span>
+									<span className="text-justify px-3 text-sm">{capitalizeFirstLetter(pet.comments!)}</span>
 								</p>
 							</div>
 							{isAdopting && <AdoptButton />}
@@ -49,13 +48,13 @@ export default function PetCard({ pets, isAdopting }: {
 								<Image src={pet.image!} alt={pet.image!} fill className="rounded-tl-md rounded-bl-md"/>
 							</div>
 							<div className="py-2 mr-4 my-auto text-justify break-words">
-								<AdjustTextSize type="Name: " value={capitalizeFirstLetter(pet.name!)} />
-								<AdjustTextSize type="Type: " value={capitalizeFirstLetter(pet.type)} />
-								<AdjustTextSize type="Breed: " value={pet.breed!} />
-								<AdjustTextSize type="Gender: " value={capitalizeFirstLetter(pet.gender)} />
-								<AdjustTextSize type="Age: " value={pet.age!} />
-								<AdjustTextSize type="Compatibility: " value={capitalizeFirstLetter(pet.compatibility.join(', '))} />
-								<AdjustTextSize type="Comments: " value={pet.comments!} />
+								<AdjustTextSize name="Name: " value={pet.name!}/>
+								<AdjustTextSize name="Type: " value={pet.type}/>
+								<AdjustTextSize name="Breed: " value={pet.breed!}/>
+								<AdjustTextSize name="Gender: " value={pet.gender}/>
+								<AdjustTextSize name="Age: " value={pet.age!}/>
+								<AdjustTextSize name="Compatibility: " value={pet.compatibility.join(', ')}/>
+								<AdjustTextSize name="Comments: " value={pet.comments!}/>
 							</div>
 							{isAdopting && <AdoptButton />}
 						</div>
@@ -66,14 +65,14 @@ export default function PetCard({ pets, isAdopting }: {
 	);
 }
 
-function AdjustTextSize({ type, value }: {
-	type: string
+function AdjustTextSize({ name, value }: {
+	name: string
 	value: string
 }) {
 	return (
 		<p>
-			<span className="text-[15px]">{type}</span>
-			<span className="text-sm">{value}</span>
+			<span className="text-[15px]">{name}</span>
+			<span className="text-sm">{capitalizeFirstLetter(value)}</span>
 		</p>
 	);
 }

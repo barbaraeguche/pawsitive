@@ -1,8 +1,6 @@
 'use client';
-
 import { useNavigationParams } from '@/hooks/useNavigationParams';
 import { useDebounce } from '@/hooks/useDebounce';
-
 import Input from '@/ui/input';
 import Button from '@/ui/button';
 import ClearButton from '@/ui/adopt/clear-button';
