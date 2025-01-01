@@ -6,6 +6,7 @@ const mainLinks = [
 	{ name: 'Care', href: '/care' },
 	{ name: 'Rehome', href: '/rehome' },
 	{ name: 'Adopt', href: '/adopt' },
+	{ name: 'login', href: '/login' },
 ];
 
 export default function Header() {

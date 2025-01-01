@@ -23,6 +23,7 @@
 - **title:** description
 - prices with real time payments to adopt, example stripe
 - contact for user satisfaction and faster customer service/experience
+- remember me, other auth providers
 
 ## .env file 📄
 this project requires an `.env` file in the root directory. rename the `.env.example` file to `.env`, and update it with the necessary values. ensure this file is configured properly and not committed to version control.

@@ -1,25 +1,38 @@
 'use client';
+import { useState } from 'react';
 import { Eye, EyeClosed } from 'lucide-react';
-import Headings from '@/components/headings';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
+import AuthSeparator from '@/ui/login/auth-separator';
 
-export default function LoginForm() {
-	const { state, isPending } = { state: {
+const { state, isPending } = { state: {
 		values: { name: '', email: '', password: '' },
-    errors: { name: [], email: [], password: [] },
-    message: null,
-		}, isPending: false };
-	
-	function viewPassword(e: HTMLInputElement) {
-		return e.type === 'password' ? <EyeClosed/> : <Eye/>;
-	}
+		errors: { name: [], email: [], password: [] },
+		message: null,
+	}, isPending: false };
+
+export default function SignUpForm() {
+	const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 	
 	return (
 		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
-			<Headings title="Rehome Your Beloved Pet"/>
 			<form>
 				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
+					<h4 className="text-xl">Create Account</h4>
+					
+					{/* providers */}
+					<div className="flex w-full gap-x-2">
+						<Button type="button" intent="refresh" className="w-full border-brown-80 ">
+							with Google
+						</Button>
+						<Button type="button" intent="refresh" className="w-full border-brown-80">
+							with Github
+						</Button>
+					</div>
+					
+					{/* separator */}
+					<AuthSeparator/>
+					
 					{/* name */}
 					<div>
 						<label htmlFor="name" className="mb-1 block text-sm">Full Name</label>
@@ -60,15 +73,21 @@ export default function LoginForm() {
 					{/* password */}
 					<div>
 						<label htmlFor="password" className="mb-1 block text-sm">Password</label>
-						<div className="bg-celeste">
+						<div className="relative">
 							<Input id="password"
 							       name="password"
-							       type="password"
+							       type={`${isPasswordVisible ? 'text' : 'password'}`}
+							       className="pr-10"
+							       placeholder="******"
 							       aria-describedby="password-error"
 							       defaultValue={state.values?.password}
-							       placeholder="******"
 							/>
-							<EyeClosed className="absolute top-1/2 right-1"/>
+							<button onClick={() => setIsPasswordVisible((prev) => !prev)}
+							        aria-label={isPasswordVisible ? 'Hide password' : 'Show password'}
+							        className="text-gray-600 absolute w-4 top-1/2 -translate-y-1/2 right-3 flex"
+							>
+								{isPasswordVisible ? <Eye/> : <EyeClosed/>}
+							</button>
 						</div>
 						<div id="password-error" aria-live="polite" aria-atomic="true">
 							{state.errors?.password?.map((error: string) => (
@@ -80,21 +99,12 @@ export default function LoginForm() {
 					</div>
 					
 					{/* buttons */}
-					<div className="!mt-8 flex gap-x-3">
-						<Button type="reset"
-						        intent="refresh"
-						        className="w-1/3"
-						>
-							Clear
-						</Button>
-						
-						<Button type="submit"
-						        disabled={isPending}
-						        className="w-2/3 disabled:bg-brown-80/10 disabled:text-brown disabled:cursor-default"
-						>
-							Rehome
-						</Button>
-					</div>
+					<Button type="submit"
+					        disabled={isPending}
+					        className="!mt-8 w-full disabled:bg-brown-80/10 disabled:text-brown disabled:cursor-default"
+					>
+						Rehome
+					</Button>
 				</div>
 			</form>
 		</div>
