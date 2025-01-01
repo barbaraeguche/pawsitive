@@ -1,13 +1,13 @@
 'use client';
 import { useActionState } from 'react';
-import { PetRecordState } from '@/lib/definitions';
+import { PetInfoState } from '@/lib/definitions';
 import { rehomePet } from '@/lib/action';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
 import Headings from '@/components/headings';
 
 export default function Form() {
-	const initialState: PetRecordState = { values: {}, errors: {}, message: null };
+	const initialState: PetInfoState = { values: {}, errors: {}, message: null };
 	const [state, formAction, isPending] = useActionState(rehomePet, initialState);
 	
 	return (
@@ -177,16 +177,16 @@ export default function Form() {
 								<label htmlFor="cats" className="text-sm ml-2 cursor-pointer">Cats</label>
 							</div>
 							
-							{/* small kids */}
+							{/* kids */}
 							<div>
-								<input id="small kids"
+								<input id="kids"
 								       name="compatibility"
 								       type="checkbox"
-								       value="small kids"
+								       value="kids"
 								       className="size-3.5 cursor-pointer accent-celeste"
-								       defaultChecked={state.values?.compatibility?.includes('small kids')}
+								       defaultChecked={state.values?.compatibility?.includes('kids')}
 								/>
-								<label htmlFor="small kids" className="text-sm ml-2 cursor-pointer">Small kids</label>
+								<label htmlFor="kids" className="text-sm ml-2 cursor-pointer">Kids</label>
 							</div>
 						</div>
 						<div id="compatibility-error" aria-live="polite" aria-atomic="true">

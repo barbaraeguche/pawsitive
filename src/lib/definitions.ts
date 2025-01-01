@@ -5,25 +5,25 @@ export type User = {
 	password: string;
 };
 
-export type PetRecord = {
+export type PetInfo = {
 	id: string;
 	name: string;
 	type: 'cat' | 'dog';
 	breed: string;
 	gender: 'male' | 'female';
 	age: string;
-	compatibility: Array<'dogs' | 'cats' | 'small kids'>;
+	compatibility: Array<'dogs' | 'cats' | 'kids'>;
 	image: string;
 	comments: string;
 };
 
-export type AvailablePetsRecord = Partial<Omit<PetRecord, 'type' | 'gender' | 'compatibility'>> & {
+export type AvailablePetInfo = Partial<Omit<PetInfo, 'type' | 'gender' | 'compatibility'>> & {
 	type: string;
 	gender: string;
 	compatibility: string[];
 };
 
-export type PetRecordState = {
+export type PetInfoState = {
 	values?: { [key: string]: any };
 	errors?: {
 		name?: string[];
@@ -38,16 +38,11 @@ export type PetRecordState = {
 	message?: string | null;
 };
 
-export type Contact = {
-	email: string;
-	message: string;
-};
-
-export type ContactState = {
+export type UserState = {
 	errors?: {
-		name: string
-		email?: string;
-		message?: string;
+		name?: string[]
+		email?: string[];
+		password?: string[];
 	},
 	message?: string | null;
 };

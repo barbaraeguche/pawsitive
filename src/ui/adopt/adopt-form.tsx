@@ -97,8 +97,8 @@ export default function Form() {
 						<label htmlFor="age" className="mb-1 block text-sm">Pet Age</label>
 						<Input id="age"
 						       name="age"
-						       placeholder="e.g., 2yrs 3months or 15months"
 						       defaultValue={searchParams.get('age')?.toString()}
+						       placeholder="e.g., 5month(s) or 1yr or 2yr(s) 3month(s)"
 						       onChange={(e) => handleFilter('age', e.target.value)}
 						/>
 					</div>
@@ -131,16 +131,16 @@ export default function Form() {
 								<label htmlFor="cats" className="text-sm ml-2 cursor-pointer">Cats</label>
 							</div>
 							
-							{/* small kids */}
+							{/* kids */}
 							<div>
-								<input id="small kids"
+								<input id="kids"
 								       name="compatibility"
 								       type="checkbox"
-								       value="small kids"
+								       value="kids"
 								       onChange={(e) => handleFilter('compatibility', e.target.value, 'checkbox')}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
-								<label htmlFor="small kids" className="text-sm ml-2 cursor-pointer">Small kids</label>
+								<label htmlFor="kids" className="text-sm ml-2 cursor-pointer">Kids</label>
 							</div>
 						</div>
 					</fieldset>
