@@ -41,7 +41,7 @@ function StatsCards({ percent, target, title }: {
 }) {
 	return (
 		<span className="flex flex-col gap-y-4">
-			<h3 data-percentage={percent} data-target={target} className="counter text-6xl font-bold">
+			<h3 data-percentage={percent} data-target={target} className="counter text-5xl sm:text-6xl font-bold">
 				0
 			</h3>
 			{title}

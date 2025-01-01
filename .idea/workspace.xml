@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/queries.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/login-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/login/auth-separator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/login/signup-form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/available-pets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/available-pets.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/form-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/form-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/pet-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/pet-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/stats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/stats.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/login/login-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,11 +93,11 @@
       <recent name="$PROJECT_DIR$/src/app/care" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ui/login" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/ui" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/pets" />
-      <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -178,7 +177,7 @@
       <workItem from="1735270714965" duration="28541000" />
       <workItem from="1735353991435" duration="46873000" />
       <workItem from="1735624261560" duration="7890000" />
-      <workItem from="1735661754359" duration="15211000" />
+      <workItem from="1735661754359" duration="24844000" />
     </task>
     <servers />
   </component>
