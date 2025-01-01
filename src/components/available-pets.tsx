@@ -1,14 +1,14 @@
 'use client';
 import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
-import { AvailablePetsRecord, PetRecord } from '@/lib/definitions';
+import { AvailablePetInfo, PetInfo } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
 import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
 
-export default function AvailablePets({ type, breed, gender, age, compatibility }: AvailablePetsRecord) {
+export default function AvailablePets({ type, breed, gender, age, compatibility }: AvailablePetInfo) {
 	const [isLoading] = useState<boolean>(false);
-	const [filteredPets, setFilteredPets] = useState<AvailablePetsRecord[]>([{
+	const [filteredPets, setFilteredPets] = useState<AvailablePetInfo[]>([{
 		id: '', name: '', type: '', breed: '', gender: '', age: '', compatibility: [], image: '/cat.jpg', comments: ''
 	}]);
 	const { filterTrigger } = useAdoptContext();
@@ -22,7 +22,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Golden Retriever",
 				gender: "male",
 				age: "2 years",
-				compatibility: ["dogs", "cats", "small kids"],
+				compatibility: ["dogs", "cats", "kids"],
 				image: "/dog.jpg",
 				comments: "Loves to play fetch and is great with children.",
 			},
@@ -33,7 +33,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Persian",
 				gender: "female",
 				age: "3 years",
-				compatibility: ["cats", "small kids"],
+				compatibility: ["cats", "kids"],
 				image: "/cat.jpg",
 				comments: "Very calm and enjoys being groomed regularly.",
 			},
@@ -44,7 +44,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Bulldog",
 				gender: "male",
 				age: "4 years",
-				compatibility: ["dogs", "small kids"],
+				compatibility: ["dogs", "kids"],
 				image: "/dog.jpg",
 				comments: "Enjoys short walks and lounging indoors.",
 			},
@@ -55,7 +55,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Siamese",
 				gender: "female",
 				age: "1 year",
-				compatibility: ["cats", "small kids"],
+				compatibility: ["cats", "kids"],
 				image: "/cat.jpg",
 				comments: "Playful and very curious about her surroundings.",
 			},
@@ -77,7 +77,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Persian",
 				gender: "female",
 				age: "3 years",
-				compatibility: ["cats", "small kids"],
+				compatibility: ["cats", "kids"],
 				image: "/cat.jpg",
 				comments: "Very calm and enjoys being groomed regularly.",
 			},
@@ -88,7 +88,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Golden Retriever",
 				gender: "male",
 				age: "2 years",
-				compatibility: ["dogs", "cats", "small kids"],
+				compatibility: ["dogs", "cats", "kids"],
 				image: "/dog.jpg",
 				comments: "Loves to play fetch and is great with children.",
 			},
@@ -99,7 +99,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Persian",
 				gender: "female",
 				age: "3 years",
-				compatibility: ["cats", "small kids"],
+				compatibility: ["cats", "kids"],
 				image: "/cat.jpg",
 				comments: "Very calm and enjoys being groomed regularly.",
 			},
@@ -110,7 +110,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Bulldog",
 				gender: "male",
 				age: "4 years",
-				compatibility: ["dogs", "small kids"],
+				compatibility: ["dogs", "kids"],
 				image: "/dog.jpg",
 				comments: "Enjoys short walks and lounging indoors.",
 			},
@@ -121,7 +121,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 				breed: "Siamese",
 				gender: "female",
 				age: "1 year",
-				compatibility: ["cats", "small kids"],
+				compatibility: ["cats", "kids"],
 				image: "/cat.jpg",
 				comments: "Playful and very curious about her surroundings.",
 			},

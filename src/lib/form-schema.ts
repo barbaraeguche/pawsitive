@@ -12,7 +12,7 @@ const RehomeSchema = z.object({
 		);
 	}, { message: 'Format: Xmonth(s) or Xyr(s) or Xyr(s) Ymonth(s)' }),
 	compatibility: z.array(
-		z.enum(['dogs', 'cats', 'small kids']), { message: 'Please select at least one option' }
+		z.enum(['dogs', 'cats', 'kids']), { message: 'Please select at least one option' }
 	),
 	image: z.custom<File>((val) => {
 		return val instanceof File && ['image/jpeg', 'image/png'].includes(val.type) && val.size <= 5 * 1024 * 1024;

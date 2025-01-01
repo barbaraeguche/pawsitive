@@ -24,7 +24,8 @@ export default {
 				  80: 'rgba(59,31,21,0.6)'
 			  },
 			  celeste: { // for input accents
-				  DEFAULT: '#accbee'
+				  DEFAULT: '#ad5636'
+				  // c69f53 d86f4a a6b36b
 			  }
 		  },
 		  keyframes: {
