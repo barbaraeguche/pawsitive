@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { AuthError } from 'next-auth';
 import { signIn } from '../../auth';
 import bcrypt from 'bcryptjs';
-import { imageToBase64 } from '@/lib/utils';
+import { imageToBase64, normalizeText } from '@/lib/utils';
 import { prismaCreateUser, prismaRehomePet } from '@/lib/data';
 import { ObjectValuesType, PetInfoState, UserLoginState, UserRegisterState } from '@/lib/definitions';
 import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
@@ -37,7 +37,7 @@ export async function rehomePet(_prevState: PetInfoState, formData: FormData) {
 	
 	// insert into database
 	try {
-		await prismaRehomePet({ name, breed, age, comments }, type, gender, compatibility, binaryImage);
+		await prismaRehomePet(normalizeText(name), type, normalizeText(breed), gender, { age, comments }, compatibility, binaryImage);
 	} catch (_) {
 		return { message: 'Database error. Failed to rehome pet.' };
 	}
@@ -107,7 +107,7 @@ export async function createUser(_prevState: UserRegisterState, formData: FormDa
 	
 	// insert into database
 	try {
-		await prismaCreateUser({ name, email }, hashedPassword);
+		await prismaCreateUser(normalizeText(name), normalizeText(email), hashedPassword);
 	} catch (err) {
 		return { message: 'Database error. Failed to create user.' };
 	}

@@ -21,12 +21,6 @@ export type PetInfo = {
 	comments: string;
 };
 
-export type AvailablePetInfo = Partial<Omit<PetInfo, 'type' | 'gender' | 'compatibility'>> & {
-	type: string;
-	gender: string;
-	compatibility: string[];
-};
-
 export type PetInfoState = {
 	values?: ObjectValuesType;
 	errors?: {

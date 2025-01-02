@@ -1,15 +1,23 @@
 'use server';
 import { prisma } from '../../prisma/queries';
-import { User, PetInfo } from './definitions';
+import { PetInfo } from './definitions';
 
 // prisma - find a user by their email
 export const getUserByEmail = async (email: string) => {
-	return prisma.user.findUnique({ where: { email } });
+	return prisma.user.findFirst({
+		where: {
+			email: {
+				equals: email,
+				mode: 'insensitive'
+			}
+		}
+	});
 };
 
 // prisma - create a new user
 export const prismaCreateUser = async (
-	{ name, email }: Partial<User>,
+	name: string,
+	email: string,
 	password: string
 ) => {
 	await prisma.user.create({
@@ -23,9 +31,11 @@ export const prismaCreateUser = async (
 
 // prisma - add a new pet to both databases using transaction for atomicity
 export const prismaRehomePet = async (
-	{ name, breed, age, comments }: Partial<PetInfo>,
+	name: string,
 	type: PetInfo['type'],
+	breed: string,
 	gender: PetInfo['gender'],
+	{ age, comments }: Partial<PetInfo>,
 	compatibility: PetInfo['compatibility'],
 	image: string
 ) => {
