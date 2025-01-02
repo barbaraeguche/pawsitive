@@ -11,7 +11,7 @@ export default async function AdoptPage(props: {
 		breed?: string,
 		gender?: string,
 		age?: string,
-		compatibility?: string[]
+		compatibility?: Array<'dogs' | 'cats' | 'kids'>
 	}>
 }) {
 	const searchParams = await props.searchParams;

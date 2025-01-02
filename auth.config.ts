@@ -14,7 +14,6 @@ export const authConfig = {
 	callbacks: {
 		authorized({ auth, request: { nextUrl }}) {
 			const isLoggedIn = !!auth?.user;
-			console.log(isLoggedIn);
 			
 			const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
 			const isAuthRoute = authRoutes.includes(nextUrl.pathname);

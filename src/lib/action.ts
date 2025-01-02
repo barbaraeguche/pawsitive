@@ -3,39 +3,48 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { AuthError } from 'next-auth';
 import { signIn } from '../../auth';
+import bcrypt from 'bcryptjs';
+import { prismaCreateUser, prismaRehomePet } from '@/lib/data';
 import { ObjectValuesType, PetInfoState, UserLoginState, UserRegisterState } from '@/lib/definitions';
 import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
-import {prisma} from '../../prisma/queries';
-import bcrypt from 'bcryptjs';
 
+/**
+ * this function rehomes a pet submitted by the user.
+ * @param _prevState the previous state of the pet information.
+ * @param formData the form data containing the pet details.
+ * @return either a zod validation or database error.
+ */
 export async function rehomePet(_prevState: PetInfoState, formData: FormData) {
 	const formDataObject: ObjectValuesType = {};
-	
 	// transform the compatibility field into an array
 	for (const [key, value] of formData.entries()) {
 		formDataObject[key] = key === 'compatibility' ? formData.getAll(key) : value
 	}
 	
-	// validate fields using zod
 	const validatedFields = RehomePet.safeParse(formDataObject);
-	
 	// if form validation fails, return errors, otherwise continue
 	if (!validatedFields.success) {
 		return {
 			values: formDataObject,
 			errors: validatedFields.error.flatten().fieldErrors,
-			message: 'Missing fields. Failed to rehome pet.'
 		};
 	}
 	
-	// prepare data for insertion
-	// const { name, type, breed, gender, age, compatibility, image, comments } = validatedFields.data;
+	const { name, type, breed, gender, age, compatibility, image, comments } = validatedFields.data;
+	// convert image to binary
+	let binaryImage: string = '';
+	if (image instanceof File) {
+		const arrayBuffer = await image.arrayBuffer();
+		binaryImage = Buffer.from(arrayBuffer).toString('base64');
+	}
+	
+	// const binaryImage = Buffer.from(await image.arrayBuffer()).toString('base64');
 	
 	// insert into database
 	try {
-	
+		await prismaRehomePet({ name, breed, age, comments }, type, gender, compatibility, binaryImage);
 	} catch (_) {
-		return { message: 'Database error: failed to rehome pet.' };
+		return { message: 'Database error. Failed to rehome pet.' };
 	}
 	
 	// revalidate the cache for the rehome page, and redirect the user
@@ -43,72 +52,71 @@ export async function rehomePet(_prevState: PetInfoState, formData: FormData) {
 	redirect('/account/rehomed');
 }
 
+/**
+ * this function handles user login by validating credentials and attempting to authenticate the user.
+ * @param _prevState the previous state of the user's login information.
+ * @param formData the form data containing the user's details.
+ * @return either a zod validation or database error.
+ */
 export async function loginUser(_prevState: UserLoginState, formData: FormData)  {
 	const formDataObject: ObjectValuesType = Object.fromEntries(formData.entries());
-	
-	// validate fields using zod
 	const validatedFields = LoginSchema.safeParse(formDataObject);
 	
 	// if form validation fails, return errors, otherwise continue
 	if (!validatedFields.success) {
 		return {
 			values: formDataObject,
-			errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing fields. Failed to log in.'
+			errors: validatedFields.error.flatten().fieldErrors
 		};
 	}
 	
-	// log in user
+	// authenticate user
 	try {
 		await signIn('credentials', {
-			...validatedFields.data,
-			redirectTo: '/account'
+			...validatedFields.data
 		})
 	} catch (err) {
 		if (err instanceof AuthError) {
 			switch (err.type) {
-				case 'CredentialsSignin': return { message: 'Invalid credentials' }
+				case 'CredentialsSignin': return { message: 'Invalid credentials.' }
 				default: return { message: 'Something went wrong.' }
 			}
 		}
 		throw err;
 	}
 	
-	return {
-		message: 'Email sent',
-	};
+	return { message: null };
 }
 
+/**
+ * this function handles user registration by validating credentials, hashing passwords, and inserting the user's details into the database.
+ * @param _prevState the previous state of the user's registration information.
+ * @param formData the form data containing the user's details.
+ * @return either a zod validation or database error.
+ */
 export async function createUser(_prevState: UserRegisterState, formData: FormData)  {
 	const formDataObject: ObjectValuesType = Object.fromEntries(formData.entries());
-	
-	// validate fields using zod
-	const validatedFields = RegisterSchema.safeParse(Object.fromEntries(formData.entries()));
+	const validatedFields = RegisterSchema.safeParse(formDataObject);
 	
 	// if form validation fails, return errors, otherwise continue
 	if (!validatedFields.success) {
 		return {
 			values: formDataObject,
-			errors: validatedFields.error.flatten().fieldErrors,
-			message: 'Invalid Fields',
+			errors: validatedFields.error.flatten().fieldErrors
 		};
 	}
 	
-	const hash = await bcrypt.hash(validatedFields.data.password, 10)
+	const { name, email, password } = validatedFields.data;
+	// hash password
+	const hashedPassword = await bcrypt.hash(password, 10);
 	
-	// log in user
+	// insert into database
 	try {
-		await prisma.user.create({
-			data: {
-				...validatedFields.data,
-				password: hash
-			}
-		})
+		await prismaCreateUser({ name, email }, hashedPassword);
 	} catch (err) {
-		throw err;
+		return { message: 'Database error. Failed to create user.' };
 	}
 	
-	return {
-		message: 'Email sent',
-	};
-} //greg123
+	// redirect the user back to the login page
+	redirect('/login');
+}

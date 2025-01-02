@@ -6,6 +6,7 @@ import { UserRegisterState } from '@/lib/definitions';
 import { createUser } from '@/lib/action';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
+import FormError from '@/ui/form-error';
 import AuthSeparator from '@/ui/auth/separator';
 
 export default function SignUpForm() {
@@ -36,12 +37,13 @@ export default function SignUpForm() {
 					<div className="space-y-4">
 						{/* name */}
 						<div>
-							<label htmlFor="name" className="mb-1 block text-sm">Full Name</label>
+							<label htmlFor="name" className="mb-1 block text-sm">Name</label>
 							<Input id="name"
 							       name="name"
+							       disabled={isPending}
 							       aria-describedby="name-error"
 							       defaultValue={state.values?.name}
-							       placeholder="Enter your full name"
+							       placeholder="Enter your name"
 							/>
 							<div id="name-error" aria-live="polite" aria-atomic="true">
 								{state.errors?.name?.map((error: string) => (
@@ -58,6 +60,7 @@ export default function SignUpForm() {
 							<Input id="email"
 							       name="email"
 							       type="email"
+							       disabled={isPending}
 							       aria-describedby="email-error"
 							       defaultValue={state.values?.email}
 							       placeholder="Enter your email address"
@@ -80,6 +83,7 @@ export default function SignUpForm() {
 								       type={`${isPasswordVisible ? 'text' : 'password'}`}
 								       className="pr-10"
 								       placeholder="******"
+								       disabled={isPending}
 								       aria-describedby="password-error"
 								       defaultValue={state.values?.password}
 								/>
@@ -97,6 +101,11 @@ export default function SignUpForm() {
 									</p>
 								))}
 							</div>
+						</div>
+						
+						{/* database error if any */}
+						<div aria-description="db-error" aria-live="polite" aria-atomic="true">
+							<FormError message={state.message}/>
 						</div>
 						
 						{/* submit button */}

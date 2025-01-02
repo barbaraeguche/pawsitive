@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { capitalizeFirstLetter } from '@/lib/utils';
-import { PetInfo, AvailablePetInfo } from '@/lib/definitions';
+import { PetInfo } from '@/lib/definitions';
 import AdoptButton from '@/ui/adopt/adopt-button';
 
 export default function PetCard({ pets, isAdopting }: {
-	pets: PetInfo[] | AvailablePetInfo[],
+	pets: PetInfo[],
 	isAdopting?: boolean
 }) {
 	return (
@@ -17,18 +17,18 @@ export default function PetCard({ pets, isAdopting }: {
 						     className="relative border border-brown-80 rounded-lg flex flex-col shadow-xl shadow-brown-80/15 bg-dough/35"
 						>
 							<div className="relative h-[220px]">
-								<Image src={pet.image!} alt={pet.image!} fill className="rounded-t-md"/>
+								<Image src={pet.image} alt={pet.image} fill className="rounded-t-md"/>
 							</div>
 							<div className="p-2 my-1.5 text-center break-words">
-								<AdjustTextSize name="Name: " value={pet.name!}/>
+								<AdjustTextSize name="Name: " value={pet.name}/>
 								<AdjustTextSize name="Type: " value={pet.type}/>
-								<AdjustTextSize name="Breed: " value={pet.breed!}/>
+								<AdjustTextSize name="Breed: " value={pet.breed}/>
 								<AdjustTextSize name="Gender: " value={pet.gender}/>
-								<AdjustTextSize name="Age: " value={pet.age!}/>
+								<AdjustTextSize name="Age: " value={pet.age}/>
 								<AdjustTextSize name="Compatibility: " value={pet.compatibility.join(', ')}/>
 								<p className="mt-2 flex flex-col">
 									<span className="underline text-[15px]">Comments</span>
-									<span className="text-justify px-3 text-sm">{capitalizeFirstLetter(pet.comments!)}</span>
+									<span className="text-justify px-3 text-sm">{capitalizeFirstLetter(pet.comments)}</span>
 								</p>
 							</div>
 							{isAdopting && <AdoptButton />}
@@ -45,16 +45,16 @@ export default function PetCard({ pets, isAdopting }: {
 						     className="relative border border-brown-80 rounded-md flex gap-x-4 shadow-xl shadow-brown-80/15 bg-dough/35"
 						>
 							<div className="relative size-[190px]">
-								<Image src={pet.image!} alt={pet.image!} fill className="rounded-tl-md rounded-bl-md"/>
+								<Image src={pet.image} alt={pet.image} fill className="rounded-tl-md rounded-bl-md"/>
 							</div>
 							<div className="py-2 mr-4 my-auto text-justify break-words">
-								<AdjustTextSize name="Name: " value={pet.name!}/>
+								<AdjustTextSize name="Name: " value={pet.name}/>
 								<AdjustTextSize name="Type: " value={pet.type}/>
-								<AdjustTextSize name="Breed: " value={pet.breed!}/>
+								<AdjustTextSize name="Breed: " value={pet.breed}/>
 								<AdjustTextSize name="Gender: " value={pet.gender}/>
-								<AdjustTextSize name="Age: " value={pet.age!}/>
+								<AdjustTextSize name="Age: " value={pet.age}/>
 								<AdjustTextSize name="Compatibility: " value={pet.compatibility.join(', ')}/>
-								<AdjustTextSize name="Comments: " value={pet.comments!}/>
+								<AdjustTextSize name="Comments: " value={pet.comments}/>
 							</div>
 							{isAdopting && <AdoptButton />}
 						</div>

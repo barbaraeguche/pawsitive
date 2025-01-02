@@ -10,7 +10,9 @@ export default function Sidenav() {
 			<div className="hidden md:block rounded-md grow w-full bg-gray-50"/>
 			<form action={async () => {
 				'use server';
-				await signOut();
+				await signOut({
+					redirectTo: '/'
+				});
 			}}>
 				<Button type="submit"
 				        intent="danger"
