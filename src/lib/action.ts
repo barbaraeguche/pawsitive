@@ -38,7 +38,8 @@ export async function rehomePet(_prevState: PetInfoState, formData: FormData) {
 	// insert into database
 	try {
 		await prismaRehomePet(normalizeText(name), type, normalizeText(breed), gender, { age, comments }, compatibility, binaryImage);
-	} catch (_err) {
+	} catch (err) {
+		console.error(err);
 		return { message: 'Database error. Failed to rehome pet.' };
 	}
 	
@@ -74,7 +75,10 @@ export async function loginUser(_prevState: UserLoginState, formData: FormData) 
 		if (err instanceof AuthError) {
 			switch (err.type) {
 				case 'CredentialsSignin': return { message: 'Invalid credentials.' }
-				default: return { message: 'Something went wrong.' }
+				default: {
+					console.error(err);
+					return { message: 'Something went wrong.' }
+				}
 			}
 		}
 		throw err;
@@ -108,7 +112,8 @@ export async function createUser(_prevState: UserRegisterState, formData: FormDa
 	// insert into database
 	try {
 		await prismaCreateUser(normalizeText(name), normalizeText(email), hashedPassword);
-	} catch (_err) {
+	} catch (err) {
+		console.error(err);
 		return { message: 'Database error. Failed to create user.' };
 	}
 	

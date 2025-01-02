@@ -29,28 +29,28 @@ export default async function CarePage() {
 		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
 			{JSON.stringify(session)}
 			
-			{/*<Headings title="Pet Wellness Handbook"/>*/}
+			<Headings title="Pet Wellness Handbook"/>
 			
-			{/*<Tabs defaultValue="cats" className="px-2">*/}
-			{/*	<TabsList className="w-full mb-4">*/}
-			{/*		<TabsTrigger value="cats" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Cats</TabsTrigger>*/}
-			{/*		<TabsTrigger value="dogs" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Dogs</TabsTrigger>*/}
-			{/*	</TabsList>*/}
-			{/*	*/}
-			{/*	<TabsContent value="cats">*/}
-			{/*		<CardWrapper array={catCare}/>*/}
-			{/*	</TabsContent>*/}
-			{/*	*/}
-			{/*	<TabsContent value="dogs">*/}
-			{/*		<CardWrapper array={dogCare}/>*/}
-			{/*	</TabsContent>*/}
-			{/*</Tabs>*/}
+			<Tabs defaultValue="cats" className="px-2">
+				<TabsList className="w-full mb-4">
+					<TabsTrigger value="cats" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Cats</TabsTrigger>
+					<TabsTrigger value="dogs" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Dogs</TabsTrigger>
+				</TabsList>
+				
+				<TabsContent value="cats">
+					<CardWrapper array={catCare}/>
+				</TabsContent>
+				
+				<TabsContent value="dogs">
+					<CardWrapper array={dogCare}/>
+				</TabsContent>
+			</Tabs>
 			
-			{/*<p className="italic px-2 text-justify">*/}
-			{/*	<b>Final Note: {' '}</b>*/}
-			{/*	Loving care, regular attention, and understanding their needs will help your pets thrive.*/}
-			{/*	Remember, every pet is unique and may have individual preferences or requirements.*/}
-			{/*</p>*/}
+			<p className="italic px-2 text-justify">
+				<b>Final Note: {' '}</b>
+				Loving care, regular attention, and understanding their needs will help your pets thrive.
+				Remember, every pet is unique and may have individual preferences or requirements.
+			</p>
 		</div>
 	);
 }
