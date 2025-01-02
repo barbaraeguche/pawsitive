@@ -1,5 +1,5 @@
 export type ObjectValuesType = {
-	[key: string]: unknown
+	[key: string]: any
 };
 
 // export type User = {
