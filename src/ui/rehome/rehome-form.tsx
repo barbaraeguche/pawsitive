@@ -4,6 +4,7 @@ import { PetInfoState } from '@/lib/definitions';
 import { rehomePet } from '@/lib/action';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
+import FormError from '@/ui/form-error';
 import Headings from '@/components/headings';
 
 export default function Form() {
@@ -14,12 +15,14 @@ export default function Form() {
 		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
 			<Headings title="Rehome Your Beloved Pet"/>
 			<form action={formAction}>
-				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
+				<div
+					className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet name */}
 					<div>
 						<label htmlFor="name" className="mb-1 block text-sm">Pet Name</label>
 						<Input id="name"
 						       name="name"
+						       disabled={isPending}
 						       aria-describedby="name-error"
 						       defaultValue={state.values?.name}
 						       placeholder="Enter your pet's name"
@@ -45,6 +48,7 @@ export default function Form() {
 								       name="type"
 								       type="radio"
 								       value="cat"
+								       disabled={isPending}
 								       defaultChecked={state.values?.type === 'cat'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
@@ -57,6 +61,7 @@ export default function Form() {
 								       name="type"
 								       type="radio"
 								       value="dog"
+								       disabled={isPending}
 								       defaultChecked={state.values?.type === 'dog'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
@@ -77,6 +82,7 @@ export default function Form() {
 						<label htmlFor="breed" className="mb-1 block text-sm">Pet Breed</label>
 						<Input id="breed"
 						       name="breed"
+						       disabled={isPending}
 						       aria-describedby="breed-error"
 						       defaultValue={state.values?.breed}
 						       placeholder="Enter your pet's breed"
@@ -102,6 +108,7 @@ export default function Form() {
 								       name="gender"
 								       type="radio"
 								       value="male"
+								       disabled={isPending}
 								       defaultChecked={state.values?.gender === 'male'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
@@ -114,6 +121,7 @@ export default function Form() {
 								       name="gender"
 								       type="radio"
 								       value="female"
+								       disabled={isPending}
 								       defaultChecked={state.values?.gender === 'female'}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								/>
@@ -134,6 +142,7 @@ export default function Form() {
 						<label htmlFor="age" className="mb-1 block text-sm">Pet Age</label>
 						<Input id="age"
 						       name="age"
+						       disabled={isPending}
 						       aria-describedby="age-error"
 						       defaultValue={state.values?.age}
 						       placeholder="e.g., 5month(s) or 1yr or 2yr(s) 3month(s)"
@@ -159,6 +168,7 @@ export default function Form() {
 								       name="compatibility"
 								       type="checkbox"
 								       value="dogs"
+								       disabled={isPending}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								       defaultChecked={state.values?.compatibility?.includes('dogs')}
 								/>
@@ -171,6 +181,7 @@ export default function Form() {
 								       name="compatibility"
 								       type="checkbox"
 								       value="cats"
+								       disabled={isPending}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								       defaultChecked={state.values?.compatibility?.includes('cats')}
 								/>
@@ -183,6 +194,7 @@ export default function Form() {
 								       name="compatibility"
 								       type="checkbox"
 								       value="kids"
+								       disabled={isPending}
 								       className="size-3.5 cursor-pointer accent-celeste"
 								       defaultChecked={state.values?.compatibility?.includes('kids')}
 								/>
@@ -205,6 +217,7 @@ export default function Form() {
 							<Input id="image"
 							       name="image"
 							       type="file"
+							       disabled={isPending}
 							       aria-describedby="image-error"
 							       accept="image/jpeg, image/png"
 							       className="hidden"
@@ -230,6 +243,7 @@ export default function Form() {
 						<label htmlFor="comments" className="mb-1 block text-sm">Comments</label>
 						<textarea id="comments"
 						          name="comments"
+						          disabled={isPending}
 						          aria-describedby="comments-error"
 						          rows={4} cols={30} maxLength={170}
 						          defaultValue={state.values?.comments}
@@ -243,6 +257,11 @@ export default function Form() {
 								</p>
 							))}
 						</div>
+					</div>
+					
+					{/* database error if any */}
+					<div aria-description="db-error" aria-live="polite" aria-atomic="true">
+						<FormError message={state.message}/>
 					</div>
 					
 					{/* buttons */}

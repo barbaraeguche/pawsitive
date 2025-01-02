@@ -54,7 +54,7 @@ export default function Form() {
 						<Input id="breed"
 						       name="breed"
 						       placeholder="Enter your pet's breed"
-						       defaultValue={searchParams.get('breed')?.toString()}
+						       defaultValue={searchParams?.get('breed')?.toString()}
 						       onChange={(e) => handleFilter('breed', e.target.value)}
 						/>
 					</div>
@@ -97,7 +97,7 @@ export default function Form() {
 						<label htmlFor="age" className="mb-1 block text-sm">Pet Age</label>
 						<Input id="age"
 						       name="age"
-						       defaultValue={searchParams.get('age')?.toString()}
+						       defaultValue={searchParams?.get('age')?.toString()}
 						       placeholder="e.g., 5month(s) or 1yr or 2yr(s) 3month(s)"
 						       onChange={(e) => handleFilter('age', e.target.value)}
 						/>

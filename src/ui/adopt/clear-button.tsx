@@ -7,7 +7,7 @@ export default function ClearButton({ selector }: {
 	selector: string;
 }) {
 	const { replace, pathname, searchParams } = useNavigationParams();
-	const params = new URLSearchParams(searchParams);
+	const params = new URLSearchParams(searchParams!);
 	const firstIndex = selector.indexOf("'") + 1;
 	const toDelete = selector.substring(firstIndex, selector.indexOf("'", firstIndex));
 	

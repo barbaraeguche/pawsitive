@@ -1,142 +1,49 @@
 'use client';
 import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
-import { AvailablePetInfo, PetInfo } from '@/lib/definitions';
+import { prismaGetAvailablePets } from '@/lib/data';
+import { PetInfo } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
 import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
 
-export default function AvailablePets({ type, breed, gender, age, compatibility }: AvailablePetInfo) {
-	const [isLoading] = useState<boolean>(false);
-	const [filteredPets, setFilteredPets] = useState<AvailablePetInfo[]>([{
-		id: '', name: '', type: '', breed: '', gender: '', age: '', compatibility: [], image: '/cat.jpg', comments: ''
-	}]);
+export default function AvailablePets({ type, breed, gender, age, compatibility }: {
+	type: string,
+	breed: string,
+	gender: string,
+	age: string,
+	compatibility: PetInfo['compatibility']
+}) {
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [allPets, setAllPets] = useState<PetInfo[]>([]);
+	const [filteredPets, setFilteredPets] = useState<PetInfo[]>([]);
 	const { filterTrigger } = useAdoptContext();
 	
+	// rather than ping the db on every update, fetch once and filter
 	useEffect(() => {
-		const pets = [
-			{
-				id: "1",
-				name: 'Tom',
-				type: "dog",
-				breed: "Golden Retriever",
-				gender: "male",
-				age: "2 years",
-				compatibility: ["dogs", "cats", "kids"],
-				image: "/dog.jpg",
-				comments: "Loves to play fetch and is great with children.",
-			},
-			{
-				id: "2",
-				name: 'Angela',
-				type: "cat",
-				breed: "Persian",
-				gender: "female",
-				age: "3 years",
-				compatibility: ["cats", "kids"],
-				image: "/cat.jpg",
-				comments: "Very calm and enjoys being groomed regularly.",
-			},
-			{
-				id: "3",
-				name: 'Tom',
-				type: "dog",
-				breed: "Bulldog",
-				gender: "male",
-				age: "4 years",
-				compatibility: ["dogs", "kids"],
-				image: "/dog.jpg",
-				comments: "Enjoys short walks and lounging indoors.",
-			},
-			{
-				id: "4",
-				name: 'Angela',
-				type: "cat",
-				breed: "Siamese",
-				gender: "female",
-				age: "1 year",
-				compatibility: ["cats", "kids"],
-				image: "/cat.jpg",
-				comments: "Playful and very curious about her surroundings.",
-			},
-			{
-				id: "5",
-				name: 'Tom',
-				type: "dog",
-				breed: "Beagle",
-				gender: "male",
-				age: "5 years",
-				compatibility: ["dogs"],
-				image: "/dog.jpg",
-				comments: "Energetic and loves outdoor activities.",
-			},
-			{
-				id: "6",
-				name: 'Angela',
-				type: "cat",
-				breed: "Persian",
-				gender: "female",
-				age: "3 years",
-				compatibility: ["cats", "kids"],
-				image: "/cat.jpg",
-				comments: "Very calm and enjoys being groomed regularly.",
-			},
-			{
-				id: "7",
-				name: 'Tom',
-				type: "dog",
-				breed: "Golden Retriever",
-				gender: "male",
-				age: "2 years",
-				compatibility: ["dogs", "cats", "kids"],
-				image: "/dog.jpg",
-				comments: "Loves to play fetch and is great with children.",
-			},
-			{
-				id: "8",
-				name: 'Angela',
-				type: "cat",
-				breed: "Persian",
-				gender: "female",
-				age: "3 years",
-				compatibility: ["cats", "kids"],
-				image: "/cat.jpg",
-				comments: "Very calm and enjoys being groomed regularly.",
-			},
-			{
-				id: "9",
-				name: 'Tom',
-				type: "dog",
-				breed: "Bulldog",
-				gender: "male",
-				age: "4 years",
-				compatibility: ["dogs", "kids"],
-				image: "/dog.jpg",
-				comments: "Enjoys short walks and lounging indoors.",
-			},
-			{
-				id: "10",
-				name: 'Angela',
-				type: "cat",
-				breed: "Siamese",
-				gender: "female",
-				age: "1 year",
-				compatibility: ["cats", "kids"],
-				image: "/cat.jpg",
-				comments: "Playful and very curious about her surroundings.",
-			},
-		];
-
-		setFilteredPets(pets.filter((pet) => {
+		const loadAvailablePets = async () => {
+			setIsLoading(true); // start loading
+			
+			try {
+				setAllPets(await prismaGetAvailablePets());
+			} finally {
+				setIsLoading(false); // stop loading once fetched
+			}
+		};
+		
+		loadAvailablePets();
+	}, [filterTrigger]);
+	useEffect(() => {
+		setFilteredPets(allPets.filter((pet) => {
 			return (
 				(!type || pet.type === type) &&
-				(!breed || pet.breed.includes(breed.toLowerCase())) &&
-				(!gender || pet.gender === gender) &&
-				(!age || pet.age.includes(age.toLowerCase())) &&
-				(!compatibility.length || compatibility.every((compat) => pet.compatibility.includes(compat)))
+        (!breed || pet.breed === breed) &&
+        (!gender || pet.gender === gender) &&
+        (!age || pet.age === age) &&
+				(!compatibility || compatibility.every((comp) => pet.compatibility.includes(comp)))
 			);
 		}));
-	}, [filterTrigger, type, breed, gender, age, compatibility]);
+	}, [allPets, type, breed, gender, age, compatibility]);
 	
 	return (
 		<Fragment>

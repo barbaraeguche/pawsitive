@@ -6,8 +6,8 @@ import { UserLoginState } from '@/lib/definitions';
 import { loginUser } from '@/lib/action';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
+import FormError from '@/ui/form-error';
 import AuthSeparator from '@/ui/auth/separator';
-import FormError from '@/ui/auth/form-error';
 
 export default function LoginForm() {
 	const initialState: UserLoginState = { values: {}, errors: {}, message: null };
@@ -41,6 +41,7 @@ export default function LoginForm() {
 							<Input id="email"
 							       name="email"
 							       type="email"
+							       disabled={isPending}
 							       aria-describedby="email-error"
 							       defaultValue={state.values?.email}
 							       placeholder="Enter your email address"
@@ -63,6 +64,7 @@ export default function LoginForm() {
 								       type={`${isPasswordVisible ? 'text' : 'password'}`}
 								       className="pr-10"
 								       placeholder="******"
+								       disabled={isPending}
 								       aria-describedby="password-error"
 								       defaultValue={state.values?.password}
 								/>
@@ -82,7 +84,10 @@ export default function LoginForm() {
 							</div>
 						</div>
 						
-						<FormError message="Invalid credentials!"/>
+						{/* database error if any */}
+						<div aria-description="db-error" aria-live="polite" aria-atomic="true">
+							<FormError message={state.message}/>
+						</div>
 						
 						{/* submit button */}
 						<Button type="submit"

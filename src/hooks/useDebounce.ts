@@ -6,7 +6,7 @@ export const useDebounce = () => {
 	const { replace, pathname, searchParams } = useNavigationParams();
 	
 	const handleFilter = useDebouncedCallback((name: string, value: string, type?: string) => {
-		const params = new URLSearchParams(searchParams);
+		const params = new URLSearchParams(searchParams!);
 		
 		if (type === 'checkbox') {
 			params.has(name, value) ? params.delete(name, value) : params.append(name, value);
