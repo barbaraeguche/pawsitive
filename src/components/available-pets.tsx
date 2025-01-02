@@ -60,7 +60,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			) : (
 				filteredPets.length === 0 ? (
 					<div className="flex justify-center">
-						<span className="!mt-16 toRow:!mt-36 text-base">No matching pets available</span>
+						<span className="!mt-16 toGrid:!mt-36 text-base">No matching pets available</span>
 					</div>
 				) : (
 					<PetCard pets={filteredPets} isAdopting={true}/>

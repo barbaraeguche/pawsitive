@@ -33,7 +33,7 @@ function PetCardDesktopSkeleton({ isAdopting }: {
 				<div className="h-2 w-3/5 rounded-md bg-brown-80/30"/>
 				<div className="h-2 w-2/5 rounded-md bg-brown-80/30"/>
 				<div className="h-2 w-4/5 rounded-md bg-brown-80/30"/>
-				<div className="h-12 w-full rounded-md bg-brown-80/20"/>
+				<div className="h-8 w-full rounded-md bg-brown-80/20"/>
 			</div>
 			{isAdopting && <AdoptButtonSkeleton/>}
 		</div>

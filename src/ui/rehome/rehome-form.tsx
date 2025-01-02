@@ -245,9 +245,9 @@ export default function Form() {
 						          name="comments"
 						          disabled={isPending}
 						          aria-describedby="comments-error"
-						          rows={4} cols={30} maxLength={170}
+						          rows={4} cols={30} maxLength={150}
 						          defaultValue={state.values?.comments}
-						          placeholder="Tell us more about your pet, max 170 words"
+						          placeholder="Tell us more about your pet, max 150 words"
 						          className="align-top resize-none w-full rounded-md p-2 border border-brown-80 text-sm placeholder:text-gray-500 focus:placeholder:text-gray-400 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-brown transition-colors"
 						/>
 						<div id="comments-error" aria-live="polite" aria-atomic="true">

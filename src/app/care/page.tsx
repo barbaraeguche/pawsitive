@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/shadcn/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/ui/shadcn/card";
 import Headings from '@/components/headings';
+import { auth } from '../../../auth';
 
 export const metadata: Metadata = { title: 'Pet Care' };
 
@@ -21,31 +22,35 @@ const dogCare = [
 	{ title: 'Training and Behavior', content: 'Reinforce good behavior with rewards, establish a routine for trust, and use crates for training and safety.' }
 ];
 
-export default function CarePage() {
+export default async function CarePage() {
+	const session = await auth();
+	
 	return (
 		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
-			<Headings title="Pet Wellness Handbook"/>
+			{JSON.stringify(session)}
 			
-			<Tabs defaultValue="cats" className="px-2">
-				<TabsList className="w-full mb-4">
-					<TabsTrigger value="cats" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Cats</TabsTrigger>
-					<TabsTrigger value="dogs" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Dogs</TabsTrigger>
-				</TabsList>
-				
-				<TabsContent value="cats">
-					<CardWrapper array={catCare}/>
-				</TabsContent>
-				
-				<TabsContent value="dogs">
-					<CardWrapper array={dogCare}/>
-				</TabsContent>
-			</Tabs>
+			{/*<Headings title="Pet Wellness Handbook"/>*/}
 			
-			<p className="italic px-2 text-justify">
-				<b>Final Note: {' '}</b>
-				Loving care, regular attention, and understanding their needs will help your pets thrive.
-				Remember, every pet is unique and may have individual preferences or requirements.
-			</p>
+			{/*<Tabs defaultValue="cats" className="px-2">*/}
+			{/*	<TabsList className="w-full mb-4">*/}
+			{/*		<TabsTrigger value="cats" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Cats</TabsTrigger>*/}
+			{/*		<TabsTrigger value="dogs" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Dogs</TabsTrigger>*/}
+			{/*	</TabsList>*/}
+			{/*	*/}
+			{/*	<TabsContent value="cats">*/}
+			{/*		<CardWrapper array={catCare}/>*/}
+			{/*	</TabsContent>*/}
+			{/*	*/}
+			{/*	<TabsContent value="dogs">*/}
+			{/*		<CardWrapper array={dogCare}/>*/}
+			{/*	</TabsContent>*/}
+			{/*</Tabs>*/}
+			
+			{/*<p className="italic px-2 text-justify">*/}
+			{/*	<b>Final Note: {' '}</b>*/}
+			{/*	Loving care, regular attention, and understanding their needs will help your pets thrive.*/}
+			{/*	Remember, every pet is unique and may have individual preferences or requirements.*/}
+			{/*</p>*/}
 		</div>
 	);
 }
