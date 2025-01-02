@@ -2,12 +2,12 @@ export type ObjectValuesType = {
 	[key: string]: any
 };
 
-export type User = {
-	id: string;
-	name: string;
-	email: string;
-	password: string;
-};
+// export type User = {
+// 	id: string;
+// 	name: string;
+// 	email: string;
+// 	password: string;
+// };
 
 export type PetInfo = {
 	id: string;

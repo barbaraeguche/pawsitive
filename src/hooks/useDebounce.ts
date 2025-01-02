@@ -9,9 +9,11 @@ export const useDebounce = () => {
 		const params = new URLSearchParams(searchParams!);
 		
 		if (type === 'checkbox') {
-			params.has(name, value) ? params.delete(name, value) : params.append(name, value);
+			if (params.has(name, value)) params.delete(name, value)
+			else params.append(name, value);
 		} else {
-			value ? params.set(name, value) : params.delete(name);
+			if (value) params.set(name, value)
+			else params.delete(name);
 		}
 		
 		replace(`${pathname}?${params.toString()}`);
