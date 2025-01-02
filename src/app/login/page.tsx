@@ -1,11 +1,7 @@
-import LoginForm from '@/ui/login/login-form';
-import SignUpForm from '@/ui/login/signup-form';
+import LoginForm from '@/ui/auth/login-form';
 
-export default function AuthPage() {
+export default function LoginPage() {
 	return (
-		<>
-			<LoginForm/>
-      <SignUpForm/>
-		</>
+		<LoginForm/>
 	);
 }

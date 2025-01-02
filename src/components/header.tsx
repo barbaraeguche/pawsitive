@@ -5,8 +5,7 @@ import MobileNavLink from '@/ui/home/mobile-nav-link';
 const mainLinks = [
 	{ name: 'Care', href: '/care' },
 	{ name: 'Rehome', href: '/rehome' },
-	{ name: 'Adopt', href: '/adopt' },
-	{ name: 'login', href: '/login' },
+	{ name: 'Adopt', href: '/adopt' }
 ];
 
 export default function Header() {

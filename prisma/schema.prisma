@@ -9,9 +9,9 @@ datasource db {
 
 model User {
   id          String        @id @default(uuid())
-  name        String
+  name        String?
   email       String        @unique
-  password    String
+  password    String?
   rehomedPets RehomedPets[]
   adoptedPets AdoptedPets[]
 }
