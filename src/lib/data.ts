@@ -23,7 +23,7 @@ export const prismaCreateUser = async (
 	await prisma.user.create({
 		data: {
 			name,
-			email: email!,
+			email,
       password
 		}
 	});
@@ -42,9 +42,9 @@ export const prismaRehomePet = async (
 	await prisma.$transaction(async (tx) => {
 		const pet = await tx.petInfo.create({
 			data: {
-				name: name!,
+				name,
 				type,
-				breed: breed!,
+				breed,
         gender,
         age: age!,
         compatibility,
