@@ -1,6 +1,7 @@
 'use client';
 import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
+import { base64ToImage } from '@/lib/utils';
 import { prismaGetAvailablePets } from '@/lib/data';
 import { PetInfo } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
@@ -26,6 +27,12 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			
 			try {
 				setAllPets(await prismaGetAvailablePets());
+				allPets.map(async (pet) => {
+					const imageUrl = await base64ToImage(pet.image);
+					return { ...pet, imageUrl }
+				});
+			} catch (err) {
+				console.error(`Failed to process image for pet`, err);
 			} finally {
 				setIsLoading(false); // stop loading once fetched
 			}

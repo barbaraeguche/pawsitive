@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { AuthError } from 'next-auth';
 import { signIn } from '../../auth';
 import bcrypt from 'bcryptjs';
+import { imageToBase64 } from '@/lib/utils';
 import { prismaCreateUser, prismaRehomePet } from '@/lib/data';
 import { ObjectValuesType, PetInfoState, UserLoginState, UserRegisterState } from '@/lib/definitions';
 import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
@@ -31,14 +32,8 @@ export async function rehomePet(_prevState: PetInfoState, formData: FormData) {
 	}
 	
 	const { name, type, breed, gender, age, compatibility, image, comments } = validatedFields.data;
-	// convert image to binary
-	let binaryImage: string = '';
-	if (image instanceof File) {
-		const arrayBuffer = await image.arrayBuffer();
-		binaryImage = Buffer.from(arrayBuffer).toString('base64');
-	}
-	
-	// const binaryImage = Buffer.from(await image.arrayBuffer()).toString('base64');
+	// convert image to base 64
+	const binaryImage = await imageToBase64(image);
 	
 	// insert into database
 	try {
