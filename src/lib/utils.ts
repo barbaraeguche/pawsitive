@@ -43,7 +43,8 @@ export const imageToBase64 = async (image: File | Blob) => {
     const arrayBuffer = await image.arrayBuffer();
     const base64String = Buffer.from(arrayBuffer).toString('base64');
     return `data:${image.type};base64,${base64String}`;
-  } catch (_err) {
+  } catch (err) {
+    console.error(err);
     console.error('Error converting image to base64.');
     throw new Error('Failed to convert image to base64.');
   }
@@ -66,7 +67,8 @@ export const base64ToImage = async (base64String: string) => {
       bytes[i] = binaryString.charCodeAt(i);
     }
     return URL.createObjectURL(new Blob([bytes], { type: mimeType }));
-  } catch (_err) {
+  } catch (err) {
+    console.error(err);
     console.error('Error converting base64 to image.');
     throw new Error('Failed to convert base64 to image.');
   }
