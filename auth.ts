@@ -38,3 +38,4 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		})
 	]
 });
+// `data:image/jpeg;base64${Buffer.from().toString('base64')}`
