@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
@@ -23,13 +23,13 @@ interface ButtonProps
 	className?: string;
 }
 
-export default function Button({ intent, className, children, ...rest }: ButtonProps) {
+export default forwardRef<HTMLButtonElement, ButtonProps>(function Button({ intent, className, children, ...rest }, ref) {
 	return (
-		<button
-			{...rest}
-			className={cn(buttonVariants({ intent }), className)}
+		<button {...rest}
+		        ref={ref}
+		        className={cn(buttonVariants({ intent }), className)}
 		>
 			{children}
 		</button>
 	);
-}
+})

@@ -1,5 +1,16 @@
 import { z } from 'zod';
 
+export const RegisterSchema = z.object({
+	name: z.string().min(1, { message: 'Please enter your name' }),
+	email: z.string().email({ message: 'Please enter an email' }),
+	password: z.string().min(6, { message: 'Please enter a password, minimum 6 characters' })
+});
+
+export const LoginSchema = z.object({
+	email: z.string().email({ message: 'Please enter your email' }),
+	password: z.string().min(1, { message: 'Please enter your password' })
+});
+
 const RehomeSchema = z.object({
 	id: z.string(),
 	name: z.string().min(3, { message: 'Please enter a name, at least 3 characters' }),

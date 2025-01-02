@@ -1,3 +1,7 @@
+export type ObjectValuesType = {
+	[key: string]: any
+};
+
 export type User = {
 	id: string;
 	name: string;
@@ -24,7 +28,7 @@ export type AvailablePetInfo = Partial<Omit<PetInfo, 'type' | 'gender' | 'compat
 };
 
 export type PetInfoState = {
-	values?: { [key: string]: any };
+	values?: ObjectValuesType;
 	errors?: {
 		name?: string[];
 		type?: string[];
@@ -38,7 +42,17 @@ export type PetInfoState = {
 	message?: string | null;
 };
 
-export type UserState = {
+export type UserLoginState = {
+	values?: ObjectValuesType;
+	errors?: {
+		email?: string[];
+		password?: string[];
+	},
+	message?: string | null;
+};
+
+export type UserRegisterState = {
+	values?: ObjectValuesType;
 	errors?: {
 		name?: string[]
 		email?: string[];

@@ -5,7 +5,7 @@ export function cn(...args: ClassValue[]) {
   return twMerge(clsx(args));
 }
 
-export const incrementCount = () => {
+export const incrementCount = (): void => {
   const counters = document.querySelectorAll('.counter');
   counters.forEach((counter) => {
     const updateCount = () => {
