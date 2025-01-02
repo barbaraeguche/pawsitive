@@ -26,10 +26,10 @@ export default async function AdoptPage(props: {
 	
 	return (
 		<div className="!mt-12 !mb-32 flex flex-col gap-y-9 toGrid:flex-row">
-			<div className="w-full toGrid:w-1/3 toRow:w-1/4">
+			<div className="w-full toGrid:w-1/4">
 				<Form/>
 			</div>
-			<div className="px-1.5 md:px-0 w-full toGrid:w-2/3 toGrid:mr-3 toRow:w-3/4 [1937px]:mr-0">
+			<div className="px-1.5 md:px-0 w-full toGrid:w-3/4 toGrid:mr-3 [1937px]:mr-0">
 				<AdoptProvider>
 					<AvailablePets type={type} breed={breed} gender={gender} age={age} compatibility={compatibility}/>
 				</AdoptProvider>

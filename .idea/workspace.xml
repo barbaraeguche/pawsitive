@@ -5,31 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auth.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/register/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/settings/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/auth/form-error.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/queries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/form-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/form-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/login/auth-separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/auth/separator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/login/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/auth/login-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/login/signup-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/auth/signup-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/adopt/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/care/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/available-pets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/available-pets.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/pet-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/pet-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/rehome/rehome-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -76,6 +61,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Node.js.dumy.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.middleware.ts.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.queries.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -105,11 +91,11 @@
       <recent name="$PROJECT_DIR$/src/app/care" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/lib" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/ui/login" />
-      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/ui" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/lib" />
+      <recent name="$PROJECT_DIR$/src/ui/login" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -200,6 +186,8 @@
       <workItem from="1735757478909" duration="70000" />
       <workItem from="1735770032334" duration="10520000" />
       <workItem from="1735781776124" duration="7229000" />
+      <workItem from="1735789033032" duration="32870000" />
+      <workItem from="1735853363157" duration="4391000" />
     </task>
     <servers />
   </component>

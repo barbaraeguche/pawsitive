@@ -8,8 +8,7 @@ export default {
   	extend: {
 			screens: {
 				card: '923px',
-				toGrid: '1550px',
-				toRow: '1800px',
+				toGrid: '1550px'
 			},
   		borderRadius: {
   			lg: 'var(--radius)',

@@ -10,7 +10,7 @@ export const authConfig = {
 		signIn: '/login',
 		signOut: '/account'
 	},
-	providers: [/* add to auth.ts as it's a non-node.js file */],
+	providers: [/* added to auth.ts as it's a non-node.js file */],
 	callbacks: {
 		authorized({ auth, request: { nextUrl }}) {
 			const isLoggedIn = !!auth?.user;
