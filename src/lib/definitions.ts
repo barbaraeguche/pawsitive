@@ -9,7 +9,7 @@ export type ObjectValuesType = {
 // 	password: string;
 // };
 
-export type PetInfo = {
+export type Pet = {
 	id: string;
 	name: string;
 	type: 'cat' | 'dog';
@@ -21,7 +21,7 @@ export type PetInfo = {
 	comments: string;
 };
 
-export type PetInfoState = {
+export type PetState = {
 	values?: ObjectValuesType;
 	errors?: {
 		name?: string[];

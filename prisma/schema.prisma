@@ -8,15 +8,15 @@ datasource db {
 }
 
 model User {
-  id          String        @id @default(uuid())
-  name        String?
-  email       String        @unique
-  password    String?
-  rehomedPets RehomedPets[]
-  adoptedPets AdoptedPets[]
+  id       String    @id @default(uuid())
+  name     String?
+  email    String    @unique
+  password String?
+  rehomed  Rehomed[]
+  adopted  Adopted[]
 }
 
-model PetInfo {
+model Pet {
   id            String          @id @default(uuid())
   name          String
   type          Type
@@ -26,26 +26,26 @@ model PetInfo {
   compatibility Compatibility[]
   image         String
   comments      String
-  rehomedPets   RehomedPets?
-  adoptedPets   AdoptedPets?
+  rehomed       Rehomed?
+  adopted       Adopted?
 }
 
-model RehomedPets {
+model Rehomed {
   id     Int    @id @default(autoincrement())
   petId  String @unique
   userId String
 
-  pet  PetInfo @relation(fields: [petId], references: [id], onDelete: Cascade)
-  user User    @relation(fields: [userId], references: [id])
+  pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: NoAction)
 }
 
-model AdoptedPets {
+model Adopted {
   id     Int    @id @default(autoincrement())
   petId  String @unique
   userId String
 
-  pet  PetInfo @relation(fields: [petId], references: [id], onDelete: Cascade)
-  user User    @relation(fields: [userId], references: [id])
+  pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: NoAction)
 }
 
 enum Type {

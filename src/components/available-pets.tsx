@@ -3,7 +3,7 @@ import { Fragment, useState, useEffect } from 'react';
 import { useAdoptContext } from '@/hooks/adopt-context';
 import { base64ToImage } from '@/lib/utils';
 import { prismaGetAvailablePets } from '@/lib/data';
-import { PetInfo } from '@/lib/definitions';
+import { Pet } from '@/lib/definitions';
 import PetCard from '@/ui/pet-card';
 import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
@@ -13,12 +13,12 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 	breed: string,
 	gender: string,
 	age: string,
-	compatibility: PetInfo['compatibility']
+	compatibility: Pet['compatibility']
 }) {
 	const [isLoading, setIsLoading] = useState<boolean>(true);
-	const [allPets, setAllPets] = useState<PetInfo[]>([]);
-	const [filteredPets, setFilteredPets] = useState<PetInfo[]>([]);
-	const { filterTrigger } = useAdoptContext();
+	const [allPets, setAllPets] = useState<Pet[]>([]);
+	const [filteredPets, setFilteredPets] = useState<Pet[]>([]);
+	// const { filterTrigger } = useAdoptContext();
 	
 	// rather than ping the db on every update, fetch once and filter
 	useEffect(() => {
@@ -39,17 +39,19 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 		};
 		
 		loadAvailablePets();
-	}, [allPets, filterTrigger]);
+	}, []);
 	useEffect(() => {
-		setFilteredPets(allPets.filter((pet) => {
-			return (
-				(!type || pet.type === type) &&
-        (!breed || pet.breed === breed) &&
-        (!gender || pet.gender === gender) &&
-        (!age || pet.age === age) &&
-				(!compatibility || compatibility.every((comp) => pet.compatibility.includes(comp)))
-			);
-		}));
+		if (allPets.length > 0) {
+			setFilteredPets(allPets.filter((pet) => {
+				return (
+					(!type || pet.type === type) &&
+					(!breed || pet.breed === breed) &&
+					(!gender || pet.gender === gender) &&
+					(!age || pet.age === age) &&
+					(!compatibility || compatibility.every((comp) => pet.compatibility.includes(comp)))
+				);
+			}));
+		}
 	}, [allPets, type, breed, gender, age, compatibility]);
 	
 	return (

@@ -1,14 +1,14 @@
 'use server';
-import { prisma } from '../../prisma/queries';
-import { PetInfo } from './definitions';
+import { prisma } from '../../prisma/script';
+import { Pet } from './definitions';
 
 // prisma - find a user by their email
 export const getUserByEmail = async (email: string) => {
-	return prisma.user.findFirst({
+	return await prisma.user.findFirst({
 		where: {
 			email: {
 				equals: email,
-				mode: 'insensitive'
+        mode: 'insensitive'
 			}
 		}
 	});
@@ -17,8 +17,8 @@ export const getUserByEmail = async (email: string) => {
 // prisma - create a new user
 export const prismaCreateUser = async (
 	name: string,
-	email: string,
-	password: string
+  email: string,
+  password: string
 ) => {
 	await prisma.user.create({
 		data: {
@@ -31,85 +31,83 @@ export const prismaCreateUser = async (
 
 // prisma - add a new pet to both databases using transaction for atomicity
 export const prismaRehomePet = async (
+	id: string = '19379352-b3e9-45d3-9d2a-4135d495f576',
 	name: string,
-	type: PetInfo['type'],
+	type: Pet['type'],
 	breed: string,
-	gender: PetInfo['gender'],
-	{ age, comments }: Partial<PetInfo>,
-	compatibility: PetInfo['compatibility'],
+	gender: Pet['gender'],
+	{ age, comments }: Partial<Pet>,
+	compatibility: Pet['compatibility'],
 	image: string
 ) => {
-	await prisma.$transaction(async (tx) => {
-		const pet = await tx.petInfo.create({
-			data: {
-				name,
-				type,
-				breed,
-        gender,
-        age: age!,
-        compatibility,
-        image,
-				comments: comments!
-			}
+	try {
+		await prisma.$transaction(async (tx) => {
+			const pet = await tx.pet.create({
+				data: {
+					name,
+					type,
+					breed,
+					gender,
+					age: age!,
+					compatibility,
+					image,
+					comments: comments!
+				}
+			});
+			const rehome = await tx.rehomed.create({
+				data: {
+					petId: pet.id,
+					userId: id
+				}
+			});
+			
+			return { pet, rehome };
 		});
-		await tx.rehomedPets.create({
-			data: {
-				petId: pet.id,
-				userId: 'ce168e4c-d1a0-4c46-b192-ff24e734337d' //greg123
-			}
-		});
-	});
+	} catch (e) {
+		console.error('Failed to rehome pet:', e);
+		throw e;
+	}
 };
 
 // prisma - retrieve all available pets
 export const prismaGetAvailablePets = async () => {
-	return await prisma.petInfo.findMany({});
-};
-
-// prisma - get the pets adopted by a given user
-export const getAdoptedPets = async (id: string) => {
-	const findUser = await prisma.user.findUnique({
-		where: { id },
-		include: { adoptedPets: true }
-	});
-	
-	if (findUser) {
-		const petIds = findUser.adoptedPets.map((pet) => pet.petId);
-		const adoptedPets = await prisma.petInfo.findMany({
-			where: {
-				id: { in: petIds }
-			}
-		});
-		
-		// TODO: delete before final push
-		console.log(adoptedPets);
-		console.log(adoptedPets);
-	}
-	
-	return 'User not found';
+	return await prisma.pet.findMany({});
 };
 
 // prisma - get the pets rehomed by a given user
-export const getRehomedPets = async (id: string) => {
+export const getRehomedPets = async (id: string = '19379352-b3e9-45d3-9d2a-4135d495f576') => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
-		include: { rehomedPets: true }
+		include: { rehomed: true }
 	});
 	
 	if (findUser) {
-		const petIds = findUser.rehomedPets.map((pet) => pet.petId);
-		const rehomedPets = await prisma.petInfo.findMany({
+		const petIds = findUser.rehomed.map((pet) => pet.petId);
+		return await prisma.pet.findMany({
 			where: {
 				id: { in: petIds }
 			}
 		});
-		
-		// TODO: delete before final push
-		console.log(rehomedPets);
-		console.log(rehomedPets);
 	}
 	
 	return 'User not found';
 };
 
-// '58260b12-9c8f-48b7-9538-147896d674ed'
+// prisma - get the pets adopted by a given user
+export const getAdoptedPets = async (id: string = '19379352-b3e9-45d3-9d2a-4135d495f576') => {
+	const findUser = await prisma.user.findUnique({
+		where: { id },
+		include: { adopted: true }
+	});
+	
+	if (findUser) {
+		const petIds = findUser.adopted.map((pet) => pet.petId);
+		return await prisma.pet.findMany({
+      where: {
+        id: { in: petIds }
+      }
+    });
+	}
+	
+	return 'User not found';
+};
