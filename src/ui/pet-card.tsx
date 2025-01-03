@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { capitalizeFirstLetter } from '@/lib/utils';
-import { PetInfo } from '@/lib/definitions';
+import { Pet } from '@/lib/definitions';
 import AdoptButton from '@/ui/adopt/adopt-button';
 
 export default function PetCard({ pets, isAdopting }: {
-	pets: PetInfo[],
+	pets: Pet[],
 	isAdopting?: boolean
 }) {
 	return (

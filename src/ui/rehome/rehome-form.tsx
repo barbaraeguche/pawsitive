@@ -1,6 +1,6 @@
 'use client';
 import { useActionState } from 'react';
-import { PetInfoState } from '@/lib/definitions';
+import { PetState } from '@/lib/definitions';
 import { rehomePet } from '@/lib/action';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
@@ -8,7 +8,7 @@ import FormError from '@/ui/form-error';
 import Headings from '@/components/headings';
 
 export default function Form() {
-	const initialState: PetInfoState = { values: {}, errors: {}, message: null };
+	const initialState: PetState = { values: {}, errors: {}, message: null };
 	const [state, formAction, isPending] = useActionState(rehomePet, initialState);
 	
 	return (
@@ -218,8 +218,9 @@ export default function Form() {
 							       name="image"
 							       type="file"
 							       disabled={isPending}
-							       aria-describedby="image-error"
 							       accept="image/jpeg, image/png"
+							       aria-describedby="image-error"
+							       defaultValue={state.values?.image}
 							       className="hidden"
 							/>
 							{/* centered label content */}

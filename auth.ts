@@ -4,7 +4,7 @@ import Credentials from 'next-auth/providers/credentials';
 import Google from 'next-auth/providers/google';
 import GitHub from 'next-auth/providers/google';
 import { authConfig } from './auth.config';
-import { prisma } from './prisma/queries';
+import { prisma } from './prisma/script';
 import bcrypt from 'bcryptjs';
 import { LoginSchema } from '@/lib/form-schema';
 import { getUserByEmail } from '@/lib/data';
