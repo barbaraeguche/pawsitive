@@ -18,7 +18,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [allPets, setAllPets] = useState<Pet[]>([]);
 	const [filteredPets, setFilteredPets] = useState<Pet[]>([]);
-	const { filterTrigger } = useAdoptContext();
+	// const { filterTrigger } = useAdoptContext();
 	
 	// rather than ping the db on every update, fetch once and filter
 	useEffect(() => {
