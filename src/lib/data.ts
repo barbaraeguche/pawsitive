@@ -31,7 +31,7 @@ export const prismaCreateUser = async (
 
 // prisma - add a new pet to both databases using transaction for atomicity
 export const prismaRehomePet = async (
-	id: string = '19379352-b3e9-45d3-9d2a-4135d495f576',
+	id: string = 'da90c5d4-2a9a-45f9-b29d-846b9d938437',
 	name: string,
 	type: Pet['type'],
 	breed: string,
@@ -75,7 +75,7 @@ export const prismaGetAvailablePets = async () => {
 };
 
 // prisma - get the pets rehomed by a given user
-export const getRehomedPets = async (id: string = '19379352-b3e9-45d3-9d2a-4135d495f576') => {
+export const getRehomedPets = async (id: string = 'da90c5d4-2a9a-45f9-b29d-846b9d938437') => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
 		include: { rehomed: true }
@@ -94,7 +94,7 @@ export const getRehomedPets = async (id: string = '19379352-b3e9-45d3-9d2a-4135d
 };
 
 // prisma - get the pets adopted by a given user
-export const getAdoptedPets = async (id: string = '19379352-b3e9-45d3-9d2a-4135d495f576') => {
+export const getAdoptedPets = async (id: string = 'da90c5d4-2a9a-45f9-b29d-846b9d938437') => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
 		include: { adopted: true }

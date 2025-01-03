@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { withAccelerate } from '@prisma/extension-accelerate';
-import { getUserByEmail, getRehomedPets } from '@/lib/data';
+import { getUserByEmail, getRehomedPets, prismaRehomePet } from '@/lib/data';
 
 export const prisma = new PrismaClient().$extends(withAccelerate())
 
@@ -9,8 +9,11 @@ async function main() {
 	// console.log(user);
 	//
 	// if (user) {
-	// 	const rehomed = await getRehomedPets(user.id);
-	// 	console.log(rehomed);
+	// 	const { age, comments } = { age: '1yr', comments: 'tom is actually a cat.' }
+	// 	await prismaRehomePet(user.id, 'tom', 'dog', 'dachshund', 'male', { age, comments }, ['kids'], '/dog.jpg');
+	//
+	// 	const prevRehomed = await getRehomedPets(user.id);
+	// 	console.log(prevRehomed);
 	// }
 }
 
