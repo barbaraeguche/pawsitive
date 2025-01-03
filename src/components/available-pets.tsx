@@ -39,7 +39,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 		};
 		
 		loadAvailablePets();
-	});
+	}, []);
 	useEffect(() => {
 		if (allPets.length > 0) {
 			setFilteredPets(allPets.filter((pet) => {
