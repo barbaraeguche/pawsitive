@@ -8,7 +8,8 @@ import PetCard from '@/ui/pet-card';
 import PetCardsSkeleton from '@/ui/skeleton';
 import Headings from '@/components/headings';
 
-export default function AvailablePets({ type, breed, gender, age, compatibility }: {
+export default function AvailablePets({ userId, type, breed, gender, age, compatibility }: {
+	userId: string,
 	type: string,
 	breed: string,
 	gender: string,
@@ -18,19 +19,23 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [allPets, setAllPets] = useState<Pet[]>([]);
 	const [filteredPets, setFilteredPets] = useState<Pet[]>([]);
-	// const { filterTrigger } = useAdoptContext();
+	const { filterTrigger } = useAdoptContext();
 	
 	// rather than ping the db on every update, fetch once and filter
 	useEffect(() => {
 		const loadAvailablePets = async () => {
-			setIsLoading(true); // start loading
+			if (filterTrigger === 0) setIsLoading(true); // start loading
 			
 			try {
-				setAllPets(await prismaGetAvailablePets());
-				allPets.map(async (pet) => {
-					const imageUrl = await base64ToImage(pet.image);
-					return { ...pet, imageUrl }
-				});
+				const pets = await prismaGetAvailablePets(userId);
+				// process all images at once and update state with processed pets
+				const petsImages = await Promise.all(
+					pets.map(async (pet) => {
+            const imageUrl = await base64ToImage(pet.image);
+            return { ...pet, imageUrl }
+          })
+				);
+				setAllPets(petsImages);
 			} catch (err) {
 				console.error(`Failed to process image for pet`, err);
 			} finally {
@@ -39,7 +44,8 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 		};
 		
 		loadAvailablePets();
-	}, []);
+	}, [filterTrigger]);
+	
 	useEffect(() => {
 		if (allPets.length > 0) {
 			setFilteredPets(allPets.filter((pet) => {
@@ -62,7 +68,7 @@ export default function AvailablePets({ type, breed, gender, age, compatibility 
 			) : (
 				filteredPets.length === 0 ? (
 					<div className="flex justify-center">
-						<span className="!mt-16 toGrid:!mt-36 text-base">No matching pets available</span>
+						<span className="!mt-16 toGrid:!mt-36 text-base">No matching pets available.</span>
 					</div>
 				) : (
 					<PetCard pets={filteredPets} isAdopting={true}/>

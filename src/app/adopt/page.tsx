@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { AdoptProvider } from '@/hooks/adopt-context';
+import { getUserCredentials } from '@/lib/data';
 import Form from '@/ui/adopt/adopt-form';
 import AvailablePets from '@/components/available-pets';
 
@@ -14,6 +15,7 @@ export default async function AdoptPage(props: {
 		compatibility?: Array<'dogs' | 'cats' | 'kids'>
 	}>
 }) {
+	const userId = (await getUserCredentials())?.user?.id!
 	const searchParams = await props.searchParams;
 	
 	const type = searchParams?.type || '';
@@ -31,7 +33,7 @@ export default async function AdoptPage(props: {
 			</div>
 			<div className="px-1.5 md:px-0 w-full toGrid:w-3/4 toGrid:mr-3 [1937px]:mr-0">
 				<AdoptProvider>
-					<AvailablePets type={type} breed={breed} gender={gender} age={age} compatibility={compatibility}/>
+					<AvailablePets userId={userId} type={type} breed={breed} gender={gender} age={age} compatibility={compatibility}/>
 				</AdoptProvider>
 			</div>
 		</div>

@@ -75,8 +75,7 @@ function AdoptButtonSkeleton() {
 		<Button intent="skeleton"
 		        className="absolute top-1 right-1"
 		>
-			<div className="block w-5 card:hidden"/>
-			<div className="hidden card:block card:w-12"/>
+			<div className="block w-5"/>
 		</Button>
 	);
 }

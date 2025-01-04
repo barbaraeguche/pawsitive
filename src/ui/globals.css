@@ -8,6 +8,10 @@
   }
 }
 
+body[data-scroll-locked][data-scroll-locked] {
+  overflow: auto !important;
+}
+
 .blob-outline {
   .left { border-radius: 60% 40% 40% 60%; }
   .right { border-radius: 40% 60% 60% 40%; }

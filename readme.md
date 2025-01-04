@@ -8,6 +8,7 @@
 - rehome a pet
 - authentication, cookies, authorization....................
 - adopted and rehomed pet history
+- you cannot adopt any pets you've rehomed
 
 ## what I learned 💭
 - multiple pages website
@@ -16,8 +17,9 @@
 
 ## limitations 🚨
 - **title:** description
-- currently only for cats and dogs over a month old(because of zod validation)
+- currently only for cats and dogs >= a month old(because of zod validation)
 - does not take up full browser width..... max 2000px
+- not other login providers like github or google
 
 ## improvements 🌱
 - **title:** description

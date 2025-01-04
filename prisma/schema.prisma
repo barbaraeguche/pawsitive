@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "../../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -8,12 +9,14 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(uuid())
-  name     String?
-  email    String    @unique
-  password String?
-  rehomed  Rehomed[]
-  adopted  Adopted[]
+  id          String    @id @default(uuid())
+  name        String
+  email       String    @unique
+  password    String
+  rehomeCount Int       @default(0)
+  adoptCount  Int       @default(0)
+  rehomed     Rehomed[]
+  adopted     Adopted[]
 }
 
 model Pet {
@@ -36,7 +39,7 @@ model Rehomed {
   userId String
 
   pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
-  user User @relation(fields: [userId], references: [id], onDelete: NoAction)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Adopted {
@@ -45,7 +48,7 @@ model Adopted {
   userId String
 
   pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
-  user User @relation(fields: [userId], references: [id], onDelete: NoAction)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 enum Type {

@@ -5,7 +5,7 @@ import { AuthError } from 'next-auth';
 import { signIn } from '../../auth';
 import bcrypt from 'bcryptjs';
 import { imageToBase64, normalizeText } from '@/lib/utils';
-import { prismaCreateUser, prismaRehomePet } from '@/lib/data';
+import { getUserCredentials, prismaCreateUser, prismaRehomePet } from '@/lib/data';
 import { ObjectValuesType, PetState, UserLoginState, UserRegisterState } from '@/lib/definitions';
 import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
 
@@ -16,6 +16,9 @@ import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
  * @return either a zod validation or database error.
  */
 export async function rehomePet(_prevState: PetState, formData: FormData) {
+	// get the user's id;
+	const userId = (await getUserCredentials())?.user?.id!;
+	
 	const formDataObject: ObjectValuesType = {};
 	// transform the compatibility field into an array
 	for (const [key, value] of formData.entries()) {
@@ -37,9 +40,11 @@ export async function rehomePet(_prevState: PetState, formData: FormData) {
 	
 	// insert into database
 	try {
-		await prismaRehomePet('da90c5d4-2a9a-45f9-b29d-846b9d938437', normalizeText(name), type, normalizeText(breed), gender, { age, comments }, compatibility, binaryImage);
+		const response = await prismaRehomePet(userId, normalizeText(name), type, normalizeText(breed), gender, { age, comments }, compatibility, binaryImage);
+		if (response) {
+      return { message: response };
+    }
 	} catch (err) {
-		console.error(err);
 		return { message: 'Database error. Failed to rehome pet.' };
 	}
 	
@@ -70,7 +75,7 @@ export async function loginUser(_prevState: UserLoginState, formData: FormData) 
 	try {
 		await signIn('credentials', {
 			...validatedFields.data
-		})
+		});
 	} catch (err) {
 		if (err instanceof AuthError) {
 			switch (err.type) {
