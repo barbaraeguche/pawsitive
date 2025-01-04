@@ -7,7 +7,6 @@ import { loginUser } from '@/lib/action';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
 import FormError from '@/ui/form-error';
-import AuthSeparator from '@/ui/auth/separator';
 
 export default function LoginForm() {
 	const initialState: UserLoginState = { values: {}, errors: {}, message: null };
@@ -19,19 +18,6 @@ export default function LoginForm() {
 			<form action={formAction}>
 				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					<h4 className="text-xl">Log In to Account</h4>
-					
-					{/* providers */}
-					<div className="flex w-full gap-x-2">
-						<Button type="button" intent="refresh" className="w-full border-brown-80 ">
-							with Google
-						</Button>
-						<Button type="button" intent="refresh" className="w-full border-brown-80">
-							with Github
-						</Button>
-					</div>
-					
-					{/* separator */}
-					<AuthSeparator/>
 					
 					{/* actual form */}
 					<div className="space-y-4">

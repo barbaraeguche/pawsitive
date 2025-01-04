@@ -31,7 +31,7 @@ export default function PetCard({ pets, isAdopting }: {
 									<span className="text-justify px-3 text-sm">{capitalizeFirstLetter(pet.comments)}</span>
 								</p>
 							</div>
-							{isAdopting && <AdoptButton />}
+							{isAdopting && <AdoptButton petId={pet.id} petName={pet.name}/>}
 						</div>
 					))}
 				</div>
@@ -56,7 +56,7 @@ export default function PetCard({ pets, isAdopting }: {
 								<AdjustTextSize name="Compatibility: " value={pet.compatibility.join(', ')}/>
 								<AdjustTextSize name="Comments: " value={pet.comments}/>
 							</div>
-							{isAdopting && <AdoptButton />}
+							{isAdopting && <AdoptButton petId={pet.id} petName={pet.name}/>}
 						</div>
 					))}
 				</div>

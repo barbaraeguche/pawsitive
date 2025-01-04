@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, FC, createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 
 type AdoptContextType = {
 	filterTrigger: number;
@@ -8,7 +8,9 @@ type AdoptContextType = {
 
 const AdoptContext = createContext<AdoptContextType | undefined>(undefined);
 
-export const AdoptProvider: FC<{ children:ReactNode }> = ({ children }) => {
+export function AdoptProvider({ children } : {
+	children: ReactNode
+}) {
 	const [filterTrigger, setFilterTrigger] = useState<number>(0);
 	
 	const triggerAdopt = () => setFilterTrigger((prev) => prev + 1);
@@ -18,7 +20,7 @@ export const AdoptProvider: FC<{ children:ReactNode }> = ({ children }) => {
 			{children}
 		</AdoptContext.Provider>
 	);
-};
+}
 
 export const useAdoptContext = () => {
 	const context = useContext(AdoptContext);

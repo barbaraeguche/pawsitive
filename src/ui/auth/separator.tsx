@@ -1,3 +1,4 @@
+// would have used if i had implemented other login providers like google or github
 export default function AuthSeparator() {
 	return (
 		<div className="w-full flex items-center gap-x-2">

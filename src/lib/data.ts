@@ -1,6 +1,12 @@
 'use server';
+import { auth } from '../../auth';
 import { prisma } from '../../prisma/script';
 import { Pet } from './definitions';
+
+// auth get user
+export const getUserCredentials = async () => {
+	return await auth();
+}
 
 // prisma - find a user by their email
 export const getUserByEmail = async (email: string) => {
@@ -31,7 +37,7 @@ export const prismaCreateUser = async (
 
 // prisma - add a new pet to both databases using transaction for atomicity
 export const prismaRehomePet = async (
-	id: string = 'da90c5d4-2a9a-45f9-b29d-846b9d938437',
+	userId: string,
 	name: string,
 	type: Pet['type'],
 	breed: string,
@@ -41,6 +47,16 @@ export const prismaRehomePet = async (
 	image: string
 ) => {
 	try {
+		// check if user has reached the maximum rehome value (6)
+		const counter = await prisma.user.findUnique({
+			where: { id: userId },
+			select: { rehomeCount: true }
+		});
+		// ensure user/counter exists and check limit
+		if (!counter || counter.rehomeCount >= 6) {
+			return 'You can only rehome a maximum of 6 pets.'
+		}
+		
 		await prisma.$transaction(async (tx) => {
 			const pet = await tx.pet.create({
 				data: {
@@ -54,28 +70,74 @@ export const prismaRehomePet = async (
 					comments: comments!
 				}
 			});
-			const rehome = await tx.rehomed.create({
+			await tx.rehomed.create({
 				data: {
 					petId: pet.id,
-					userId: id
+					userId
 				}
 			});
-			
-			return { pet, rehome };
+			await tx.user.update({
+				where: { id: userId },
+				data: {
+					rehomeCount: { increment: 1 }
+				}
+			});
 		});
-	} catch (e) {
-		console.error('Failed to rehome pet:', e);
-		throw e;
+	} catch (err) {
+		console.error(`Failed to rehome pet: ${err}`);
+		throw err;
+	}
+};
+
+// prisma - add a pet to the adopted table using transaction for atomicity
+export const prismaAdoptPet = async (petId: string, userId: string) => {
+	try {
+		// check if user has reached the maximum adopt value (4)
+		const counter = await prisma.user.findUnique({
+			where: { id: userId },
+			select: { adoptCount: true }
+		});
+		// ensure user/counter exists and check limit
+		if (!counter || counter.adoptCount >= 4) {
+			return;
+		}
+		
+		await prisma.$transaction(async (tx) => {
+			await tx.adopted.create({
+				data: {
+					petId,
+					userId
+				}
+			});
+			await tx.user.update({
+				where: { id: userId },
+				data: {
+					adoptCount: { increment: 1 }
+				}
+			});
+		});
+	} catch (err) {
+		console.error(`Failed to adopt pet: ${err}`);
+		throw err;
 	}
 };
 
 // prisma - retrieve all available pets
-export const prismaGetAvailablePets = async () => {
-	return await prisma.pet.findMany({});
+export const prismaGetAvailablePets = async (userId: string) => {
+	return await prisma.pet.findMany({
+		where: {
+			AND: [
+				{
+					NOT: { rehomed: { userId } }
+				},
+				{ adopted: null }
+			]
+		}
+	});
 };
 
 // prisma - get the pets rehomed by a given user
-export const getRehomedPets = async (id: string = 'da90c5d4-2a9a-45f9-b29d-846b9d938437') => {
+export const getRehomedPets = async (id: string) => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
 		include: { rehomed: true }
@@ -94,7 +156,7 @@ export const getRehomedPets = async (id: string = 'da90c5d4-2a9a-45f9-b29d-846b9
 };
 
 // prisma - get the pets adopted by a given user
-export const getAdoptedPets = async (id: string = 'da90c5d4-2a9a-45f9-b29d-846b9d938437') => {
+export const getAdoptedPets = async (id: string) => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
 		include: { adopted: true }

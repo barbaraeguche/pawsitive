@@ -1,8 +1,6 @@
 import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import Credentials from 'next-auth/providers/credentials';
-import Google from 'next-auth/providers/google';
-import GitHub from 'next-auth/providers/google';
 import { authConfig } from './auth.config';
 import { prisma } from './prisma/script';
 import bcrypt from 'bcryptjs';
@@ -14,8 +12,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 	adapter: PrismaAdapter(prisma),
 	session: { strategy: 'jwt' },
 	providers: [
-		GitHub,
-		Google,
 		Credentials({
 			async authorize(credentials) {
 				// validate fields using zod
@@ -36,5 +32,16 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 				return null;
 			}
 		})
-	]
+	],
+	callbacks: {
+		async session({ token, session }) {
+			if (token.sub && session.user) {
+				session.user.id = token.sub;
+			}
+			return session;
+		},
+		async jwt({ token }) {
+			return token;
+		}
+	}
 });

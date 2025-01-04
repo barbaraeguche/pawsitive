@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { croissantOne, lora } from '@/ui/fonts';
-import MobileNavLink from '@/ui/home/mobile-nav-link';
+import MobileNavLink from '@/ui/mobile-nav-link';
 
 const mainLinks = [
 	{ name: 'Care', href: '/care' },

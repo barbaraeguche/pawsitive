@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
+import { getUserCredentials } from '@/lib/data';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/shadcn/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/ui/shadcn/card";
 import Headings from '@/components/headings';
-import { auth } from '../../../auth';
 
 export const metadata: Metadata = { title: 'Pet Care' };
 
@@ -23,7 +23,8 @@ const dogCare = [
 ];
 
 export default async function CarePage() {
-	const session = await auth();
+	// get the user's id;
+	const session = await getUserCredentials();
 	
 	return (
 		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
