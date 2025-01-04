@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: 'Adopted Pets' };
 
 export default async function AdoptedPage() {
 	// get the user's id;
-	const userId = (await getUserCredentials())?.user?.id!;
+	const userId = await getUserCredentials();
 	const adoptedPets: Pet[] | string = await getAdoptedPets(userId);
 	
 	return (

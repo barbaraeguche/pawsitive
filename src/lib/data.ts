@@ -5,7 +5,12 @@ import { Pet } from './definitions';
 
 // auth get user
 export const getUserCredentials = async () => {
-	return await auth();
+	const id = (await auth())?.user?.id;
+	
+	if (!id) {
+		throw new Error('User ID not found - user may not be authenticated');
+	}
+	return id;
 }
 
 // prisma - find a user by their email

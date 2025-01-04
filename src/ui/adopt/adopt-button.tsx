@@ -20,7 +20,7 @@ export default function AdoptButton({ petId, petName }: {
 	petId: string,
 	petName: string
 }) {
-	const [userId, setUserId] = useState<string | null>(null);
+	const [userId, setUserId] = useState<string>('');
 	const [isAdopting, setIsAdopting] = useState<boolean>(false);
 	const { triggerAdopt } = useAdoptContext();
 	
@@ -30,7 +30,7 @@ export default function AdoptButton({ petId, petName }: {
 		
 		const fetchUser = async () => {
 			const user = await getUserCredentials();
-			setUserId(user?.user?.id || null);
+			setUserId(user);
 		};
 		fetchUser();
 		
@@ -43,7 +43,7 @@ export default function AdoptButton({ petId, petName }: {
 		try {
 			setIsAdopting(true);
 			await prismaAdoptPet(petId, userId);
-			triggerAdopt(); // Trigger the context update
+			triggerAdopt(); // trigger the context update
 		} catch (err) {
 			console.error(`Error adopting pet: ${err}`);
 		} finally {
@@ -77,7 +77,7 @@ export default function AdoptButton({ petId, petName }: {
 						        onClick={handleAdopt}
 						        disabled={isAdopting}
 						>
-							{isAdopting ? 'Processing...' : 'Confirm' }
+							Confirm
 						</Button>
 					</DialogClose>
 				</DialogFooter>

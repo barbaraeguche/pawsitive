@@ -15,7 +15,7 @@ export default async function AdoptPage(props: {
 		compatibility?: Array<'dogs' | 'cats' | 'kids'>
 	}>
 }) {
-	const userId = (await getUserCredentials())?.user?.id!
+	const userId = await getUserCredentials();
 	const searchParams = await props.searchParams;
 	
 	const type = searchParams?.type || '';
