@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { getUserCredentials } from '@/lib/data';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/shadcn/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/ui/shadcn/card";
 import Headings from '@/components/headings';
@@ -23,13 +22,8 @@ const dogCare = [
 ];
 
 export default async function CarePage() {
-	// get the user's id;
-	const session = await getUserCredentials();
-	
 	return (
 		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
-			{JSON.stringify(session)}
-			
 			<Headings title="Pet Wellness Handbook"/>
 			
 			<Tabs defaultValue="cats" className="px-2">

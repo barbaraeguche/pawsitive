@@ -10,7 +10,8 @@ export const metadata: Metadata = {
 		template: '%s | Paw Squad',
 		default: 'Paw Squad'
 	},
-	description: 'a friendly pet adoption application built with nextjs.'
+	description: 'a friendly pet adoption application built with nextjs.',
+	icons: { icon: '/pets.png' }
 };
 
 export default function RootLayout({ children } : Readonly<{

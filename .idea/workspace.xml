@@ -9,29 +9,16 @@
       <change beforePath="$PROJECT_DIR$/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/script.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/script.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/account/adopted/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/adopted/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/account/rehomed/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/rehomed/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/adopt/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/adopt/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/care/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/care/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/available-pets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/available-pets.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/adopt-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/adopt-context.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/definitions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/auth/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/auth/login-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/auth/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/auth/separator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/auth/signup-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/auth/signup-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/home/mobile-nav-link.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/mobile-nav-link.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/pet-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/pet-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/skeleton.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +197,7 @@
       <workItem from="1735955266531" duration="6524000" />
       <workItem from="1735961808113" duration="1261000" />
       <workItem from="1735963082337" duration="1162000" />
-      <workItem from="1735964287440" duration="16049000" />
+      <workItem from="1735964287440" duration="23512000" />
     </task>
     <task id="LOCAL-00001" summary="trying to get my deploy working">
       <option name="closed" value="true" />

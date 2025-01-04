@@ -10,7 +10,11 @@ import { getUserByEmail } from '@/lib/data';
 export const { auth, handlers, signIn, signOut } = NextAuth({
 	...authConfig,
 	adapter: PrismaAdapter(prisma),
-	session: { strategy: 'jwt' },
+	session: {
+		maxAge: 15 * 60,
+		strategy: 'jwt'
+	},
+	jwt: { maxAge: 15 * 60 },
 	providers: [
 		Credentials({
 			async authorize(credentials) {

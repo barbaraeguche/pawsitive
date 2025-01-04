@@ -24,16 +24,16 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 	// rather than ping the db on every update, fetch once and filter
 	useEffect(() => {
 		const loadAvailablePets = async () => {
-			if (filterTrigger === 0) setIsLoading(true); // start loading
+			setIsLoading(true); // start loading
 			
 			try {
 				const pets = await prismaGetAvailablePets(userId);
 				// process all images at once and update state with processed pets
 				const petsImages = await Promise.all(
 					pets.map(async (pet) => {
-            const imageUrl = await base64ToImage(pet.image);
-            return { ...pet, imageUrl }
-          })
+						const imageUrl = await base64ToImage(pet.image);
+						return { ...pet, imageUrl }
+					})
 				);
 				setAllPets(petsImages);
 			} catch (err) {
@@ -44,7 +44,7 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 		};
 		
 		loadAvailablePets();
-	}, [filterTrigger]);
+	}, [userId, filterTrigger]);
 	
 	useEffect(() => {
 		if (allPets.length > 0) {

@@ -17,7 +17,7 @@ import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
  */
 export async function rehomePet(_prevState: PetState, formData: FormData) {
 	// get the user's id;
-	const userId = (await getUserCredentials())?.user?.id!;
+	const userId = await getUserCredentials();
 	
 	const formDataObject: ObjectValuesType = {};
 	// transform the compatibility field into an array
@@ -44,7 +44,7 @@ export async function rehomePet(_prevState: PetState, formData: FormData) {
 		if (response) {
       return { message: response };
     }
-	} catch (err) {
+	} catch (_) {
 		return { message: 'Database error. Failed to rehome pet.' };
 	}
 	
