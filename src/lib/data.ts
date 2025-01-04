@@ -56,7 +56,7 @@ export const prismaRehomePet = async (
 		const counter = await prisma.user.findUnique({
 			where: { id: userId },
 			select: { rehomeCount: true }
-		});
+		}) as { rehomeCount: number } | null;
 		// ensure user/counter exists and check limit
 		if (!counter || counter.rehomeCount >= 6) {
 			return 'You can only rehome a maximum of 6 pets.'
@@ -101,7 +101,7 @@ export const prismaAdoptPet = async (petId: string, userId: string) => {
 		const counter = await prisma.user.findUnique({
 			where: { id: userId },
 			select: { adoptCount: true }
-		});
+		}) as { adoptCount: number } | null;
 		// ensure user/counter exists and check limit
 		if (!counter || counter.adoptCount >= 4) {
 			return;

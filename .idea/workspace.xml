@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="trying to get my deploy working 2" />
+    <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="trying to get my deploy working 2">
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +184,7 @@
       <workItem from="1735955266531" duration="6524000" />
       <workItem from="1735961808113" duration="1261000" />
       <workItem from="1735963082337" duration="1162000" />
-      <workItem from="1735964287440" duration="24207000" />
+      <workItem from="1735964287440" duration="24589000" />
     </task>
     <task id="LOCAL-00001" summary="trying to get my deploy working">
       <option name="closed" value="true" />
