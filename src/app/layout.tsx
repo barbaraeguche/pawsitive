@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 		default: 'Paw Squad'
 	},
 	description: 'a friendly pet adoption application built with nextjs.',
-	icons: { icon: '/pets.png' }
 };
 
 export default function RootLayout({ children } : Readonly<{

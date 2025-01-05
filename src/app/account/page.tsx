@@ -1,7 +1,11 @@
-export default function AccountPage() {
+'use server';
+import { getAuthUserId } from '@/lib/data';
+import UserInfo from '@/ui/account/user-info';
+
+export default async function AccountPage() {
+	const userId = await getAuthUserId();
+	
 	return (
-		<div>
-			<span>account page</span>
-		</div>
+		<UserInfo userId={userId}/>
 	);
 }

@@ -5,7 +5,7 @@ import { AuthError } from 'next-auth';
 import { signIn } from '../../auth';
 import bcrypt from 'bcryptjs';
 import { imageToBase64, normalizeText } from '@/lib/utils';
-import { getUserCredentials, prismaCreateUser, prismaRehomePet } from '@/lib/data';
+import { getAuthUserId, prismaCreateUser, prismaRehomePet } from '@/lib/data';
 import { ObjectValuesType, PetState, UserLoginState, UserRegisterState } from '@/lib/definitions';
 import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
 
@@ -17,7 +17,7 @@ import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
  */
 export async function rehomePet(_prevState: PetState, formData: FormData) {
 	// get the user's id;
-	const userId = await getUserCredentials();
+	const userId = await getAuthUserId();
 	
 	const formDataObject: ObjectValuesType = {};
 	// transform the compatibility field into an array

@@ -5,7 +5,7 @@ import NavLinks from '@/ui/account/nav-links';
 
 export default function Sidenav() {
 	return (
-		<div className="grow flex flex-col h-full space-y-1.5">
+		<div className="grow h-full flex space-x-1.5 md:space-x-0 md:space-y-1.5 md:flex-col">
 			<NavLinks/>
 			<div className="hidden md:block rounded-md grow w-full bg-gray-50"/>
 			<form action={async () => {
@@ -16,7 +16,7 @@ export default function Sidenav() {
 			}}>
 				<Button type="submit"
 				        intent="danger"
-				        className="grow w-full h-12 gap-x-2 p-4 rounded-md md:justify-start"
+				        className="grow w-full h-12 p-4 rounded-md md:justify-start"
 				>
 					<LogOut className="w-5"/>
 					<p className="hidden md:block">Sign Out</p>

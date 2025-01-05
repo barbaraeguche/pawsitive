@@ -6,6 +6,10 @@ export default {
 	content: [ "./src/**/*.{js,ts,jsx,tsx,mdx}" ],
   theme: {
   	extend: {
+			margin: {
+				top: '48px',
+				bottom: '128px'
+			},
 			screens: {
 				card: '923px',
 				toGrid: '1550px'
@@ -23,8 +27,8 @@ export default {
 				  80: 'rgba(59,31,21,0.6)'
 			  },
 			  celeste: { // for input accents
-				  DEFAULT: '#accbee'
-				  // c69f53 d86f4a a6b36b
+				  DEFAULT: '#b29661'
+				  // c69f53 d86f4a a6b36b accbee
 			  }
 		  },
 		  keyframes: {

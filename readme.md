@@ -9,6 +9,7 @@
 - authentication, cookies, authorization....................
 - adopted and rehomed pet history
 - you cannot adopt any pets you've rehomed
+- global state management using zustand
 
 ## what I learned 💭
 - multiple pages website

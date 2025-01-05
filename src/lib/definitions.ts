@@ -2,6 +2,14 @@ export type ObjectValuesType = {
 	[key: string]: any
 };
 
+export type User = {
+	id: string;
+	name: string;
+	email: string;
+	rehomeCount: number;
+	adoptCount: number;
+};
+
 export type Pet = {
 	id: string;
 	name: string;
