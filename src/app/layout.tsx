@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { SessionProvider } from 'next-auth/react';
 import { ReactNode } from 'react';
 import '@/ui/globals.css';
 import { newsreader } from '@/ui/fonts';
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 		default: 'Paw Squad'
 	},
 	description: 'a friendly pet adoption application built with nextjs.',
+	icons: { icon: '/pets.png' }
 };
 
 export default function RootLayout({ children } : Readonly<{
@@ -19,11 +21,13 @@ export default function RootLayout({ children } : Readonly<{
 	return (
 		<html lang="en">
 			<body className={`${newsreader.className} p-0 m-0 box-border flex flex-col h-screen mx-auto max-w-[2000px] antialiased`}>
-				<Header/>
-				<main className="flex-1">
-					{children}
-				</main>
-				<Footer/>
+				<SessionProvider>
+					<Header/>
+					<main className="flex-1">
+						{children}
+					</main>
+					<Footer/>
+				</SessionProvider>
 			</body>
 		</html>
 	);
