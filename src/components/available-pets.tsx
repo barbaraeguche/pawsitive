@@ -1,6 +1,6 @@
 'use client';
 import { Fragment, useState, useEffect } from 'react';
-import { useAdoptContext } from '@/hooks/adopt-context';
+import { useAdoptStore } from '@/store/adoptStore';
 import { base64ToImage } from '@/lib/utils';
 import { prismaGetAvailablePets } from '@/lib/data';
 import { Pet } from '@/lib/definitions';
@@ -19,7 +19,7 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [allPets, setAllPets] = useState<Pet[]>([]);
 	const [filteredPets, setFilteredPets] = useState<Pet[]>([]);
-	const { filterTrigger } = useAdoptContext();
+	const filterTrigger = useAdoptStore((state) => state.filterTrigger);
 	
 	// rather than ping the db on every update, fetch once and filter
 	useEffect(() => {

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="trying to get my deploy working 2">
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+    <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="ughhhhhh, just deploy">
+      <change beforePath="$PROJECT_DIR$/src/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/data.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +184,7 @@
       <workItem from="1735955266531" duration="6524000" />
       <workItem from="1735961808113" duration="1261000" />
       <workItem from="1735963082337" duration="1162000" />
-      <workItem from="1735964287440" duration="24589000" />
+      <workItem from="1735964287440" duration="24954000" />
     </task>
     <task id="LOCAL-00001" summary="trying to get my deploy working">
       <option name="closed" value="true" />
@@ -202,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735869042041</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ughhhhhh, just deploy">
+      <option name="closed" value="true" />
+      <created>1735989434764</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735989434766</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +230,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trying to get my deploy working" />
     <MESSAGE value="trying to get my deploy working 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to get my deploy working 2" />
+    <MESSAGE value="another deployment" />
+    <MESSAGE value="ughhhhhh" />
+    <MESSAGE value="ughhhhhh, just deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="ughhhhhh, just deploy" />
   </component>
 </project>

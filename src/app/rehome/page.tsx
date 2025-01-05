@@ -5,8 +5,6 @@ export const metadata: Metadata = { title: 'Rehome Your Pet' };
 
 export default function RehomePage() {
 	return (
-		<div>
-			<Form/>
-		</div>
+		<Form/>
 	);
 }

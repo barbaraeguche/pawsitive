@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
-import { useAdoptContext } from '@/hooks/adopt-context';
+import { useAdoptStore } from '@/store/adoptStore';
 import { capitalizeFirstLetter } from '@/lib/utils';
-import { getUserCredentials, prismaAdoptPet } from '@/lib/data';
+import { getAuthUserId, prismaAdoptPet } from '@/lib/data';
 import Button from '@/ui/button';
 import {
 	Dialog,
@@ -22,14 +22,14 @@ export default function AdoptButton({ petId, petName }: {
 }) {
 	const [userId, setUserId] = useState<string>('');
 	const [isAdopting, setIsAdopting] = useState<boolean>(false);
-	const { triggerAdopt } = useAdoptContext();
+	const triggerAdopt = useAdoptStore((state) => state.triggerAdopt);
 	
 	useEffect(() => {
 		// this prevents the margin and padding from swapping values when the dialog opens.
 		document.body.style.cssText = "padding: 0px !important; margin: auto !important;";
 		
 		const fetchUser = async () => {
-			const user = await getUserCredentials();
+			const user = await getAuthUserId();
 			setUserId(user);
 		};
 		fetchUser();
