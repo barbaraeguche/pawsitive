@@ -1,18 +1,17 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { getUserCredentials } from '@/lib/data';
+import { getAuthUserId, getUserCredentials } from '@/lib/data';
 import { User } from '@/lib/definitions';
 import Input from '@/ui/input';
 import Headings from '@/components/headings';
 
-export default function UserInfo({ userId }: {
-	userId: string
-}) {
+export default function UserInfo() {
 	const [user, setUser] = useState<User>({ id: '', name: '', email: '', rehomeCount: 0, adoptCount: 0 });
 	
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
+				const userId = await getAuthUserId();
 				const user = await getUserCredentials(userId);
 				setUser(user!);
 			} catch (err) {
@@ -21,7 +20,7 @@ export default function UserInfo({ userId }: {
 		};
 		
 		fetchUser();
-	}, [userId]);
+	}, []);
 	
 	return (
 		<div className="px-1.5 !mt-top !mb-bottom space-y-12">

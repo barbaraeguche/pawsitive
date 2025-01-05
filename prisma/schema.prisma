@@ -1,12 +1,12 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../../node_modules/.prisma/client"
-  // output   = "./generated/client"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -16,8 +16,8 @@ model User {
   password    String
   rehomeCount Int       @default(0)
   adoptCount  Int       @default(0)
-  rehomed     Rehomed[]
   adopted     Adopted[]
+  rehomed     Rehomed[]
 }
 
 model Pet {
@@ -30,26 +30,24 @@ model Pet {
   compatibility Compatibility[]
   image         String
   comments      String
-  rehomed       Rehomed?
   adopted       Adopted?
+  rehomed       Rehomed?
 }
 
 model Rehomed {
   id     Int    @id @default(autoincrement())
   petId  String @unique
   userId String
-
-  pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pet    Pet    @relation(fields: [petId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Adopted {
   id     Int    @id @default(autoincrement())
   petId  String @unique
   userId String
-
-  pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pet    Pet    @relation(fields: [petId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 enum Type {
