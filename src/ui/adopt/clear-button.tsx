@@ -14,8 +14,8 @@ export default function ClearButton({ selector }: {
 	return (
 		<Button intent="refresh"
 		        type="button"
+		        aria-label="Clear selected option"
 		        className="p-2 border-0 bg-transparent text-gray-600"
-		        aria-label="Clear selected options"
 		        onClick={() => {
 			        const radioButtons = document.querySelectorAll(selector) as NodeListOf<HTMLInputElement>;
 			        radioButtons.forEach((radio) => {
@@ -23,11 +23,12 @@ export default function ClearButton({ selector }: {
 					        radio.checked = false;
 				        }
 			        });
+							
 							params.delete(toDelete);
 							replace(`${pathname}?${params.toString()}`);
 		        }}
 		>
-			<Undo className="size-4" />
+			<Undo className="size-4"/>
 		</Button>
 	);
 }

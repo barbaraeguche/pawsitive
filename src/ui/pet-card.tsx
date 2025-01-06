@@ -37,7 +37,7 @@ export default function PetCard({ pets, isAdopting }: {
 				</div>
 			</div>
 			
-			{/* medium format */}
+			{/* desktop format */}
 			<div className="hidden card:block">
 				<div className="grid grid-cols-1 toGrid:grid-cols-2 gap-3 mx-auto max-w-[717px] toGrid:max-w-[1450px]">
 					{pets.map((pet) => (

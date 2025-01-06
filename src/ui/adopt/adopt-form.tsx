@@ -13,7 +13,7 @@ export default function Form() {
 	return (
 		<div className="px-1.5 md:px-6 space-y-6 md:space-y-12">
 			<Headings title="Adopt a Pet, Bring Joy Home"/>
-			<form>
+			<form method="get">
 				<div className="mx-auto max-w-[400px] sm:max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet type */}
 					<fieldset>
@@ -97,8 +97,8 @@ export default function Form() {
 						<label htmlFor="age" className="mb-1 block text-sm">Pet Age</label>
 						<Input id="age"
 						       name="age"
-						       defaultValue={searchParams?.get('age')?.toString()}
 						       placeholder="e.g., 5month(s) or 1yr or 2yr(s) 3month(s)"
+						       defaultValue={searchParams?.get('age')?.toString()}
 						       onChange={(e) => handleFilter('age', e.target.value)}
 						/>
 					</div>

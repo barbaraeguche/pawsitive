@@ -21,10 +21,10 @@ export default function NavLinks() {
 				return (
 					<Link key={link.name}
 					      href={link.href}
-					      aria-labelledby={link.name}
+					      aria-label={link.name}
 					      className={clsx(
-						      'grow flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 hover:bg-dough/60 hover:text-brown-100 md:justify-start',
-						      { 'bg-dough/60 border-b border-b-brown-100 md:border-b-0': link.href === pathname }
+						      'grow flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 hover:bg-dough/75 hover:text-brown-100 md:justify-start',
+						      { 'bg-dough/75 border-b border-b-brown-100 md:border-b-0': link.href === pathname }
 					      )}
 					>
 						<Icon className="w-5"/>

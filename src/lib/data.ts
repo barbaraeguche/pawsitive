@@ -1,6 +1,6 @@
 'use server';
 import { auth } from '../../auth';
-import { prisma } from '../../prisma/script';
+import { prisma } from '../../prisma/client';
 import { Pet } from './definitions';
 
 // get authenticated user
@@ -15,14 +15,13 @@ export const getAuthUserId = async () => {
 
 // prisma - try to find a user by their email
 export const getUserByEmail = async (email: string) => {
-	return await prisma.user.findFirst({
+	return prisma.user.findFirst({
 		where: {
 			email: {
 				equals: email,
         mode: 'insensitive'
 			}
-		},
-		cacheStrategy: { ttl: 60 }
+		}
 	});
 };
 
@@ -53,11 +52,10 @@ export const prismaRehomePet = async (
 	image: string
 ) => {
 	try {
-		// check if user has reached the maximum rehome value (6)
+		// check if user has reached the maximum rehomed value (6)
 		const counter = await prisma.user.findUnique({
 			where: { id: userId },
-			select: { rehomeCount: true },
-			cacheStrategy: { ttl: 60 }
+			select: { rehomeCount: true }
 		});
 		// ensure user/counter exists and check limit
 		if (!counter || counter.rehomeCount >= 6) {
@@ -98,7 +96,7 @@ export const prismaRehomePet = async (
 
 // prisma - retrieve all pets that the user did not rehome, and also the ones that haven't been adopted
 export const prismaGetAvailablePets = async (userId: string) => {
-	return await prisma.pet.findMany({
+	return prisma.pet.findMany({
 		where: {
 			AND: [
 				{
@@ -106,19 +104,17 @@ export const prismaGetAvailablePets = async (userId: string) => {
 				},
 				{ adopted: null }
 			]
-		},
-		cacheStrategy: { ttl: 60 }
+		}
 	});
 };
 
 // prisma - adopt a pet if adoptCount less than max value (4), increment adoptCount by 1, all using transaction for atomicity
 export const prismaAdoptPet = async (petId: string, userId: string) => {
 	try {
-		// check if user has reached the maximum adopt value (4)
+		// check if user has reached the maximum adopted value (4)
 		const counter = await prisma.user.findUnique({
 			where: { id: userId },
-			select: { adoptCount: true },
-			cacheStrategy: { ttl: 60 }
+			select: { adoptCount: true }
 		});
 		// ensure user/counter exists and check limit
 		if (!counter || counter.adoptCount >= 4) {
@@ -148,7 +144,7 @@ export const prismaAdoptPet = async (petId: string, userId: string) => {
 
 // prisma - try to find a user by their id
 export const getUserCredentials = async (id: string) => {
-	return await prisma.user.findUnique({
+	return prisma.user.findUnique({
 		where: { id },
 		select: {
 			id: true,
@@ -156,8 +152,7 @@ export const getUserCredentials = async (id: string) => {
 			email: true,
 			rehomeCount: true,
 			adoptCount: true
-		},
-		cacheStrategy: { ttl: 60 }
+		}
 	});
 };
 
@@ -165,17 +160,15 @@ export const getUserCredentials = async (id: string) => {
 export const getRehomedPets = async (id: string) => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
-		include: { rehomed: true },
-		cacheStrategy: { ttl: 60 }
+		include: { rehomed: true }
 	});
 	
 	if (findUser) {
 		const petIds = findUser.rehomed.map((pet) => pet.petId);
-		return await prisma.pet.findMany({
+		return prisma.pet.findMany({
 			where: {
 				id: { in: petIds }
-			},
-			cacheStrategy: { ttl: 60 }
+			}
 		});
 	}
 	
@@ -186,17 +179,15 @@ export const getRehomedPets = async (id: string) => {
 export const getAdoptedPets = async (id: string) => {
 	const findUser = await prisma.user.findUnique({
 		where: { id },
-		include: { adopted: true },
-		cacheStrategy: { ttl: 60 }
+		include: { adopted: true }
 	});
 	
 	if (findUser) {
 		const petIds = findUser.adopted.map((pet) => pet.petId);
-		return await prisma.pet.findMany({
+		return prisma.pet.findMany({
       where: {
         id: { in: petIds }
-      },
-			cacheStrategy: { ttl: 60 }
+      }
     });
 	}
 	

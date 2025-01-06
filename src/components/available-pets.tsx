@@ -1,5 +1,5 @@
 'use client';
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, useMemo } from 'react';
 import { useAdoptStore } from '@/store/adoptStore';
 import { base64ToImage } from '@/lib/utils';
 import { prismaGetAvailablePets } from '@/lib/data';
@@ -18,7 +18,6 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 }) {
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [allPets, setAllPets] = useState<Pet[]>([]);
-	const [filteredPets, setFilteredPets] = useState<Pet[]>([]);
 	const filterTrigger = useAdoptStore((state) => state.filterTrigger);
 	
 	// rather than ping the db on every update, fetch once and filter
@@ -28,14 +27,14 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 			
 			try {
 				const pets = await prismaGetAvailablePets(userId);
-				// process all images at once and update state with processed pets
-				const petsImages = await Promise.all(
-					pets.map(async (pet) => {
-						const imageUrl = await base64ToImage(pet.image);
-						return { ...pet, imageUrl }
-					})
+				// process all images at once and update the state with processed pets
+				const processImage = await Promise.all(
+					pets.map(async (pet) => ({
+						...pet,
+						imageUrl: await base64ToImage(pet.image)
+					}))
 				);
-				setAllPets(petsImages);
+				setAllPets(processImage);
 			} catch (err) {
 				console.error(`Failed to process image for pet`, err);
 			} finally {
@@ -46,18 +45,18 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 		loadAvailablePets();
 	}, [userId, filterTrigger]);
 	
-	useEffect(() => {
-		if (allPets.length > 0) {
-			setFilteredPets(allPets.filter((pet) => {
-				return (
-					(!type || pet.type === type) &&
-					(!breed || pet.breed === breed) &&
-					(!gender || pet.gender === gender) &&
-					(!age || pet.age === age) &&
-					(!compatibility || compatibility.every((comp) => pet.compatibility.includes(comp)))
-				);
-			}));
-		}
+	const filteredPets = useMemo(() => {
+		if (!allPets.length) return [];
+		// return filtered pets based on the form input
+		return allPets.filter((pet) => {
+			return (
+				(!type || pet.type === type) &&
+				(!breed || pet.breed.includes(breed)) &&
+				(!gender || pet.gender === gender) &&
+				(!age || pet.age.includes(age)) &&
+				(!compatibility || compatibility.every((comp) => pet.compatibility.includes(comp)))
+			);
+		});
 	}, [allPets, type, breed, gender, age, compatibility]);
 	
 	return (
@@ -68,7 +67,7 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 			) : (
 				filteredPets.length === 0 ? (
 					<div className="flex justify-center">
-						<span className="!mt-16 toGrid:!mt-36 text-base">No matching pets available.</span>
+						<span className="!mt-16 toGrid:!mt-36 text-base">No available matching pets.</span>
 					</div>
 				) : (
 					<PetCard pets={filteredPets} isAdopting={true}/>

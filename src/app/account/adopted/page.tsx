@@ -16,14 +16,14 @@ export default async function AdoptedPage() {
 			<Headings title="Adoption Chronicles"/>
 			{typeof adoptedPets === 'string' ? (
 				<div className="flex justify-center">
-					<span className="!mt-16 toGrid:!mt-36 text-base">{adoptedPets}</span>
+					<span className="!mt-16 toGrid:!mt-36">{adoptedPets}</span>
 				</div>
 			) : adoptedPets.length === 0 ? (
 				<div className="flex justify-center">
-					<span className="!mt-16 toGrid:!mt-36 text-base">You have not adopted any pets at this time.</span>
+					<span className="!mt-16 toGrid:!mt-36">You have not adopted any pets at this time.</span>
 				</div>
 			) : (
-				<PetCard pets={adoptedPets} />
+				<PetCard pets={adoptedPets}/>
 			)}
 		</div>
 	);

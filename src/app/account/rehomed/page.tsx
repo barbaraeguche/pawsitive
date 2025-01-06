@@ -16,14 +16,14 @@ export default async function RehomedPage() {
 			<Headings title="Your Rehoming Journey"/>
 			{typeof rehomedPets === 'string' ? (
 				<div className="flex justify-center">
-					<span className="!mt-16 toGrid:!mt-36 text-base">{rehomedPets}</span>
+					<span className="!mt-16 toGrid:!mt-36">{rehomedPets}</span>
 				</div>
 			) : rehomedPets.length === 0 ? (
 				<div className="flex justify-center">
-					<span className="!mt-16 toGrid:!mt-36 text-base">You have not rehomed any pets at this time.</span>
+					<span className="!mt-16 toGrid:!mt-36">You have not rehomed any pets at this time.</span>
 				</div>
 			) : (
-				<PetCard pets={rehomedPets} />
+				<PetCard pets={rehomedPets}/>
 			)}
 		</div>
 	);

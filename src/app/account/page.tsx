@@ -1,10 +1,10 @@
-'use client';
-import { useSessionExpiry } from '@/hooks/useSessionExpiry';
+import { getAuthUserId } from '@/lib/data';
 import UserInfo from '@/ui/account/user-info';
 
-export default function AccountPage() {
-	useSessionExpiry();
+export default async function AccountPage() {
+	const userId = await getAuthUserId();
+	
 	return (
-		<UserInfo/>
+		<UserInfo userId={userId}/>
 	);
 }

@@ -16,6 +16,7 @@ export default function Sidenav() {
 			}}>
 				<Button type="submit"
 				        intent="danger"
+				        aria-label="Sign Out"
 				        className="grow w-full h-12 p-4 rounded-md md:justify-start"
 				>
 					<LogOut className="w-5"/>

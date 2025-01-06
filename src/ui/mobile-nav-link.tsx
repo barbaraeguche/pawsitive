@@ -1,6 +1,6 @@
 'use client';
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import {
 	DropdownMenu,
@@ -18,9 +18,9 @@ export default function MobileNavLink({ mainLinks }: {
 	
 	return (
 		<DropdownMenu modal={false} open={openMenu} onOpenChange={setOpenMenu}>
-			<DropdownMenuTrigger aria-label="Open navigation menu"
+			<DropdownMenuTrigger asChild
+			                     aria-label="Open navigation menu"
 			                     className="hover:cursor-pointer"
-			                     asChild
 			>
 				<Menu/>
 			</DropdownMenuTrigger>
