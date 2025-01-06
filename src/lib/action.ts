@@ -5,9 +5,9 @@ import { AuthError } from 'next-auth';
 import { signIn } from '../../auth';
 import bcrypt from 'bcryptjs';
 import { imageToBase64, normalizeText } from '@/lib/utils';
+import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
 import { getAuthUserId, prismaCreateUser, prismaRehomePet } from '@/lib/data';
 import { ObjectValuesType, PetState, UserLoginState, UserRegisterState } from '@/lib/definitions';
-import { RehomePet, LoginSchema, RegisterSchema } from '@/lib/form-schema';
 
 /**
  * this function rehomes a pet submitted by the user.
@@ -48,7 +48,7 @@ export async function rehomePet(_prevState: PetState, formData: FormData) {
 		return { message: 'Database error. Failed to rehome pet.' };
 	}
 	
-	// revalidate the cache for the rehome page, and redirect the user
+	// revalidate the cache for the rehomed page, and redirect the user
 	revalidatePath('/account/rehomed');
 	redirect('/account/rehomed');
 }

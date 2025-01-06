@@ -1,6 +1,7 @@
 # paw squad 🐾
-paw squad is a pet adoption platform where users can adopt and rehome pets. 
-it features authentication, session management, and state management to ensure a seamless experience.
+paw squad is a pet adoption platform where users can adopt and rehome pets seamlessly. 
+it features authentication, session management, and state management to ensure a smooth user experience, 
+powered by prisma db for efficient data handling.
 
 ## features 👾
 - **pet care tips:** provides useful tips on how to take care of adopted pets.
@@ -27,39 +28,77 @@ it features authentication, session management, and state management to ensure a
 ## improvements 🌱
 - **payment integration:** add real-time payments (e.g., stripe) for adoptions.
 - **customer support:** implement a contact system for better user satisfaction and faster service.
-- **authentication upgrades:** support additional login providers and a "remember me" feature.
+- **authentication upgrades:** email verification, support additional login providers and a "remember me" feature.
 
 ## session expiry hook 🪝
-this is the hook that logs users out after 15 minutes:
+this hook ensures users are automatically logged out 15 minutes after their session starts.
 ```typescript
 'use client';
 import { useSession, signOut } from 'next-auth/react';
-import { useEffect } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 
 export const useSessionExpiry = () => {
-  const { data: session } = useSession();
-  
-  useEffect(() => {
-	if (!session?.expires) return;
+  const { data: session, status, update } = useSession();
 	
-	// calculate time until session expires (15 minutes from now)
-	const loginTime = Date.now();
-	const expireTime = loginTime + (15 * 60 * 1000); // 15 minutes in milliseconds
-	const timeUntilExpiry = expireTime - loginTime;
+  const handleLogout = useCallback(async () => {
+	await signOut({ redirectTo: '/' });
+  }, []);
+	
+  // ensure session gets refreshed if unauthenticated
+  useEffect(() => {
+	if (status === "unauthenticated") {
+	  update().catch(console.error);
+	}
+  }, [status, update]);
+	
+  // compute session expiry time efficiently
+  const timeUntilExpiry = useMemo(() => {
+	if (!session?.expires) return null;
+	return new Date(session.expires).getTime() - Date.now();
+  }, [session?.expires]);
+	
+  useEffect(() => {
+	// if no valid expiration timestamp, do nothing
+	if (timeUntilExpiry === null) return;
 		
-	// set timer to logout when session expires
-	const timer = setTimeout(async () => {
-	  await signOut({
-		redirectTo: '/'
-	  });
-	}, timeUntilExpiry);
+	// if the session already expired, log out immediately
+	if (timeUntilExpiry <= 0) {
+	  handleLogout();
+	  return;
+	}
 		
-	// cleanup timer if component unmounts
+	// set a timer to log the user out when the session expires
+	const timer = setTimeout(handleLogout, timeUntilExpiry);
+		
+	// cleanup the timer if the component unmounts or session changes
 	return () => clearTimeout(timer);
-  }, [session]);
+  }, [timeUntilExpiry, handleLogout]);
 };
 ```
-this ensures that users are logged out automatically after 15 minutes to maintain security.
+
+the provider wraps the entire application to enable session tracking and automatic logout.
+```typescript jsx
+'use client';
+import { SessionProvider as NextAuthSessionProvider } from 'next-auth/react';
+import { ReactNode } from 'react';
+import { useSessionExpiry } from '@/hooks/useSessionExpiry';
+
+function SessionExpiryCheck() {
+	useSessionExpiry();
+	return null;
+}
+
+export function SessionProvider({ children }: {
+	children: ReactNode
+}) {
+	return (
+		<NextAuthSessionProvider>
+			<SessionExpiryCheck/>
+			{children}
+		</NextAuthSessionProvider>
+	);
+}
+```
 
 ## .env file 📄
 this project requires an `.env` file in the root directory. rename the `.env.example` file to `.env`, and update it with the necessary values. ensure this file is configured properly and not committed to version control.

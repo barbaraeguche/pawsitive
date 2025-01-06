@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Headings from '@/components/headings';
 import Button from '@/ui/button';
 import ValuesWrapper from '@/ui/home/values';
 import StatsWrapper from '@/ui/home/stats';
 import TestimonialWrapper from '@/ui/home/testimonials';
+import Headings from '@/components/headings';
 
 export default function RootPage() {
 	return (
-		<div className="space-y-24 !mt-12 !mb-32">
+		<div className="space-y-24 !mt-top !mb-bottom">
 			{/* banner */}
 			<section className="mx-auto flex flex-col gap-8 w-[90%] max-w-[420px] sm:max-w-[550px] md:max-w-[690px] lg:flex-row lg:gap-16 lg:max-w-6xl toGrid:gap-20 toGrid:max-w-[1400px]">
 				<div className="blob-outline flex justify-center space-x-1">

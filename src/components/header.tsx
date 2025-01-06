@@ -10,12 +10,12 @@ const mainLinks = [
 
 export default function Header() {
 	return (
-		<header className={`${lora.className} z-50 p-2 sticky top-0 border-b border-b-brown-100 bg-dough`}>
+		<header className={`${lora.className} z-50 p-1.5 sticky top-0 border-b border-b-brown-100 bg-dough`}>
 			{/* desktop format */}
 			<div className="hidden sm:flex items-center justify-between">
 				<SiteName/>
 				
-				<nav className="space-x-3 md:space-x-8 lg:space-x-16 toGrid:space-x-32">
+				<nav className="space-x-9 md:space-x-16 lg:space-x-24 toGrid:space-x-32">
 					{mainLinks.map((link) => (
 						<Link key={link.name}
 						      href={link.href}

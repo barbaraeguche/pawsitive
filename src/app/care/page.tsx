@@ -23,7 +23,7 @@ const dogCare = [
 
 export default async function CarePage() {
 	return (
-		<div className="max-w-3xl mx-auto !mt-12 !mb-32 space-y-12">
+		<div className="max-w-3xl mx-auto !mt-top !mb-bottom space-y-6 md:space-y-12">
 			<Headings title="Pet Wellness Handbook"/>
 			
 			<Tabs defaultValue="cats" className="px-2">

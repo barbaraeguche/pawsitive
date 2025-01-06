@@ -1,7 +1,6 @@
 'use client';
-// import { useRef } from 'react';
+// import { useRef, useEffect } from 'react';
 // import { useInView } from 'framer-motion';
-// import { useEffect } from 'react';
 // import { incrementCount } from '@/lib/utils';
 import Headings from '@/components/headings';
 

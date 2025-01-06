@@ -1,7 +1,7 @@
 'use client';
 import { useActionState } from 'react';
-import { PetState } from '@/lib/definitions';
 import { rehomePet } from '@/lib/action';
+import { PetState } from '@/lib/definitions';
 import Input from '@/ui/input';
 import Button from '@/ui/button';
 import FormError from '@/ui/form-error';
@@ -12,11 +12,10 @@ export default function Form() {
 	const [state, formAction, isPending] = useActionState(rehomePet, initialState);
 	
 	return (
-		<div className="px-1.5 !mt-12 !mb-32 space-y-12">
+		<div className="px-1.5 !mt-top !mb-bottom space-y-6 md:space-y-12">
 			<Headings title="Rehome Your Beloved Pet"/>
 			<form action={formAction}>
-				<div
-					className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
+				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25">
 					{/* pet name */}
 					<div>
 						<label htmlFor="name" className="mb-1 block text-sm">Pet Name</label>
@@ -220,7 +219,6 @@ export default function Form() {
 							       disabled={isPending}
 							       accept="image/jpeg, image/png"
 							       aria-describedby="image-error"
-							       defaultValue={state.values?.image}
 							       className="hidden"
 							/>
 							{/* centered label content */}
@@ -270,12 +268,14 @@ export default function Form() {
 						<Button type="reset"
 						        intent="refresh"
 						        className="w-1/3"
+						        aria-description="Clear form"
 						>
 							Clear
 						</Button>
 						
 						<Button type="submit"
 						        disabled={isPending}
+						        aria-description="Submit form"
 						        className="w-2/3 disabled:bg-brown-80/10 disabled:text-brown disabled:cursor-default"
 						>
 							Rehome

@@ -43,7 +43,7 @@ export default function AdoptButton({ petId, petName }: {
 		try {
 			setIsAdopting(true);
 			await prismaAdoptPet(petId, userId);
-			triggerAdopt(); // trigger the context update
+			triggerAdopt(); // trigger zustand context update to reflect adoption
 		} catch (err) {
 			console.error(`Error adopting pet: ${err}`);
 		} finally {

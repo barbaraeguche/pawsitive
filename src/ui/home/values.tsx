@@ -1,6 +1,6 @@
 import { HandHeart, Recycle, HousePlus } from 'lucide-react';
-import Headings from '@/components/headings';
 import clsx from 'clsx';
+import Headings from '@/components/headings';
 
 const values = {
 	'Compassionate Care': HandHeart,

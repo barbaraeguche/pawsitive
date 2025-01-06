@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import { SessionProvider } from 'next-auth/react';
 import { ReactNode } from 'react';
 import '@/ui/globals.css';
 import { newsreader } from '@/ui/fonts';
+import { SessionProvider } from '@/components/session-provider';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 
