@@ -5,6 +5,7 @@ import { useAdoptStore } from '@/store/adoptStore';
 import { capitalizeFirstLetter } from '@/lib/utils';
 import { getAuthUserId, prismaAdoptPet } from '@/lib/data';
 import Button from '@/ui/button';
+import FormError from '@/ui/form-error';
 import {
 	Dialog,
 	DialogContent,
@@ -22,6 +23,7 @@ export default function AdoptButton({ petId, petName }: {
 }) {
 	const [userId, setUserId] = useState<string>('');
 	const [isAdopting, setIsAdopting] = useState<boolean>(false);
+	const [error, setError] = useState<string>();
 	const triggerAdopt = useAdoptStore((state) => state.triggerAdopt);
 	
 	useEffect(() => {
@@ -42,7 +44,13 @@ export default function AdoptButton({ petId, petName }: {
 		
 		try {
 			setIsAdopting(true);
-			await prismaAdoptPet(petId, userId);
+			
+			const response = await prismaAdoptPet(petId, userId);
+			if (response) {
+				setError(response);
+				return;  // don't trigger zustand
+			}
+			
 			triggerAdopt(); // trigger zustand context update to reflect adoption
 		} catch (err) {
 			console.error(`Error adopting pet: ${err}`);
@@ -61,21 +69,17 @@ export default function AdoptButton({ petId, petName }: {
 			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>Adopt {capitalizeFirstLetter(petName)}</DialogTitle>
-					<DialogDescription className="flex flex-col gap-y-4">
-						<span>
-							This action <span className="text-red-600 underline">cannot</span> be undone. Once you adopt {petName},
-							they will be <span className="underline">permanently</span> added to your profile. Click confirm to proceed.
-						</span>
-						<span>
-							You can only adopt a <span className="text-red-600 underline">maximum of 4</span> pets.
-						</span>
+					<DialogDescription>
+						This action <span className="text-red-600 underline">cannot</span> be undone. Once you adopt {petName},
+						they will be <span className="underline">permanently</span> added to your profile. Click confirm to proceed.
 					</DialogDescription>
 				</DialogHeader>
+				{error && <FormError message={error}/>}
 				<DialogFooter>
 					<DialogClose asChild>
 						<Button intent="primary"
 						        onClick={handleAdopt}
-						        disabled={isAdopting}
+						        disabled={isAdopting || !!error}
 						>
 							Confirm
 						</Button>

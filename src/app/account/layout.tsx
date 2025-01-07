@@ -13,7 +13,7 @@ export default function AccountLayout({ children }: {
 	children: ReactNode
 }) {
 	return (
-		<div className="h-screen flex flex-col md:flex-row md:overflow-hidden">
+		<div className="h-full flex flex-col md:flex-row md:overflow-hidden">
 			<div className="w-full flex-row md:w-60">
 				<Sidenav/>
 			</div>

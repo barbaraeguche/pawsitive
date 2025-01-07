@@ -21,7 +21,7 @@ export const useSessionExpiry = () => {
 		console.log(session, status);
 		if (!session?.expires) return null;
 		return new Date(session.expires).getTime() - Date.now();
-	}, [session?.expires]);
+	}, [session?.expires, status, update]);
 	
 	useEffect(() => {
 		// if no valid expiration timestamp, do nothing
