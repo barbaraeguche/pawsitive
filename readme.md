@@ -55,7 +55,7 @@ export const useSessionExpiry = () => {
   const timeUntilExpiry = useMemo(() => {
 	if (!session?.expires) return null;
 	return new Date(session.expires).getTime() - Date.now();
-  }, [session?.expires, status, update]);
+  }, [session, status, update]);
 	
   useEffect(() => {
 	// if no valid expiration timestamp, do nothing
