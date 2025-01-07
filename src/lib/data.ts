@@ -81,12 +81,12 @@ export const prismaRehomePet = async (
 					userId
 				}
 			});
-			await tx.user.update({
-				where: { id: userId },
-				data: {
-					rehomeCount: { increment: 1 }
-				}
-			});
+			// await tx.user.update({
+			// 	where: { id: userId },
+			// 	data: {
+			// 		rehomeCount: { increment: 1 }
+			// 	}
+			// });
 		});
 	} catch (err) {
 		console.error(`Failed to rehome pet: ${err}`);
@@ -128,12 +128,12 @@ export const prismaAdoptPet = async (petId: string, userId: string) => {
 					userId
 				}
 			});
-			await tx.user.update({
-				where: { id: userId },
-				data: {
-					adoptCount: { increment: 1 }
-				}
-			});
+			// await tx.user.update({
+			// 	where: { id: userId },
+			// 	data: {
+			// 		adoptCount: { increment: 1 }
+			// 	}
+			// });
 		});
 	} catch (err) {
 		console.error(`Failed to adopt pet: ${err}`);
