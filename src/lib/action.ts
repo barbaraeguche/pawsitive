@@ -38,12 +38,12 @@ export async function rehomePet(_prevState: PetState, formData: FormData) {
 	// convert image to base 64
 	const binaryImage = await imageToBase64(image);
 	
-	// insert into database
+	// insert into the database
 	try {
 		const response = await prismaRehomePet(userId, normalizeText(name), type, normalizeText(breed), gender, { age, comments }, compatibility, binaryImage);
-		if (response) {
-      return { message: response };
-    }
+		// if (response) {
+    //   return { message: response };
+    // }
 	} catch (_) {
 		return { message: 'Database error. Failed to rehome pet.' };
 	}

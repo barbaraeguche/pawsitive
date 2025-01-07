@@ -52,15 +52,15 @@ export const prismaRehomePet = async (
 	image: string
 ) => {
 	try {
-		// check if user has reached the maximum rehomed value (6)
-		const counter = await prisma.user.findUnique({
-			where: { id: userId },
-			select: { rehomeCount: true }
-		});
-		// ensure user/counter exists and check limit
-		if (!counter || counter.rehomeCount >= 6) {
-			return 'You can only rehome a maximum of 6 pets.'
-		}
+		// // check if user has reached the maximum rehomed value (6)
+		// const counter = await prisma.user.findUnique({
+		// 	where: { id: userId },
+		// 	select: { rehomeCount: true }
+		// });
+		// // ensure user/counter exists and check limit
+		// if (!counter || counter.rehomeCount >= 6) {
+		// 	return 'You can only rehome a maximum of 6 pets.'
+		// }
 		
 		await prisma.$transaction(async (tx) => {
 			const pet = await tx.pet.create({
@@ -111,15 +111,15 @@ export const prismaGetAvailablePets = async (userId: string) => {
 // prisma - adopt a pet if adoptCount less than max value (4), increment adoptCount by 1, all using transaction for atomicity
 export const prismaAdoptPet = async (petId: string, userId: string) => {
 	try {
-		// check if user has reached the maximum adopted value (4)
-		const counter = await prisma.user.findUnique({
-			where: { id: userId },
-			select: { adoptCount: true }
-		});
-		// ensure user/counter exists and check limit
-		if (!counter || counter.adoptCount >= 4) {
-			return 'You can only adopt a maximum of 4 pets.'
-		}
+		// // check if user has reached the maximum adopted value (4)
+		// const counter = await prisma.user.findUnique({
+		// 	where: { id: userId },
+		// 	select: { adoptCount: true }
+		// });
+		// // ensure user/counter exists and check limit
+		// if (!counter || counter.adoptCount >= 4) {
+		// 	return 'You can only adopt a maximum of 4 pets.'
+		// }
 		
 		await prisma.$transaction(async (tx) => {
 			await tx.adopted.create({
