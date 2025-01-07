@@ -18,7 +18,6 @@ export const useSessionExpiry = () => {
 	
 	// compute session expiry time efficiently
 	const timeUntilExpiry = useMemo(() => {
-		console.log(session, status);
 		if (!session?.expires) return null;
 		return new Date(session.expires).getTime() - Date.now();
 	}, [session, status]);
