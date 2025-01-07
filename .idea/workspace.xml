@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="ughhhhhh, just deploy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/account/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useSessionExpiry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSessionExpiry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/account/user-info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/account/user-info.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/adopt/adopt-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/adopt/adopt-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +200,7 @@
       <workItem from="1736057031203" duration="13802000" />
       <workItem from="1736105648798" duration="3766000" />
       <workItem from="1736109429586" duration="23372000" />
-      <workItem from="1736166259269" duration="30412000" />
+      <workItem from="1736166259269" duration="31984000" />
     </task>
     <task id="LOCAL-00001" summary="trying to get my deploy working">
       <option name="closed" value="true" />
