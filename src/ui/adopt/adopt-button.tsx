@@ -46,10 +46,10 @@ export default function AdoptButton({ petId, petName }: {
 			setIsAdopting(true);
 			
 			const response = await prismaAdoptPet(petId, userId);
-			// if (response) {
-			// 	setError(response);
-			// 	return;  // don't trigger zustand
-			// }
+			if (response) {
+				setError(response);
+				return;  // don't trigger zustand
+			}
 			
 			triggerAdopt(); // trigger zustand context update to reflect adoption
 		} catch (err) {

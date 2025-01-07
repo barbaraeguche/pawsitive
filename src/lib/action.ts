@@ -41,9 +41,9 @@ export async function rehomePet(_prevState: PetState, formData: FormData) {
 	// insert into the database
 	try {
 		const response = await prismaRehomePet(userId, normalizeText(name), type, normalizeText(breed), gender, { age, comments }, compatibility, binaryImage);
-		// if (response) {
-    //   return { message: response };
-    // }
+		if (response) {
+      return { message: response };
+    }
 	} catch (_) {
 		return { message: 'Database error. Failed to rehome pet.' };
 	}
