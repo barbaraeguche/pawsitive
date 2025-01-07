@@ -31,7 +31,7 @@ powered by prisma db for efficient data handling.
 - **authentication upgrades:** email verification, support additional login providers and a "remember me" feature.
 
 ## session expiry hook 🪝
-this hook ensures users are automatically logged out 15 minutes after their session starts.
+this hook ensures users are automatically logged out 15 minutes after **every** hard reload.
 ```typescript
 'use client';
 import { useSession, signOut } from 'next-auth/react';
@@ -55,7 +55,7 @@ export const useSessionExpiry = () => {
   const timeUntilExpiry = useMemo(() => {
 	if (!session?.expires) return null;
 	return new Date(session.expires).getTime() - Date.now();
-  }, [session?.expires]);
+  }, [session?.expires, status, update]);
 	
   useEffect(() => {
 	// if no valid expiration timestamp, do nothing
@@ -84,19 +84,19 @@ import { ReactNode } from 'react';
 import { useSessionExpiry } from '@/hooks/useSessionExpiry';
 
 function SessionExpiryCheck() {
-	useSessionExpiry();
-	return null;
+  useSessionExpiry();
+  return null;
 }
 
 export function SessionProvider({ children }: {
-	children: ReactNode
+  children: ReactNode
 }) {
-	return (
-		<NextAuthSessionProvider>
-			<SessionExpiryCheck/>
-			{children}
-		</NextAuthSessionProvider>
-	);
+  return (
+	<NextAuthSessionProvider>
+	  <SessionExpiryCheck/>
+	  {children}
+	</NextAuthSessionProvider>
+  );
 }
 ```
 

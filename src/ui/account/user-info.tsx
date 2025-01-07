@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-import { getUserCredentials } from '@/lib/data';
+import { getUserInformation } from '@/lib/data';
 import { User } from '@/lib/definitions';
 import Input from '@/ui/input';
 import Headings from '@/components/headings';
@@ -14,7 +14,7 @@ export default function UserInfo({ userId }: {
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
-				const user = await getUserCredentials(userId);
+				const user = await getUserInformation(userId);
 				setUser(user!);
 			} catch (err) {
 				console.error(`Error fetching user information: ${err}`);
@@ -38,7 +38,7 @@ export default function UserInfo({ userId }: {
 					       className="focus-visible:outline-transparent"
 					/>
 				</div>
-					
+				
 				{/* user email */}
 				<div>
 					<label htmlFor="email" className="mb-1 block text-sm">Email</label>
@@ -49,7 +49,7 @@ export default function UserInfo({ userId }: {
 					       className="focus-visible:outline-transparent"
 					/>
 				</div>
-					
+				
 				{/* user rehome count - max 6 pets */}
 				<div className="flex items-center gap-x-3">
 					<label htmlFor="rehome-count" className="mb-1 block text-sm text-nowrap">Rehome Count:</label>
@@ -57,12 +57,12 @@ export default function UserInfo({ userId }: {
 					       id="rehome-count"
 					       value={user.rehomeCount}
 					       className={clsx(
-									 'focus-visible:outline-transparent ',
-						       { 'text-red-600': user.rehomeCount === 6  }
+						       'focus-visible:outline-transparent',
+						       { 'text-red-600': user.rehomeCount === 6 }
 					       )}
 					/>
 				</div>
-					
+				
 				{/* user adopt count - max 4 pets */}
 				<div className="flex items-center gap-x-6">
 					<label htmlFor="adopt-count" className="mb-1 block text-sm text-nowrap">Adopt Count:</label>
@@ -71,11 +71,15 @@ export default function UserInfo({ userId }: {
 					       value={user.adoptCount}
 					       className={clsx(
 						       'focus-visible:outline-transparent ',
-						       { 'text-red-600': user.adoptCount === 4  }
+						       { 'text-red-600': user.adoptCount === 4 }
 					       )}
 					/>
 				</div>
 			</div>
+			<p className="italic px-2 text-justify mx-auto max-w-[400px] sm:max-w-[600px]">
+				<b>Important Note: {' '}</b>
+				You can only rehome a <span className="text-red-600 underline">maximum of 6</span> pets, and adopt a <span className="text-red-600 underline">maximum of 4</span>.
+			</p>
 		</div>
 	);
 }

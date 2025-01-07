@@ -118,7 +118,7 @@ export const prismaAdoptPet = async (petId: string, userId: string) => {
 		});
 		// ensure user/counter exists and check limit
 		if (!counter || counter.adoptCount >= 4) {
-			return;
+			return 'You can only adopt a maximum of 4 pets.'
 		}
 		
 		await prisma.$transaction(async (tx) => {
@@ -143,7 +143,7 @@ export const prismaAdoptPet = async (petId: string, userId: string) => {
 
 
 // prisma - try to find a user by their id
-export const getUserCredentials = async (id: string) => {
+export const getUserInformation = async (id: string) => {
 	return prisma.user.findUnique({
 		where: { id },
 		select: {
