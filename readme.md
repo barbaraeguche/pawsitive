@@ -8,7 +8,7 @@ powered by prisma db for efficient data handling.
 - **adopt and rehome pets:** users can adopt up to 4 pets and rehome up to 6 pets.
 - **authentication and authorization:** next-auth credentials authentication with cookies set to expire after 15 minutes. authorization is required for adoption, rehoming, and account pages.
 - **adoption and rehoming history:** track pets you've adopted or rehomed.
-- **restrictions:** users cannot adopt pets they haven't rehomed.
+- **restrictions:** users cannot adopt a pet they rehomed.
 - **state management:** global state management using zustand that triggers a fetch request for available pets when adoption occurs.
 - **automatic session expiry:** logs users out after 15 minutes of login time.
 
