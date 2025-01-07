@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "clean": "rm -rf .next node_modules prisma/migrations && pnpm install --frozen-lockfile",
-    "build": "prisma migrate deploy && next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "build": "next build",
+    "start": "next start",
+    "vercel-build": "prisma generate && prisma db push && next build",
+    "prisma:generate": "prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
