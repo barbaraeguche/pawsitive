@@ -31,7 +31,7 @@ powered by prisma db for efficient data handling.
 - **authentication upgrades:** email verification, support additional login providers and a "remember me" feature.
 
 ## session expiry hook 🪝
-this hook ensures users are automatically logged out 15 minutes after **every** hard reload.
+this hook ensures users are automatically logged out 15 minutes after **every** reload.
 ```typescript
 'use client';
 import { useSession, signOut } from 'next-auth/react';
