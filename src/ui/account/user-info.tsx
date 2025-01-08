@@ -15,7 +15,7 @@ export default function UserInfo({ userId }: {
 		const fetchUser = async () => {
 			try {
 				const user = await getUserInformation(userId);
-				user && setUser(user);
+				setUser(user!);
 			} catch (err) {
 				console.error(`Error fetching user information: ${err}`);
 			}
