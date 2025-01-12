@@ -1,17 +1,17 @@
-import { Lora, Newsreader, Croissant_One } from 'next/font/google';
+import { Crimson_Pro, Montserrat, Lora } from 'next/font/google';
 
-export const croissantOne = Croissant_One({
-	weight: '400',
+export const crimsonPro = Crimson_Pro({
+	weight: '500',
+	subsets: ['latin']
+});
+
+export const montserrat = Montserrat({
+	weight: '500',
 	subsets: ['latin']
 });
 
 export const lora = Lora({
 	weight: '400',
-	subsets: ['latin']
-});
-
-export const newsreader = Newsreader({
-	weight: '400',
-	style: ['normal', 'italic'],
+	style: ['normal'],
 	subsets: ['latin']
 });

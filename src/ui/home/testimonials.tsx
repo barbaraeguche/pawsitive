@@ -1,7 +1,9 @@
+'use client';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Headings from '@/components/headings';
 
-export default function TestimonialWrapper() {
+export default function Testimonials() {
 	return (
 		<div className="space-y-12">
 			<Headings title="Hear From Our Community"/>

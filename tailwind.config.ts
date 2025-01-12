@@ -6,6 +6,9 @@ export default {
 	content: [ "./src/**/*.{js,ts,jsx,tsx,mdx}" ],
   theme: {
   	extend: {
+			fontSize: {
+				base: '15px'
+			},
 			margin: {
 				top: '48px',
 				bottom: '128px'
