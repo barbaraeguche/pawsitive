@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc97c9a1-b911-44e2-aa7d-d7917c106d0e" name="Changes" comment="ughhhhhh, just deploy">
+      <change afterPath="$PROJECT_DIR$/src/ui/home/about.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/home/intro.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/headings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/headings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/session-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/session-provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/fonts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/stats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/stats.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/testimonials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/home/values.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/home/values.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +51,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -49,32 +64,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.client.ts.executor": "Run",
-    "Node.js.dumy.ts.executor": "Run",
-    "Node.js.middleware.ts.executor": "Run",
-    "Node.js.queries.ts.executor": "Run",
-    "Node.js.script.ts.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "23.4.0",
-    "javascript.nodejs.core.library.typings.version": "22.10.2",
-    "last_opened_file_path": "/Users/barbara/webstorm/paw-squad/src/app/account/rehomed",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/Users/barbara/.nvm/versions/node/v22.12.0/bin/node",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Run",
-    "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "editing.templates",
-    "ts.external.directory.path": "/Users/barbara/webstorm/paw-squad/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.client.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.dumy.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.middleware.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.queries.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.script.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;23.4.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.10.2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/barbara/webstorm/paw-squad/src/app/account/rehomed&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/Users/barbara/.nvm/versions/node/v22.12.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/barbara/webstorm/paw-squad/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -200,6 +215,13 @@
       <workItem from="1736105648798" duration="3766000" />
       <workItem from="1736109429586" duration="23372000" />
       <workItem from="1736166259269" duration="36806000" />
+      <workItem from="1736295805288" duration="7988000" />
+      <workItem from="1736304568852" duration="1005000" />
+      <workItem from="1736365427824" duration="9000" />
+      <workItem from="1736376585518" duration="9302000" />
+      <workItem from="1736468227328" duration="8529000" />
+      <workItem from="1736558195890" duration="6207000" />
+      <workItem from="1736646102418" duration="6725000" />
     </task>
     <task id="LOCAL-00001" summary="trying to get my deploy working">
       <option name="closed" value="true" />

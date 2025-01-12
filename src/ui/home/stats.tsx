@@ -1,23 +1,27 @@
 'use client';
-// import { useRef, useEffect } from 'react';
-// import { useInView } from 'framer-motion';
-// import { incrementCount } from '@/lib/utils';
+import { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { incrementCount } from '@/lib/utils';
 import Headings from '@/components/headings';
 
-export default function StatsWrapper() {
-	// const statsRef = useRef<HTMLDivElement>(null);
+export default function Statistics() {
+	const statsRef = useRef<HTMLDivElement>(null);
+	const inView = useInView(statsRef, { once: true, amount: 0.3 });
 	
-	
-	// useEffect(() => {
-	// 	incrementCount();
-	// }, []);
+	useEffect(() => {
+		if (inView) {
+      incrementCount();
+    }
+	}, [inView]);
 	
 	return (
 		<div className="text-center space-y-12">
 			<Headings title="Measuring Our Success"/>
-			<div className="px-2 grid gap-y-10 sm:flex justify-center sm:gap-x-12 md:gap-x-32">
+			<div ref={statsRef}
+			     className="px-2 grid gap-y-10 sm:flex justify-center sm:gap-x-12 md:gap-x-32"
+			>
 				<StatsCards percent={false}
-				            target={927}
+				            target={627}
 				            title="Pets Adopted in 2023"
 				/>
 				<StatsCards percent={false}

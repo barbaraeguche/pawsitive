@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { croissantOne, lora } from '@/ui/fonts';
+import { crimsonPro, montserrat } from '@/ui/fonts';
 import MobileNavLink from '@/ui/mobile-nav-link';
 
 const mainLinks = [
@@ -10,7 +10,7 @@ const mainLinks = [
 
 export default function Header() {
 	return (
-		<header className={`${lora.className} z-50 p-1.5 sticky top-0 border-b border-b-brown-100 bg-dough`}>
+		<header className={`${montserrat.className} z-50 p-1.5 sticky top-0 border-b border-b-brown-100 bg-dough`}>
 			{/* desktop format */}
 			<div className="hidden sm:flex items-center justify-between">
 				<SiteName/>
@@ -42,7 +42,7 @@ export default function Header() {
 
 function SiteName() {
 	return (
-		<h1 className={`${croissantOne.className} text-xl md:text-2xl lg:text-3xl`}>
+		<h1 className={`${crimsonPro.className} text-xl md:text-2xl lg:text-3xl`}>
 			<Link href="/">PAW SQUAD</Link>
 		</h1>
 	);

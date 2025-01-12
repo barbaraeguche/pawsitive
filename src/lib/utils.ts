@@ -5,6 +5,7 @@ export function cn(...args: ClassValue[]) {
   return twMerge(clsx(args));
 }
 
+// this function gradually increments the statistics values
 export const incrementCount = (): void => {
   const counters = document.querySelectorAll('.counter');
   counters.forEach((counter) => {
@@ -19,14 +20,14 @@ export const incrementCount = (): void => {
         : Number(counter.innerHTML.slice(0, -1));
       const increment = target / 200;
       
-      // update the counter value if it's less than the target
+      // update the counter-value if it's less than the target
       if (count < target) {
         counter.innerHTML = !hasPercentage
           ? `${Math.ceil(count + increment)}`
           : `${Math.ceil(count + increment)}%`;
         
-        // repeat the update every 20ms
-        setTimeout(updateCount, 20);
+        // repeat the update every 20 ms
+        setTimeout(updateCount, 25);
       } else {
         // set counter to the target value once reached
         counter.innerHTML = !hasPercentage ? `${target}` : `${target}%`;
