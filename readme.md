@@ -10,7 +10,7 @@ powered by prisma db for efficient data handling.
 - **adoption and rehoming history:** track pets you've adopted or rehomed.
 - **restrictions:** users cannot adopt a pet they rehomed.
 - **state management:** global state management using zustand that triggers a fetch request for available pets when adoption occurs.
-- **automatic session expiry:** logs users out after 15 minutes of login time
+- **automatic session expiry:** logs users out after 15 minutes of login time.
 
 ## what I learned 💭
 - **multipage website development:** learned how to build and structure a website with multiple pages.
