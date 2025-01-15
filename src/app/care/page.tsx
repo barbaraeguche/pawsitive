@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/shadcn/tabs";
-import { Card, CardHeader, CardTitle, CardContent } from "@/ui/shadcn/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/ui/shadcn/tabs';
+import { Card, CardHeader, CardTitle, CardContent } from '@/ui/shadcn/card';
 import Headings from '@/components/headings';
 
 export const metadata: Metadata = { title: 'Pet Care' };
@@ -21,27 +21,27 @@ const dogCare = [
 	{ title: 'Training and Behavior', content: 'Reinforce good behavior with rewards, establish a routine for trust, and use crates for training and safety.' }
 ];
 
-export default async function CarePage() {
+export default async function CarePage() {{}
 	return (
-		<div className="max-w-3xl mx-auto !mt-top !mb-bottom space-y-6 md:space-y-12">
-			<Headings title="Pet Wellness Handbook"/>
+		<div className={'max-w-3xl mx-auto !mt-top !mb-bottom space-y-6 md:space-y-12'}>
+			<Headings title={'Pet Wellness Handbook'}/>
 			
-			<Tabs defaultValue="cats" className="px-2">
-				<TabsList className="w-full mb-4">
-					<TabsTrigger value="cats" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Cats</TabsTrigger>
-					<TabsTrigger value="dogs" className="w-1/2 text-[15px] data-[state=active]:border data-[state=active]:border-brown-80 transition-colors">Dogs</TabsTrigger>
+			<Tabs defaultValue={'cats'} className={'px-2'}>
+				<TabsList className={'w-full mb-4'}>
+					<TabsTrigger value={'cats'} className={'w-1/2 data-[state=active]:border border-brown-80 transition-colors'}>Cats</TabsTrigger>
+					<TabsTrigger value={'dogs'} className={'w-1/2 data-[state=active]:border border-brown-80 transition-colors'}>Dogs</TabsTrigger>
 				</TabsList>
 				
-				<TabsContent value="cats">
-					<CardWrapper array={catCare}/>
+				<TabsContent value={'cats'}>
+					<CareCards array={catCare}/>
 				</TabsContent>
 				
-				<TabsContent value="dogs">
-					<CardWrapper array={dogCare}/>
+				<TabsContent value={'dogs'}>
+					<CareCards array={dogCare}/>
 				</TabsContent>
 			</Tabs>
 			
-			<p className="italic px-2 text-justify">
+			<p className={'italic px-2 text-justify'}>
 				<b>Final Note: {' '}</b>
 				Loving care, regular attention, and understanding their needs will help your pets thrive.
 				Remember, every pet is unique and may have individual preferences or requirements.
@@ -50,17 +50,17 @@ export default async function CarePage() {
 	);
 }
 
-function CardWrapper({ array }: {
+function CareCards({ array }: {
 	array: { title: string, content: string }[]
 }) {
 	return (
-		<div className="grid gap-y-1.5">
+		<div className={'grid gap-y-1.5'}>
 			{array.map((section, index) => (
-				<Card key={index} className="border border-brown-80">
-					<CardHeader>
-						<CardTitle className="tracking-widest">{section.title}</CardTitle>
+				<Card key={index} className={'border border-brown-80'}>
+					<CardHeader className={'!p-5'}>
+						<CardTitle className={'tracking-wide'}>{section.title}</CardTitle>
 					</CardHeader>
-					<CardContent className="text-justify">
+					<CardContent className={'!px-5 !pb-5 text-justify'}>
 						<p>{section.content}</p>
 					</CardContent>
 				</Card>

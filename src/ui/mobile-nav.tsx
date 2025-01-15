@@ -11,7 +11,7 @@ import {
 	DropdownMenuTrigger
 } from '@/ui/shadcn/dropdown-menu';
 
-export default function MobileNavLink({ mainLinks }: {
+export default function MobileNav({ mainLinks }: {
 	mainLinks: { name: string; href: string }[]
 }) {
 	const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -19,29 +19,32 @@ export default function MobileNavLink({ mainLinks }: {
 	return (
 		<DropdownMenu modal={false} open={openMenu} onOpenChange={setOpenMenu}>
 			<DropdownMenuTrigger asChild
-			                     aria-label="Open navigation menu"
-			                     className="hover:cursor-pointer"
+			                     aria-label={'Open navigation menu'}
+			                     className={'hover:cursor-pointer'}
 			>
 				<Menu/>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className="bg-dough w-56">
+			<DropdownMenuContent className={'bg-dough w-56'}>
 				<DropdownMenuGroup>
 					{mainLinks.map((link) => (
 						<DropdownMenuItem key={link.name}
 						                  onClick={() => setOpenMenu(false)}
+						                  className={'focus:bg-brown/5 transition-colors'}
 						>
 							<Link href={link.href}
-							      className="px-1.5 py-0.5 rounded-lg w-full"
+							      className={'px-1.5 py-0.5 rounded-lg w-full'}
 							>
 								{link.name}
 							</Link>
 						</DropdownMenuItem>
 					))}
 				</DropdownMenuGroup>
-				<DropdownMenuSeparator className="bg-brown-80"/>
-				<DropdownMenuItem onClick={() => setOpenMenu(false)}>
-					<Link href="/account"
-					      className="px-1.5 py-0.5 rounded-lg w-full"
+				<DropdownMenuSeparator className={'bg-brown-80'}/>
+				<DropdownMenuItem onClick={() => setOpenMenu(false)}
+				                  className={'focus:bg-brown/5 transition-colors'}
+				>
+					<Link href={'/account'}
+					      className={'px-1.5 py-0.5 rounded-lg w-full'}
 					>
 						My Account
 					</Link>

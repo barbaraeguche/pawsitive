@@ -23,7 +23,7 @@ export default function AdoptButton({ petId, petName }: {
 }) {
 	const [userId, setUserId] = useState<string>('');
 	const [isAdopting, setIsAdopting] = useState<boolean>(false);
-	const [error, setError] = useState<string>();
+	const [error, setError] = useState<string>('');
 	const triggerAdopt = useAdoptStore((state) => state.triggerAdopt);
 	
 	useEffect(() => {
@@ -62,22 +62,27 @@ export default function AdoptButton({ petId, petName }: {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button className="absolute top-1 right-1">
-					<Heart className="block w-4"/>
+				<Button className={'absolute top-1 right-1'}>
+					<Heart className={'block w-4'}/>
 				</Button>
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>Adopt {capitalizeFirstLetter(petName)}</DialogTitle>
 					<DialogDescription>
-						This action <span className="text-red-600 underline">cannot</span> be undone. Once you adopt {petName},
-						they will be <span className="underline">permanently</span> added to your profile. Click confirm to proceed.
+						This action <span className={'text-red-600 underline'}>cannot</span> be undone. Once you adopt {petName},
+						they will be <span className={'underline'}>permanently</span> added to your profile. Click confirm to proceed.
 					</DialogDescription>
 				</DialogHeader>
-				{error && <FormError message={error}/>}
+				
+				{/* adoption error if any */}
+				<div aria-description={'adopt-error'} aria-live={'polite'} aria-atomic={'true'}>
+					<FormError message={error}/>
+				</div>
+				
 				<DialogFooter>
 					<DialogClose asChild>
-						<Button intent="primary"
+						<Button intent={'primary'}
 						        onClick={handleAdopt}
 						        disabled={isAdopting || !!error}
 						>

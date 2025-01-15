@@ -1,17 +1,11 @@
-'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from "framer-motion";
 import Button from '@/ui/button';
 import Headings from '@/components/headings';
 
 export default function App() {
 	return (
-		<motion.section initial={{ opacity: 0, y: 50 }}
-		                animate={{ opacity: 1, y: 0 }}
-		                transition={{ duration: 0.3 }}
-		                className={'mx-auto flex flex-col gap-8 w-[90%] max-w-[420px] sm:max-w-[550px] md:max-w-[690px] lg:flex-row lg:gap-16 lg:max-w-6xl toGrid:gap-20 toGrid:max-w-[1400px]'}
-		>
+		<section className={'mx-auto flex flex-col gap-8 w-[90%] max-w-[420px] sm:max-w-[550px] md:max-w-[690px] lg:flex-row lg:gap-16 lg:max-w-6xl toGrid:gap-20 toGrid:max-w-[1400px]'}>
 			<div className={'blob-outline flex justify-center space-x-1'}>
 				<ImageWrapper image={'/cat.jpg'} position={'left'}/>
 				<ImageWrapper image={'/dog.jpg'} position={'right'}/>
@@ -26,13 +20,13 @@ export default function App() {
 						a lasting bond.
 					</p>
 					<Button className={'w-full'}>
-						<Link href="/adopt" className={'w-full'}>
+						<Link href={'/adopt'} className={'w-full'}>
 							Meet Your New Best Friend
 						</Link>
 					</Button>
 				</div>
 			</div>
-		</motion.section>
+		</section>
 	);
 }
 
@@ -46,7 +40,7 @@ function ImageWrapper({ image, position }: {
 			       alt={position === 'left' ? 'cat.jpg' : 'dog.jpg'}
 			       width={420}
 			       height={420}
-			       className={position === 'left' ? '-translate-y-6' : ''}
+			       className={`${position === 'left' && '-translate-y-6'}`}
 			/>
 		</div>
 	);
