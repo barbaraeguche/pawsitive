@@ -14,7 +14,7 @@ export default function NavLinks() {
 	const pathname = usePathname();
 
 	return (
-		<nav className="flex w-full md:flex-col">
+		<nav className={'flex w-full md:flex-col'}>
 			{links.map((link) => {
 				const Icon = link.icon;
 				
@@ -27,8 +27,8 @@ export default function NavLinks() {
 						      { 'bg-dough/75 border-b border-b-brown-100 md:border-b-0': link.href === pathname }
 					      )}
 					>
-						<Icon className="w-5"/>
-						<p className="hidden md:block">{link.name}</p>
+						<Icon className={'w-5'}/>
+						<p className={'hidden md:block'}>{link.name}</p>
 					</Link>
 				);
 			})}

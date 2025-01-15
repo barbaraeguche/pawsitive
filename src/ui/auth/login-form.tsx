@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState, useActionState } from 'react';
+import { clsx } from 'clsx';
 import { Eye, EyeClosed } from 'lucide-react';
 import { loginUser } from '@/lib/action';
 import { UserLoginState } from '@/lib/definitions';
@@ -14,27 +15,27 @@ export default function LoginForm() {
 	const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 	
 	return (
-		<div className="px-1.5 !mt-top !mb-bottom space-y-6 md:space-y-12">
+		<div className={'px-1.5 !mt-top !mb-bottom space-y-6 md:space-y-12'}>
 			<form action={formAction}>
-				<div className="mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-5 border border-brown-80 shadow-md shadow-brown-80/25">
-					<h4 className="text-xl">Log In to Account</h4>
+				<div className={'mx-auto max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-5 border border-brown-80 shadow-md shadow-brown-80/25'}>
+					<h4 className={'text-xl'}>Log In to Account</h4>
 					
 					{/* actual form */}
-					<div className="space-y-4">
+					<div className={'space-y-4'}>
 						{/* email */}
 						<div>
-							<label htmlFor="email" className="mb-1 block text-sm">Email</label>
-							<Input id="email"
-							       name="email"
-							       type="email"
+							<label htmlFor={'email'} className={'mb-1 block text-sm'}>Email</label>
+							<Input id={'email'}
+							       name={'email'}
+							       type={'email'}
 							       disabled={isPending}
-							       aria-describedby="email-error"
+							       aria-describedby={'email-error'}
 							       defaultValue={state.values?.email}
-							       placeholder="Enter your email address"
+							       placeholder={'dave@example.com'}
 							/>
-							<div id="email-error" aria-live="polite" aria-atomic="true">
+							<div id={'email-error'} aria-live={'polite'} aria-atomic={'true'}>
 								{state.errors?.email?.map((error: string) => (
-									<p key={error} className="mt-1 text-sm text-red-600">
+									<p key={error} className={'mt-1 text-sm text-red-600'}>
 										{error}
 									</p>
 								))}
@@ -43,28 +44,28 @@ export default function LoginForm() {
 						
 						{/* password */}
 						<div>
-							<label htmlFor="password" className="mb-1 block text-sm">Password</label>
-							<div className="relative">
-								<Input id="password"
-								       name="password"
+							<label htmlFor={'password'} className={'mb-1 block text-sm'}>Password</label>
+							<div className={'relative'}>
+								<Input id={'password'}
+								       name={'password'}
 								       type={`${isPasswordVisible ? 'text' : 'password'}`}
-								       className="pr-10"
+								       className={'pr-10'}
 								       disabled={isPending}
-								       placeholder="******"
-								       aria-describedby="password-error"
+								       placeholder={'******'}
+								       aria-describedby={'password-error'}
 								       defaultValue={state.values?.password}
 								/>
-								<button type="button"
+								<button type={'button'}
 								        onClick={() => setIsPasswordVisible((prev) => !prev)}
 								        aria-label={isPasswordVisible ? 'Hide password' : 'Show password'}
-								        className="text-gray-600 absolute w-4 top-1/2 -translate-y-1/2 right-3 flex"
+								        className={'text-gray-600 absolute w-4 top-1/2 -translate-y-1/2 right-3 flex'}
 								>
 									{isPasswordVisible ? <Eye/> : <EyeClosed/>}
 								</button>
 							</div>
-							<div id="password-error" aria-live="polite" aria-atomic="true">
+							<div id={'password-error'} aria-live={'polite'} aria-atomic={'true'}>
 								{state.errors?.password?.map((error: string) => (
-									<p key={error} className="mt-1 text-sm text-red-600">
+									<p key={error} className={'mt-1 text-sm text-red-600'}>
 										{error}
 									</p>
 								))}
@@ -72,22 +73,27 @@ export default function LoginForm() {
 						</div>
 						
 						{/* database error if any */}
-						<div aria-description="db-error" aria-live="polite" aria-atomic="true">
+						<div aria-description={'db-error'} aria-live={'polite'} aria-atomic={'true'}>
 							<FormError message={state.message}/>
 						</div>
 						
 						{/* submit button */}
-						<Button type="submit"
+						<Button type={'submit'}
 						        disabled={isPending}
-						        aria-description="Log in"
-						        className="!mt-5 w-full disabled:bg-brown-80/10 disabled:text-brown disabled:cursor-default"
+						        aria-description={'Log in'}
+						        className={'!mt-5 w-full disabled:bg-brown-80/10 disabled:text-brown disabled:cursor-default'}
 						>
 							Log in
 						</Button>
 					</div>
 					
 					{/* link to register page */}
-					<Link href="/register" className="flex justify-center hover:underline">
+					<Link href={isPending ? '#' : '/register'}
+					      className={clsx(
+									'flex justify-center hover:underline',
+						      { 'pointer-events-none text-gray-400': isPending }
+					      )}
+					>
 						Don&rsquo;t have an account?
 					</Link>
 				</div>

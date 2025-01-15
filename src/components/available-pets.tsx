@@ -31,7 +31,7 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 				const processImage = await Promise.all(
 					pets.map(async (pet) => ({
 						...pet,
-						imageUrl: await base64ToImage(pet.image)
+						image: await base64ToImage(pet.image)
 					}))
 				);
 				setAllPets(processImage);
@@ -61,13 +61,13 @@ export default function AvailablePets({ userId, type, breed, gender, age, compat
 	
 	return (
 		<Fragment>
-			<Headings title="Our Available Pets"/>
+			<Headings title={'Our Available Pets'}/>
 			{isLoading ? (
 				<PetCardsSkeleton isAdopting={true}/>
 			) : (
 				filteredPets.length === 0 ? (
-					<div className="flex justify-center">
-						<span className="!mt-16 toGrid:!mt-36 text-base">No available matching pets.</span>
+					<div className={'flex justify-center'}>
+						<span className={'!mt-16 toGrid:!mt-36'}>No available matching pets.</span>
 					</div>
 				) : (
 					<PetCard pets={filteredPets} isAdopting={true}/>
