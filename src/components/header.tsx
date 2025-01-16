@@ -10,7 +10,7 @@ const mainLinks = [
 
 export default function Header() {
 	return (
-		<header className={`${montserrat.className} z-50 p-1.5 sticky top-0 border-b border-b-brown-100 bg-dough`}>
+		<header className={`${montserrat.className} text-[16px] z-50 p-1.5 sticky top-0 border-b border-b-brown-100 bg-dough`}>
 			{/* mobile format */}
 			<div className={'flex items-center justify-between sm:hidden'}>
 				<SiteName/>
@@ -25,7 +25,7 @@ export default function Header() {
 					{mainLinks.map((link) => (
 						<Link key={link.name}
 						      href={link.href}
-						      className={'px-1.5 py-0.5 border-x border-transparent hover:border-brown rounded-lg transition-colors'}
+						      className={'px-2 py-0.5 border-x border-transparent hover:border-brown rounded-lg transition-colors'}
 						>
 							{link.name}
 						</Link>

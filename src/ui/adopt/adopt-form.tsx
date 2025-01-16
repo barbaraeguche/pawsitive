@@ -23,7 +23,7 @@ export default function Form() {
 						</div>
 						<div className={'flex gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2'}>
 							{/* cat */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'cat'}
 								       name={'type'}
 								       type={'radio'}
@@ -35,7 +35,7 @@ export default function Form() {
 							</div>
 							
 							{/* dog */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'dog'}
 								       name={'type'}
 								       type={'radio'}
@@ -67,7 +67,7 @@ export default function Form() {
 						</div>
 						<div className={'flex gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2'}>
 							{/* male */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'male'}
 								       name={'gender'}
 								       type={'radio'}
@@ -79,7 +79,7 @@ export default function Form() {
 							</div>
 							
 							{/* female */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'female'}
 								       name={'gender'}
 								       type={'radio'}
@@ -108,7 +108,7 @@ export default function Form() {
 						<legend className={'mb-1 block text-sm'}>Pet Compatibility</legend>
 						<div className={'grid grid-cols-2 sm:flex sm:gap-x-8 rounded-md border border-brown-80 bg-white px-2.5 py-2'}>
 							{/* dogs */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'dogs'}
 								       name={'compatibility'}
 								       type={'checkbox'}
@@ -120,7 +120,7 @@ export default function Form() {
 							</div>
 							
 							{/* cats */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'cats'}
 								       name={'compatibility'}
 								       type={'checkbox'}
@@ -132,7 +132,7 @@ export default function Form() {
 							</div>
 							
 							{/* kids */}
-							<div>
+							<div className={'flex items-center'}>
 								<input id={'kids'}
 								       name={'compatibility'}
 								       type={'checkbox'}
