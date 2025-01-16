@@ -22,7 +22,7 @@ export const authConfig = {
 			// if needed api route for next-auth
 			if (isApiAuthRoute) return true;
 			
-			// if user is on an auth route
+			// if a user is on an auth route
 			if (isAuthRoute) {
 				if (isLoggedIn) return NextResponse.redirect(new URL(default_login_redirect, nextUrl));
 				return true;
