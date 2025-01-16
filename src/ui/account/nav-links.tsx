@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Heart, HomeIcon, History } from 'lucide-react';
 import clsx from 'clsx';
+import { Heart, HomeIcon, History } from 'lucide-react';
 
 const links = [
 	{ name: 'Home', href: '/account', icon: HomeIcon },
@@ -23,8 +23,11 @@ export default function NavLinks() {
 					      href={link.href}
 					      aria-label={link.name}
 					      className={clsx(
-						      'grow flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 hover:bg-dough/75 hover:text-brown-100 md:justify-start',
-						      { 'bg-dough/75 border-b border-b-brown-100 md:border-b-0': link.href === pathname }
+						      'grow flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 md:justify-start',
+						      {
+										'bg-brown/10 border-b border-b-brown-100 md:border-b-0': link.href === pathname,
+							      'hover:bg-brown/5': link.href !== pathname
+									}
 					      )}
 					>
 						<Icon className={'w-5'}/>

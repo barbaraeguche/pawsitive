@@ -19,8 +19,8 @@ export default function RootLayout({ children } : Readonly<{
 	children: ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${lora.className} p-0 m-0 box-border text-base flex flex-col h-screen mx-auto max-w-[2000px] antialiased`}>
+		<html lang="en" className={'overflow-y-auto'}>
+			<body className={`${lora.className} p-0 m-0 box-border text-base flex flex-col h-screen mx-auto max-w-[2000px] overflow-y-auto antialiased`}>
 				<SessionProvider>
 					<Header/>
 					<main className={'flex-1'}>

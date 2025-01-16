@@ -38,7 +38,7 @@ function TestimonialCards({ image, text, name }: {
 			       alt={name}
 			       width={180}
 			       height={180}
-			       className={'size-36 sm:size-40 lg:size-44 xl:size-48 rounded-full align-middle overflow-hidden'}
+			       className={'size-40 toGrid:size-48 rounded-full align-middle overflow-hidden'}
 			/>
 			<div className={'w-[75%] sm:w-full space-y-4'}>
 				<p className={'text-justify'}>{text}</p>

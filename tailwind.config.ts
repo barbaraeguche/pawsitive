@@ -26,11 +26,11 @@ export default {
 				dough: '#fbfaf5',
 			  brown: {
           100: '#3b1f15',
-				  DEFAULT: 'rgba(59,31,21,0.8)',
-				  80: 'rgba(59,31,21,0.6)'
+				  DEFAULT: 'rgba(59, 31, 21, 0.8)',
+				  80: 'rgba(59, 31, 21, 0.6)'
 			  },
 			  celeste: { // for input accents
-				  DEFAULT: '#60673f'
+				  DEFAULT: '#d28b6e'
 			  }
 		  },
 		  keyframes: {
