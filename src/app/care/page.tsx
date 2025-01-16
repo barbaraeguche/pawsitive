@@ -41,7 +41,7 @@ export default async function CarePage() {{}
 				</TabsContent>
 			</Tabs>
 			
-			<p className={'italic px-2 text-justify'}>
+			<p className={'italic text-sm px-2 text-justify'}>
 				<b>Final Note: {' '}</b>
 				Loving care, regular attention, and understanding their needs will help your pets thrive.
 				Remember, every pet is unique and may have individual preferences or requirements.

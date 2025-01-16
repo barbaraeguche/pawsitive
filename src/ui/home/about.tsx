@@ -6,7 +6,7 @@ export default function About() {
 			<div className={'my-auto'}>
 				<Headings title={'Our Mission: Happy Pets, Happy Families!'}/>
 			</div>
-			<div className={'space-y-3 text-justify text-[15px]'}>
+			<div className={'space-y-3 text-justify'}>
 				<p>
 					At Paw Squad, we connect rescued pets with loving families, offering them a safe and nurturing environment.
 					From playful kittens to loyal pups, our dedicated team ensures every pet receives the care, attention, and

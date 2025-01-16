@@ -26,9 +26,9 @@ export default function UserInfo({ userId }: {
 	}, [userId]);
 	
 	return (
-		<div className={'px-1.5 !mt-top !mb-bottom space-y-6 md:space-y-12'}>
+		<div className={'!mt-top !mb-bottom space-y-6 md:space-y-12'}>
 			<Headings title={'Account Information'}/>
-			<div className={'mx-auto max-w-[400px] sm:max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25'}>
+			<div className={'mx-auto sm:max-w-[600px] rounded-lg bg-gray-50/50 p-3 md:p-5 space-y-4 border border-brown-80 shadow-md shadow-brown-80/25'}>
 				{/* user name */}
 				<div>
 					<label htmlFor={'name'} className={'mb-1 block text-sm'}>Name</label>
@@ -77,7 +77,7 @@ export default function UserInfo({ userId }: {
 					/>
 				</div>
 			</div>
-			<p className={'italic px-2 text-justify mx-auto max-w-[400px] sm:max-w-[600px]'}>
+			<p className={'italic text-sm text-justify mx-auto sm:max-w-[600px]'}>
 				<b>Important Note: {' '}</b>
 				You can only rehome a <span className={'text-red-600 underline'}>maximum of 6</span> pets, and adopt a <span className={'text-red-600 underline'}>maximum of 4</span>.
 			</p>

@@ -28,7 +28,7 @@ const AnimateInView = ({ children }: {
 		<motion.div ref={ref}
 		            initial={{ opacity: 0, y: 50 }}
 		            whileInView={{ opacity: 1, y: 0 }}
-		            viewport={{ amount: 0.3 }}
+		            viewport={{ amount: 0.2, once: true }}
 		            transition={{ duration: 0.5 }}
 		>
 			{children}

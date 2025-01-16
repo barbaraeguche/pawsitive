@@ -60,7 +60,7 @@ export default function LoginForm() {
 								        aria-label={isPasswordVisible ? 'Hide password' : 'Show password'}
 								        className={'text-gray-600 absolute w-4 top-1/2 -translate-y-1/2 right-3 flex'}
 								>
-									{isPasswordVisible ? <Eye/> : <EyeClosed/>}
+									{isPasswordVisible ? <EyeClosed/> : <Eye/>}
 								</button>
 							</div>
 							<div id={'password-error'} aria-live={'polite'} aria-atomic={'true'}>
