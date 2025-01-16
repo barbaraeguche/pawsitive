@@ -13,7 +13,7 @@ export function SessionProvider({ children }: {
 }) {
 	return (
 		<NextAuthSessionProvider>
-			{/*<SessionExpiryCheck/>*/}
+			<SessionExpiryCheck/>
 			{children}
 		</NextAuthSessionProvider>
 	);

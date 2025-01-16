@@ -50,7 +50,7 @@ export default function UserInfo({ userId }: {
 					/>
 				</div>
 				
-				{/* user rehome count - max 6 pets */}
+				{/* user rehome count - max 5 pets */}
 				<div className={'flex items-center gap-x-3'}>
 					<label htmlFor={'rehome-count'} className={'mb-1 block text-sm text-nowrap'}>Rehome Count:</label>
 					<Input readOnly
@@ -58,12 +58,12 @@ export default function UserInfo({ userId }: {
 					       value={user.rehomeCount}
 					       className={clsx(
 						       'focus-visible:outline-transparent',
-						       { 'text-red-600': user.rehomeCount === 6 }
+						       { 'text-red-600': user.rehomeCount === 5 }
 					       )}
 					/>
 				</div>
 				
-				{/* user adopt count - max 4 pets */}
+				{/* user adopt count - max 3 pets */}
 				<div className={'flex items-center gap-x-6'}>
 					<label htmlFor={'adopt-count'} className={'mb-1 block text-sm text-nowrap'}>Adopt Count:</label>
 					<Input readOnly
@@ -71,14 +71,14 @@ export default function UserInfo({ userId }: {
 					       value={user.adoptCount}
 					       className={clsx(
 						       'focus-visible:outline-transparent ',
-						       { 'text-red-600': user.adoptCount === 4 }
+						       { 'text-red-600': user.adoptCount === 3 }
 					       )}
 					/>
 				</div>
 			</div>
 			<p className={'italic text-sm text-justify mx-auto sm:max-w-[600px]'}>
 				<b>Important Note: {' '}</b>
-				You can only rehome a <span className={'text-red-600 underline'}>maximum of 6</span> pets, and adopt a <span className={'text-red-600 underline'}>maximum of 4</span>.
+				You can only rehome a <span className={'text-red-600 underline'}>maximum of 5</span> pets, and adopt a <span className={'text-red-600 underline'}>maximum of 3</span>.
 			</p>
 		</div>
 	);

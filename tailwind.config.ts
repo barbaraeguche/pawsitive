@@ -7,6 +7,7 @@ export default {
   theme: {
   	extend: {
 			fontSize: {
+				sm: '13px',
 				base: '15px'
 			},
 			margin: {
@@ -30,7 +31,7 @@ export default {
 				  80: 'rgba(59, 31, 21, 0.6)'
 			  },
 			  celeste: { // for input accents
-				  DEFAULT: '#d28b6e'
+				  DEFAULT: 'rgba(178, 150, 97, 0.45)'
 			  }
 		  },
 		  keyframes: {

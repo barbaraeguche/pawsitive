@@ -28,7 +28,9 @@ export default async function AdoptPage(props: {
 	return (
 		<div className={'!mt-top !mb-bottom flex flex-col gap-y-9 toGrid:flex-row'}>
 			<div className={'w-full toGrid:w-1/4'}>
-				<Form/>
+				<div className={'sticky top-0'}>
+					<Form/>
+				</div>
 			</div>
 			<div className={'px-1.5 md:px-0 w-full toGrid:w-3/4 toGrid:mr-3 [1937px]:mr-0'}>
 				<AvailablePets userId={userId} type={type} breed={breed} gender={gender} age={age} compatibility={compatibility}/>
