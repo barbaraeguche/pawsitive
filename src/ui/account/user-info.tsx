@@ -9,14 +9,13 @@ import Headings from '@/components/headings';
 export default function UserInfo({ userId }: {
 	userId: string
 }) {
-	const defaultValue: User = { id: '', name: '', email: '', rehomeCount: 0, adoptCount: 0 };
-	const [user, setUser] = useState<User>(defaultValue);
+	const [user, setUser] = useState<User>({ id: '', name: '', email: '', rehomeCount: 0, adoptCount: 0 });
 	
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
 				const user = await getUserInformation(userId);
-				setUser(user ? user : defaultValue);
+				setUser(user ? user : { id: '', name: '', email: '', rehomeCount: 0, adoptCount: 0 });
 			} catch (err) {
 				console.error(`Error fetching user information: ${err}`);
 			}
