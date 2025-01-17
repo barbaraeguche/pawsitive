@@ -145,5 +145,5 @@ pnpm run dev
 
   - **adopting:**
   
-  
+  https://github.com/user-attachments/assets/3545baa7-a803-4b0c-8336-fe8d2223ae57
 </details>
