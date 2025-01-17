@@ -41,37 +41,37 @@ export const useSessionExpiry = () => {
   const { data: session, status, update } = useSession();
 	
   const handleLogout = useCallback(async () => {
-	await signOut({ redirectTo: '/' });
+    await signOut({ redirectTo: '/' });
   }, []);
 	
   // ensure session gets refreshed if unauthenticated
   useEffect(() => {
-	if (status === "unauthenticated") {
-	  update().catch(console.error);
-	}
+    if (status === "unauthenticated") {
+      update().catch(console.error);
+    }
   }, [status, update]);
 	
   // compute session expiry time efficiently
   const timeUntilExpiry = useMemo(() => {
-	if (!session?.expires) return null;
-	return new Date(session.expires).getTime() - Date.now();
+    if (!session?.expires) return null;
+    return new Date(session.expires).getTime() - Date.now();
   }, [session]);
 	
   useEffect(() => {
-	// if no valid expiration timestamp, do nothing
-	if (timeUntilExpiry === null) return;
+    // if no valid expiration timestamp, do nothing
+    if (timeUntilExpiry === null) return;
 		
-	// if the session already expired, log out immediately
-	if (timeUntilExpiry <= 0) {
-	  handleLogout();
-	  return;
-	}
+    // if the session already expired, log out immediately
+    if (timeUntilExpiry <= 0) {
+      handleLogout();
+      return;
+    }
 		
-	// set a timer to log the user out when the session expires
-	const timer = setTimeout(handleLogout, timeUntilExpiry);
+    // set a timer to log the user out when the session expires
+    const timer = setTimeout(handleLogout, timeUntilExpiry);
 		
-	// cleanup the timer if the component unmounts or session changes
-	return () => clearTimeout(timer);
+    // cleanup the timer if the component unmounts or session changes
+    return () => clearTimeout(timer);
   }, [timeUntilExpiry, handleLogout]);
 };
 ```
@@ -92,10 +92,10 @@ export function SessionProvider({ children }: {
   children: ReactNode
 }) {
   return (
-	<NextAuthSessionProvider>
-	  <SessionExpiryCheck/>
-	  {children}
-	</NextAuthSessionProvider>
+    <NextAuthSessionProvider>
+      <SessionExpiryCheck/>
+      {children}
+    </NextAuthSessionProvider>
   );
 }
 ```
@@ -130,16 +130,20 @@ pnpm run dev
 ## preview 📸
 <details>
   <summary>showcase</summary>
-  
+
   - **introduction:**
   
+  https://github.com/user-attachments/assets/6fd80cd3-3657-4aab-a196-828cfcf8d31c
 
   - **login + account:**
   
+  https://github.com/user-attachments/assets/52939086-f5ae-4425-8d3d-eb8979741d70
 
   - **rehoming:**
   
+  https://github.com/user-attachments/assets/fe9209ed-6134-4515-81f6-8ff0d9268093
 
   - **adopting:**
+  
   
 </details>
