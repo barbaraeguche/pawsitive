@@ -3,6 +3,11 @@ paw squad is a pet adoption platform where users can adopt and rehome pets seaml
 it features authentication, session management, and state management to ensure a smooth user experience, 
 powered by prisma db for efficient data handling.
 
+## tech stack ✨
+- **frontend:** built with nextjs, tailwind css, framer motion, and zustand for state management.  
+- **backend:** powered by nextjs with prisma and postgresql for database management.  
+- **deployment:** hosted entirely on vercel.
+
 ## features 👾
 - **pet care tips:** provides useful tips on how to take care of adopted pets.
 - **adopt and rehome pets:** users can adopt up to 4 pets and rehome up to 6 pets.
@@ -128,22 +133,14 @@ pnpm run dev
 - open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## preview 📸
-<details>
-  <summary>showcase</summary>
+**home page + care tips:** [Watch the video here :)](https://youtu.be/t62GXGe8JC0)
 
-  - **introduction:**
-  
-  https://github.com/user-attachments/assets/6fd80cd3-3657-4aab-a196-828cfcf8d31c
+**login + account page:**
 
-  - **login + account:**
-  
-  https://github.com/user-attachments/assets/52939086-f5ae-4425-8d3d-eb8979741d70
+https://github.com/user-attachments/assets/1dd09464-317f-4420-9d65-037ca88794e9
 
-  - **rehoming:**
-  
-  https://github.com/user-attachments/assets/fe9209ed-6134-4515-81f6-8ff0d9268093
+**rehoming:**
 
-  - **adopting:**
-  
-  https://github.com/user-attachments/assets/3545baa7-a803-4b0c-8336-fe8d2223ae57
-</details>
+https://github.com/user-attachments/assets/49e368ec-9243-403c-b653-ac64af04c26b
+
+**adopting:** [Watch the video here :)](https://youtu.be/aQ7MYwd1sK8)
