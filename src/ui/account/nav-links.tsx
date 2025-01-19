@@ -25,7 +25,7 @@ export default function NavLinks() {
 					      className={clsx(
 						      'grow flex items-center justify-center h-12 gap-x-2 p-4 rounded-md bg-gray-50 md:justify-start',
 						      {
-										'bg-brown/10 border-b border-b-brown-100 md:border-b-0': link.href === pathname,
+										'bg-brown/20 border-b border-brown-100 md:border-b-0 md:border-r-2': link.href === pathname,
 							      'hover:bg-brown/5': link.href !== pathname
 									}
 					      )}
