@@ -133,8 +133,6 @@ pnpm run dev
 - open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## preview 📸
-**home page + care tips:** [Watch the video here :)](https://youtu.be/t62GXGe8JC0)
-
 **login + account page:**
 
 https://github.com/user-attachments/assets/1dd09464-317f-4420-9d65-037ca88794e9
