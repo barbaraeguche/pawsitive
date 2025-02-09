@@ -1,5 +1,5 @@
 # paw squad 🐾
-paw squad is a pet adoption platform where users can adopt and rehome pets seamlessly. 
+a pet adoption platform where users can adopt and rehome pets seamlessly. 
 it features authentication, session management, and state management to ensure a smooth user experience, 
 powered by prisma db for efficient data handling.
 
