@@ -8,8 +8,8 @@ import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
 	title: {
-		template: '%s | Paw Squad',
-		default: 'Paw Squad'
+		template: '%s | Pawsitive',
+		default: 'Pawsitive'
 	},
 	description: 'a friendly pet adoption application built with nextjs.',
 	icons: { icon: '/pets.png' }

@@ -8,7 +8,7 @@ export default function About() {
 			</div>
 			<div className={'space-y-3 text-justify'}>
 				<p>
-					At Paw Squad, we connect rescued pets with loving families, offering them a safe and nurturing environment.
+					At Pawsitive, we connect rescued pets with loving families, offering them a safe and nurturing environment.
 					From playful kittens to loyal pups, our dedicated team ensures every pet receives the care, attention, and
 					training they need to thrive.
 				</p>

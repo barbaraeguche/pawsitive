@@ -1,5 +1,5 @@
 {
-  "name": "paw-squad",
+  "name": "pawsitive",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -54,14 +54,14 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/barbaraeguche/paw-squad.git"
+    "url": "git+https://github.com/barbaraeguche/pawsitive.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/barbaraeguche/paw-squad/issues"
+    "url": "https://github.com/barbaraeguche/pawsitive/issues"
   },
-  "homepage": "https://github.com/barbaraeguche/paw-squad#readme"
+  "homepage": "https://github.com/barbaraeguche/pawsitive#readme"
 }

@@ -15,7 +15,7 @@ export default function App() {
 				<Headings title={'Find Your Perfect Furry Friend!'}/>
 				<div className={'space-y-3'}>
 					<p className={'italic text-justify'}>
-						At Paw Squad, we connect loving families with pets in need of a forever home. Whether you&rsquo;re looking
+						At Pawsitive, we connect loving families with pets in need of a forever home. Whether you&rsquo;re looking
 						for a playful puppy or a calm senior companion, we’re here to help you find your perfect match and create
 						a lasting bond.
 					</p>
