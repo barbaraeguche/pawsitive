@@ -1,4 +1,4 @@
-# paw squad 🐾
+# pawsitive 🐾
 a pet adoption platform where users can adopt and rehome pets seamlessly. 
 it features authentication, session management, and state management to ensure a smooth user experience, 
 powered by prisma db for efficient data handling.
@@ -114,11 +114,11 @@ to get the project up and running on your local machine, follow these steps:
 - **ensure [node.js](https://nodejs.org/en) is installed:** this project uses node v22
 - **clone the repository:**
 ```bash
-git clone https://github.com/barbaraeguche/paw-squad.git
+git clone https://github.com/barbaraeguche/pawsitive.git
 ```
 - **navigate to the project directory:**
 ```bash
-cd paw-squad
+cd pawsitive
 ```
 - **install dependencies:**
 ```bash

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/paw-squad.iml" filepath="$PROJECT_DIR$/.idea/paw-squad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pawsitive.iml" filepath="$PROJECT_DIR$/.idea/pawsitive.iml" />
     </modules>
   </component>
 </project>
